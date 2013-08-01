@@ -74,7 +74,7 @@ inline void CGPointSet(CGPoint *v, float x, float y){
     self = [super init];
         
     pointLimit = limit;
-	self.width = 5;
+	self.width = 5; //太さ
 	
     vertices = (CGPoint *)calloc(2*limit+5, sizeof(vertices[0]));
     coordinates = (CGPoint *)calloc(2*limit+5, sizeof(coordinates[0]));
@@ -231,6 +231,8 @@ inline void CGPointSet(CGPoint *v, float x, float y){
     glVertexAttribPointer(kCCVertexAttrib_TexCoords, 2, GL_FLOAT, GL_FALSE, sizeof(coordinates[0]), coordinates);
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 2*[path count]-2);
 }
+
+
 
 - (void) finish
 {

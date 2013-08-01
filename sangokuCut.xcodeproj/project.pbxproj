@@ -323,6 +323,11 @@
 		9C8DDC1717AA32C500BC144B /* watermelon_splurt.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C8DDC0F17AA32C500BC144B /* watermelon_splurt.plist */; };
 		9C8DDC1A17AA337A00BC144B /* streak-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8DDC1817AA337700BC144B /* streak-hd.png */; };
 		9C8DDC1B17AA337A00BC144B /* streak.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8DDC1917AA337800BC144B /* streak.png */; };
+		9C8DDC4017AA69A900BC144B /* PRFilledPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DDC3917AA69A900BC144B /* PRFilledPolygon.m */; };
+		9C8DDC4117AA69A900BC144B /* PRRatcliffTriangulator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DDC3B17AA69A900BC144B /* PRRatcliffTriangulator.mm */; };
+		9C8DDC4217AA69A900BC144B /* triangulate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DDC3D17AA69A900BC144B /* triangulate.cpp */; };
+		9C8DDC4517AA6B3700BC144B /* PolygonSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DDC4417AA6B3700BC144B /* PolygonSprite.mm */; };
+		9C8DDC4F17AA763400BC144B /* Zombi_Lv1.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DDC4E17AA763400BC144B /* Zombi_Lv1.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -840,6 +845,17 @@
 		9C8DDC0F17AA32C500BC144B /* watermelon_splurt.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = watermelon_splurt.plist; sourceTree = "<group>"; };
 		9C8DDC1817AA337700BC144B /* streak-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "streak-hd.png"; sourceTree = "<group>"; };
 		9C8DDC1917AA337800BC144B /* streak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = streak.png; sourceTree = "<group>"; };
+		9C8DDC3817AA69A900BC144B /* PRFilledPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRFilledPolygon.h; sourceTree = "<group>"; };
+		9C8DDC3917AA69A900BC144B /* PRFilledPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRFilledPolygon.m; sourceTree = "<group>"; };
+		9C8DDC3A17AA69A900BC144B /* PRRatcliffTriangulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRRatcliffTriangulator.h; sourceTree = "<group>"; };
+		9C8DDC3B17AA69A900BC144B /* PRRatcliffTriangulator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PRRatcliffTriangulator.mm; sourceTree = "<group>"; };
+		9C8DDC3C17AA69A900BC144B /* PRTriangulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRTriangulator.h; sourceTree = "<group>"; };
+		9C8DDC3D17AA69A900BC144B /* triangulate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = triangulate.cpp; sourceTree = "<group>"; };
+		9C8DDC3E17AA69A900BC144B /* triangulate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = triangulate.h; sourceTree = "<group>"; };
+		9C8DDC4317AA6B3700BC144B /* PolygonSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolygonSprite.h; sourceTree = "<group>"; };
+		9C8DDC4417AA6B3700BC144B /* PolygonSprite.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PolygonSprite.mm; sourceTree = "<group>"; };
+		9C8DDC4D17AA763400BC144B /* Zombi_Lv1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zombi_Lv1.h; sourceTree = "<group>"; };
+		9C8DDC4E17AA763400BC144B /* Zombi_Lv1.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Zombi_Lv1.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1699,6 +1715,8 @@
 		9C8DDC0317AA320700BC144B /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				9C8DDC4C17AA761700BC144B /* enemy */,
+				9C8DDC3517AA69A900BC144B /* PRKit */,
 				9C8DDC0417AA321400BC144B /* CCBlade.h */,
 				9C8DDC0517AA321400BC144B /* CCBlade.mm */,
 			);
@@ -1719,6 +1737,31 @@
 			);
 			name = Particles;
 			path = Resources/Particles;
+			sourceTree = "<group>";
+		};
+		9C8DDC3517AA69A900BC144B /* PRKit */ = {
+			isa = PBXGroup;
+			children = (
+				9C8DDC4317AA6B3700BC144B /* PolygonSprite.h */,
+				9C8DDC4417AA6B3700BC144B /* PolygonSprite.mm */,
+				9C8DDC3817AA69A900BC144B /* PRFilledPolygon.h */,
+				9C8DDC3917AA69A900BC144B /* PRFilledPolygon.m */,
+				9C8DDC3A17AA69A900BC144B /* PRRatcliffTriangulator.h */,
+				9C8DDC3B17AA69A900BC144B /* PRRatcliffTriangulator.mm */,
+				9C8DDC3C17AA69A900BC144B /* PRTriangulator.h */,
+				9C8DDC3D17AA69A900BC144B /* triangulate.cpp */,
+				9C8DDC3E17AA69A900BC144B /* triangulate.h */,
+			);
+			path = PRKit;
+			sourceTree = "<group>";
+		};
+		9C8DDC4C17AA761700BC144B /* enemy */ = {
+			isa = PBXGroup;
+			children = (
+				9C8DDC4D17AA763400BC144B /* Zombi_Lv1.h */,
+				9C8DDC4E17AA763400BC144B /* Zombi_Lv1.mm */,
+			);
+			path = enemy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2088,6 +2131,11 @@
 				9C8DDAEE17AA2A2300BC144B /* IntroLayer.mm in Sources */,
 				9C8DDAF117AA2A2300BC144B /* GLES-Render.mm in Sources */,
 				9C8DDC0617AA321400BC144B /* CCBlade.mm in Sources */,
+				9C8DDC4017AA69A900BC144B /* PRFilledPolygon.m in Sources */,
+				9C8DDC4117AA69A900BC144B /* PRRatcliffTriangulator.mm in Sources */,
+				9C8DDC4217AA69A900BC144B /* triangulate.cpp in Sources */,
+				9C8DDC4517AA6B3700BC144B /* PolygonSprite.mm in Sources */,
+				9C8DDC4F17AA763400BC144B /* Zombi_Lv1.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2209,6 +2257,7 @@
 				9C8DDAF817AA2A2300BC144B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

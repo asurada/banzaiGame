@@ -36,6 +36,10 @@
     
     //particle effect for the blade
     CCParticleSystemQuad *_bladeSparkle;
+    
+    
+    //the sprite cache
+    CCArray *_cache;
 
     
 }

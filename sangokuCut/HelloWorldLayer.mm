@@ -15,6 +15,8 @@
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
 #import "CCBlade.h"
+#import "PolygonSprite.h"
+#import "Zombi_Lv1.h"
 
 
 enum {
@@ -27,7 +29,7 @@ enum {
 @interface HelloWorldLayer()
 -(void) initPhysics;
 -(void) addNewSpriteAtPosition:(CGPoint)p;
--(void) createMenu;
+
 @end
 
 @implementation HelloWorldLayer
@@ -60,7 +62,7 @@ enum {
 		
 		// init physics
 		[self initPhysics];
-		[self initBackground];
+		
         
         
         
@@ -85,7 +87,8 @@ enum {
         [_bladeSparkle stopSystem];
         [self addChild:_bladeSparkle z:3];
         
-        
+        [self initSprites];
+        //[self initBackground];
 		// create reset button
 		//[self createMenu];
 		
@@ -110,7 +113,7 @@ enum {
 //		[label setColor:ccc3(0,0,255)];
 //		label.position = ccp( s.width/2, s.height-50);
 //        
-//		[self scheduleUpdate];
+        [self scheduleUpdate];
 	}
 	return self;
 }
@@ -126,57 +129,6 @@ enum {
 	[super dealloc];
 }	
 
--(void) createMenu
-{
-	// Default font size will be 22 points.
-	[CCMenuItemFont setFontSize:22];
-	
-	// Reset Button
-	CCMenuItemLabel *reset = [CCMenuItemFont itemWithString:@"Reset" block:^(id sender){
-		[[CCDirector sharedDirector] replaceScene: [HelloWorldLayer scene]];
-	}];
-
-	// to avoid a retain-cycle with the menuitem and blocks
-	__block id copy_self = self;
-
-	// Achievement Menu Item using blocks
-	CCMenuItem *itemAchievement = [CCMenuItemFont itemWithString:@"Achievements" block:^(id sender) {
-		
-		
-		GKAchievementViewController *achivementViewController = [[GKAchievementViewController alloc] init];
-		achivementViewController.achievementDelegate = copy_self;
-		
-		AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-		
-		[[app navController] presentModalViewController:achivementViewController animated:YES];
-		
-		[achivementViewController release];
-	}];
-	
-	// Leaderboard Menu Item using blocks
-	CCMenuItem *itemLeaderboard = [CCMenuItemFont itemWithString:@"Leaderboard" block:^(id sender) {
-		
-		
-		GKLeaderboardViewController *leaderboardViewController = [[GKLeaderboardViewController alloc] init];
-		leaderboardViewController.leaderboardDelegate = copy_self;
-		
-		AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-		
-		[[app navController] presentModalViewController:leaderboardViewController animated:YES];
-		
-		[leaderboardViewController release];
-	}];
-	
-	CCMenu *menu = [CCMenu menuWithItems:itemAchievement, itemLeaderboard, reset, nil];
-	
-	[menu alignItemsVertically];
-	
-	CGSize size = [[CCDirector sharedDirector] winSize];
-	[menu setPosition:ccp( size.width/2, size.height/2)];
-	
-	
-	[self addChild: menu z:-1];	
-}
 
 -(void) initPhysics
 {
@@ -287,7 +239,6 @@ enum {
 	[sprite setPTMRatio:PTM_RATIO];
 	[sprite setB2Body:body];
 	[sprite setPosition: ccp( p.x, p.y)];
-
 }
 
 -(void) update: (ccTime) dt
@@ -299,23 +250,13 @@ enum {
 	
 	int32 velocityIterations = 8;
 	int32 positionIterations = 1;
+    
+    [self spriteLoop];
 	
 	// Instruct the world to perform a single step of simulation. It is
 	// generally best to keep the time step and iterations fixed.
 	world->Step(dt, velocityIterations, positionIterations);	
 }
-
-//- (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-//{
-//	//Add a new body/atlas sprite at the touched location
-//	for( UITouch *touch in touches ) {
-//		CGPoint location = [touch locationInView: [touch view]];
-//		
-//		location = [[CCDirector sharedDirector] convertToGL: location];
-//		
-//		[self addNewSpriteAtPosition: location];
-//	}
-//}
 
 
 
@@ -435,7 +376,7 @@ enum {
 		CGPoint location = [touch locationInView: [touch view]];
         
         // remove all entry and exit points from all polygons
-       // [self clearSlices];
+        // [self clearSlices];
         
         // fade the blade
         [_blade dim:YES];
@@ -443,6 +384,57 @@ enum {
         // sparkle effect stops
         [_bladeSparkle stopSystem];
 	}
+}
+
+
+-(void)initSprites
+{
+    // allocate the a cache
+    _cache = [[CCArray alloc] initWithCapacity:53];
+    
+    // create fruits
+    for (int i = 0; i < 2; i++)
+    {
+        PolygonSprite *sprite = [[Zombi_Lv1 alloc] initWithWorld:world];
+        sprite.position = ccp(200,600);
+        [self addChild:sprite z:2];
+        [self addChild:sprite.splurt z:3];
+        [_cache addObject:sprite];
+    }
+}
+
+
+
+/*
+ * The main loop for tossing sprites. Picks out random fruits to be tossed based on a toss type.
+ */
+-(void)spriteLoop
+{
+    //double curTime = CACurrentMediaTime();
+    
+    //execute only when it's time to toss sprites again
+    if (true)
+    {
+        PolygonSprite *sprite;
+        
+        int chance = arc4random()%8;
+        if (chance == 0)
+        {
+            CCARRAY_FOREACH(_cache, sprite)
+            {
+                //if (sprite.state == kStateIdle && sprite.type == kTypeBomb)
+                {
+                  
+                    //CGPoint randomPosition = ccp(0,0);
+                    //sprite.position = randomPosition;
+                    //sprite.body->SetLinearVelocity(b2Vec2(randomXVelocity/PTM_RATIO,randomYVelocity/PTM_RATIO));
+                    //sprite.body->SetAngularVelocity(randomAngularVelocity);
+
+                    break;
+                }
+            }
+        }
+     }
 }
 
 
