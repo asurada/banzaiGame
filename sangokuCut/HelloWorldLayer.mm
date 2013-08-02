@@ -30,6 +30,7 @@ enum {
 -(void) initPhysics;
 -(void) addNewSpriteAtPosition:(CGPoint)p;
 @property (nonatomic, strong) CCAction *walkAction;
+@property (nonatomic, strong) CCAction *walkAction2;
 @end
 
 
@@ -64,7 +65,7 @@ enum {
 		
 		// init physics
 		[self initPhysics];
-        [self initBackground];
+        [self initBackground_iphone5];
         //[self initSprites];
         
         
@@ -86,11 +87,11 @@ enum {
               [NSString stringWithFormat:@"sheet_256x256_%d.png",i]]];
         }
         
-        CCAnimation *walkAnim = [CCAnimation animationWithSpriteFrames:walkAnimFrames delay:0.08f];
+        CCAnimation *walkAnim = [CCAnimation animationWithSpriteFrames:walkAnimFrames delay:0.07f];
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         CCSprite *player = [CCSprite spriteWithFile:@"sheet1.png" rect:CGRectMake(0, 0, 256, 256)];
         player.scale = 1;
-        player.position = ccp(player.contentSize.width/2, winSize.height/2);
+        player.position = ccp(player.contentSize.width/2+30, winSize.height/2+10);
         
       
        
@@ -98,6 +99,38 @@ enum {
                            [CCAnimate actionWithAnimation:walkAnim]];
         [self addChild:player z:1];
         [player runAction:self.walkAction];
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zombi_lv1.plist"];
+        CCSpriteBatchNode *spriteSheet2 = [CCSpriteBatchNode batchNodeWithFile:@"zombi_lv1.png"];
+        [self addChild:spriteSheet2];
+        
+        NSMutableArray *walkAnimFrames2 = [NSMutableArray array];
+        for (int i=1; i<=13; i++) {
+            [walkAnimFrames2 addObject:
+             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+              [NSString stringWithFormat:@"sheet_256x256_%d.png",i]]];
+        }
+        
+        CCAnimation *walkAnim2 = [CCAnimation animationWithSpriteFrames:walkAnimFrames2 delay:0.07f];
+        CGSize winSize2 = [[CCDirector sharedDirector] winSize];
+        CCSprite *player2 = [CCSprite spriteWithFile:@"sheet2.png" rect:CGRectMake(0, 0, 256, 256)];
+        player2.scale = 1;
+        player2.position = ccp(player2.contentSize.width/2+30, winSize2.height/2-100);
+        
+        
+        
+        self.walkAction2 = [CCRepeatForever actionWithAction:
+                           [CCAnimate actionWithAnimation:walkAnim2]];
+        [self addChild:player2 z:3];
+        [player2 runAction:self.walkAction2];
         
         
         
@@ -112,11 +145,11 @@ enum {
         
         for (int i = 0; i < 3; i++)
         {
-            CCBlade *blade = [CCBlade bladeWithMaximumPoint:50];
+            CCBlade *blade = [CCBlade bladeWithMaximumPoint:30];
             blade.autoDim = YES;
             blade.texture = texture;
             
-            [self addChild:blade z:2];
+            [self addChild:blade z:10];
             [_blades addObject:blade];
         }
         
@@ -124,7 +157,7 @@ enum {
         // initialize the blade sparkle particle effect
         _bladeSparkle = [CCParticleSystemQuad particleWithFile:@"blade_sparkle.plist"];
         [_bladeSparkle stopSystem];
-        [self addChild:_bladeSparkle z:3];
+        [self addChild:_bladeSparkle z:10];
         
       
 
@@ -304,19 +337,30 @@ enum {
 /*
  * Initializes everything in the background
  */
--(void)initBackground
+-(void)initBackground_iphone5
 {
     CGSize screen = [[CCDirector sharedDirector] winSize];
+    int height = 0;
     
     // add the background image
-    CCSprite *background = [CCSprite spriteWithFile:@"Bg_iPhone4s.png"];
-    background.scale = 1.0f;
-    background.position = ccp(screen.width/2,screen.height/2);
-    [self addChild:background z:0];
+    CCSprite *background_01 = [CCSprite spriteWithFile:@"Bg_iPhone5_01.png"];
+    background_01.position = ccp(screen.width/2,screen.height-background_01.contentSize.height/2);//415
+    [self addChild:background_01 z:0];
     
-    // add the particle effect
-    //CCParticleSystemQuad *sunPollen = [CCParticleSystemQuad particleWithFile:@"sun_pollen.plist"];
-    //[self addChild:sunPollen];
+    height = background_01.contentSize.height;
+    CCSprite *background_02 = [CCSprite spriteWithFile:@"Bg_iPhone5_02.png"];
+    background_02.position = ccp(screen.width/2,screen.height - height - background_02.contentSize.height/2);
+    [self addChild:background_02 z:2];
+    
+    height = height + background_02.contentSize.height;
+    CCSprite *background_03 = [CCSprite spriteWithFile:@"Bg_iPhone5_03.png"];
+    background_03.position = ccp(screen.width/2,screen.height - height - background_03.contentSize.height/2);
+    [self addChild:background_03 z:4];
+    
+    height = height + background_03.contentSize.height;
+    CCSprite *background_04 = [CCSprite spriteWithFile:@"Bg_iPhone5_04.png"];
+    background_04.position = ccp(screen.width/2,screen.height - height - background_04.contentSize.height/2);
+    [self addChild:background_04 z:6];
 }
 
 #pragma mark - Controls

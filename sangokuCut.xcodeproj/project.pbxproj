@@ -258,6 +258,11 @@
 		9C97B7F817AB92F800B0012D /* Girl_injure.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C97B7F617AB92F700B0012D /* Girl_injure.plist */; };
 		9C97B7F917AB92F800B0012D /* Girl_injure.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C97B7F717AB92F700B0012D /* Girl_injure.png */; };
 		9C97B7FC17AB944300B0012D /* BaseCharacter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C97B7FB17AB944300B0012D /* BaseCharacter.mm */; };
+		9C97B80517ABB59B00B0012D /* Bg_iPhone5_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C97B80117ABB59A00B0012D /* Bg_iPhone5_01.png */; };
+		9C97B80617ABB59B00B0012D /* Bg_iPhone5_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C97B80217ABB59A00B0012D /* Bg_iPhone5_02.png */; };
+		9C97B80717ABB59B00B0012D /* Bg_iPhone5_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C97B80317ABB59A00B0012D /* Bg_iPhone5_03.png */; };
+		9C97B80817ABB59B00B0012D /* Bg_iPhone5_04.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C97B80417ABB59A00B0012D /* Bg_iPhone5_04.png */; };
+		9C97B80A17ABD62800B0012D /* sheet2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C97B80917ABD62600B0012D /* sheet2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -717,6 +722,11 @@
 		9C97B7F717AB92F700B0012D /* Girl_injure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Girl_injure.png; sourceTree = "<group>"; };
 		9C97B7FA17AB944300B0012D /* BaseCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCharacter.h; sourceTree = "<group>"; };
 		9C97B7FB17AB944300B0012D /* BaseCharacter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BaseCharacter.mm; sourceTree = "<group>"; };
+		9C97B80117ABB59A00B0012D /* Bg_iPhone5_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bg_iPhone5_01.png; sourceTree = "<group>"; };
+		9C97B80217ABB59A00B0012D /* Bg_iPhone5_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bg_iPhone5_02.png; sourceTree = "<group>"; };
+		9C97B80317ABB59A00B0012D /* Bg_iPhone5_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bg_iPhone5_03.png; sourceTree = "<group>"; };
+		9C97B80417ABB59A00B0012D /* Bg_iPhone5_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bg_iPhone5_04.png; sourceTree = "<group>"; };
+		9C97B80917ABD62600B0012D /* sheet2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sheet2.png; path = sangokuCut/Resources/sheet2.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1339,6 +1349,7 @@
 		9C8DDAF917AA2ACA00BC144B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9C97B80917ABD62600B0012D /* sheet2.png */,
 				9C97B7E517AB7F4000B0012D /* sheet1.png */,
 				9C8DDC1817AA337700BC144B /* streak-hd.png */,
 				9C8DDC1917AA337800BC144B /* streak.png */,
@@ -1356,6 +1367,10 @@
 		9C8DDAFA17AA2EC700BC144B /* Background */ = {
 			isa = PBXGroup;
 			children = (
+				9C97B80117ABB59A00B0012D /* Bg_iPhone5_01.png */,
+				9C97B80217ABB59A00B0012D /* Bg_iPhone5_02.png */,
+				9C97B80317ABB59A00B0012D /* Bg_iPhone5_03.png */,
+				9C97B80417ABB59A00B0012D /* Bg_iPhone5_04.png */,
 				9C8DDAFB17AA2EC700BC144B /* Bg_iPhone4s.png */,
 				9C8DDAFC17AA2EC700BC144B /* Bg_iPhone5.png */,
 			);
@@ -1636,6 +1651,11 @@
 				9C97B7F517AB91AC00B0012D /* Girl_normal.png in Resources */,
 				9C97B7F817AB92F800B0012D /* Girl_injure.plist in Resources */,
 				9C97B7F917AB92F800B0012D /* Girl_injure.png in Resources */,
+				9C97B80517ABB59B00B0012D /* Bg_iPhone5_01.png in Resources */,
+				9C97B80617ABB59B00B0012D /* Bg_iPhone5_02.png in Resources */,
+				9C97B80717ABB59B00B0012D /* Bg_iPhone5_03.png in Resources */,
+				9C97B80817ABB59B00B0012D /* Bg_iPhone5_04.png in Resources */,
+				9C97B80A17ABD62800B0012D /* sheet2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
