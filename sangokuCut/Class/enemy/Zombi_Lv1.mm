@@ -28,7 +28,7 @@
     
     b2Body *body = [self createBodyForWorld:world position:b2Vec2(screen.width/2/PTM_RATIO,screen.height/2/PTM_RATIO) rotation:0 vertices:vertices vertexCount:count density:5.0 friction:0.2 restitution:0.2];
     
-    if ((self = [super initWithFile:file body:body original:YES]))
+    if ((self = [super initWithFile:file body:body original:NO]))
     {
         self.type = kTypeBanana;
         self.splurt = [CCParticleSystemQuad particleWithFile:@"banana_splurt.plist"];

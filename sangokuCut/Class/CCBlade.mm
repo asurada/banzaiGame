@@ -116,7 +116,7 @@ inline void CGPointSet(CGPoint *v, float x, float y){
 		it = [[path objectAtIndex:i+1] CGPointValue];
 	}
     
-    CGPointSet(coordinates+1, 0.25, 1.0); 
+    CGPointSet(coordinates+1, 0.25, 1.0);
 	CGPointSet(coordinates+2, 0.25, 0.0);
 	
 	vertices[2*[path count]-3] = it;
@@ -135,7 +135,7 @@ inline void CGPointSet(CGPoint *v, float x, float y){
     width = width_ * CC_CONTENT_SCALE_FACTOR();
 }
 
-#define DISTANCE_TO_INTERPOLATE 10
+#define DISTANCE_TO_INTERPOLATE 5
 
 - (void) push:(CGPoint) v{
     _willPop = NO;
@@ -144,7 +144,7 @@ inline void CGPointSet(CGPoint *v, float x, float y){
 		return;
 	}
     if (CC_CONTENT_SCALE_FACTOR() != 1.0f) {
-        v = ccpMult(v, CC_CONTENT_SCALE_FACTOR());
+        v = ccpMult(v, 1.0);
     }
 
 #if USE_LAGRANGE

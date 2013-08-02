@@ -86,7 +86,7 @@
 -(b2Body*)createBodyForWorld:(b2World *)world position:(b2Vec2)position rotation:(float)rotation vertices:(b2Vec2*)vertices vertexCount:(int32)count density:(float)density friction:(float)friction restitution:(float)restitution
 {
     b2BodyDef bodyDef;
-    bodyDef.type = b2_dynamicBody;
+    bodyDef.type = b2_kinematicBody;
     bodyDef.position = position;
     bodyDef.angle = rotation;
     b2Body *body = world->CreateBody(&bodyDef);

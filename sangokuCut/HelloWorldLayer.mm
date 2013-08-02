@@ -29,8 +29,10 @@ enum {
 @interface HelloWorldLayer()
 -(void) initPhysics;
 -(void) addNewSpriteAtPosition:(CGPoint)p;
-
+@property (nonatomic, strong) CCAction *walkAction;
 @end
+
+
 
 @implementation HelloWorldLayer
 
@@ -62,8 +64,45 @@ enum {
 		
 		// init physics
 		[self initPhysics];
-		
+        [self initBackground];
+        //[self initSprites];
         
+        
+//        CGSize winSize = [[CCDirector sharedDirector] winSize];
+//        CCSprite *player = [CCSprite spriteWithFile:@"sheet1.png" rect:CGRectMake(0, 0, 256, 256)];
+//        player.scale = 0.5;
+//        player.position = ccp(player.contentSize.width/2, winSize.height/2);
+//        [self addChild:player z:1];
+        
+        
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Girl_injure.plist"];
+        CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"Girl_injure.png"];
+        [self addChild:spriteSheet];
+        
+        NSMutableArray *walkAnimFrames = [NSMutableArray array];
+        for (int i=1; i<=19; i++) {
+            [walkAnimFrames addObject:
+             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+              [NSString stringWithFormat:@"sheet_256x256_%d.png",i]]];
+        }
+        
+        CCAnimation *walkAnim = [CCAnimation animationWithSpriteFrames:walkAnimFrames delay:0.08f];
+        CGSize winSize = [[CCDirector sharedDirector] winSize];
+        CCSprite *player = [CCSprite spriteWithFile:@"sheet1.png" rect:CGRectMake(0, 0, 256, 256)];
+        player.scale = 1;
+        player.position = ccp(player.contentSize.width/2, winSize.height/2);
+        
+      
+       
+        self.walkAction = [CCRepeatForever actionWithAction:
+                           [CCAnimate actionWithAnimation:walkAnim]];
+        [self addChild:player z:1];
+        [player runAction:self.walkAction];
+        
+        
+        
+        //[spriteSheet addChild:self.bear];
+
         
         
         // initialize the blade effect
@@ -74,7 +113,7 @@ enum {
         for (int i = 0; i < 3; i++)
         {
             CCBlade *blade = [CCBlade bladeWithMaximumPoint:50];
-            blade.autoDim = NO;
+            blade.autoDim = YES;
             blade.texture = texture;
             
             [self addChild:blade z:2];
@@ -87,8 +126,8 @@ enum {
         [_bladeSparkle stopSystem];
         [self addChild:_bladeSparkle z:3];
         
-        [self initSprites];
-        //[self initBackground];
+      
+
 		// create reset button
 		//[self createMenu];
 		
@@ -271,7 +310,7 @@ enum {
     
     // add the background image
     CCSprite *background = [CCSprite spriteWithFile:@"Bg_iPhone4s.png"];
-    background.scale = 0.5f;
+    background.scale = 1.0f;
     background.position = ccp(screen.width/2,screen.height/2);
     [self addChild:background z:0];
     
@@ -292,7 +331,7 @@ enum {
         location = [[CCDirector sharedDirector] convertToGL:location];
         
         // move the start and end of the ray cast to the touch
-        //_startPoint = location;
+        //startPoint = location;
         //_endPoint = location;
         
         // get an unused blade and move it to the touch
@@ -353,6 +392,7 @@ enum {
         // sparkle follows the touch
         _bladeSparkle.position = location;
         
+        
         /*
         // play the sound if velocity is past a certain value
         if (ccpDistance(_bladeSparkle.position, oldPosition) / deltaTime > 1000)
@@ -389,8 +429,14 @@ enum {
 
 -(void)initSprites
 {
-    // allocate the a cache
+    PolygonSprite *sprite = [[Zombi_Lv1 alloc] initWithWorld:world];
+    sprite.position = ccp(200,600);
+    [self addChild:sprite z:1];
+    [self addChild:sprite.splurt z:3];
+    
+    /*// allocate the a cache
     _cache = [[CCArray alloc] initWithCapacity:53];
+    
     
     // create fruits
     for (int i = 0; i < 2; i++)
@@ -400,7 +446,7 @@ enum {
         [self addChild:sprite z:2];
         [self addChild:sprite.splurt z:3];
         [_cache addObject:sprite];
-    }
+    }*/
 }
 
 
