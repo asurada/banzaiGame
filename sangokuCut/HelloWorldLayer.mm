@@ -17,6 +17,9 @@
 #import "CCBlade.h"
 #import "PolygonSprite.h"
 #import "Zombi_Lv1.h"
+#import "Zhangfei.h"
+#import "Zombi.h"
+#import "Mary.h"
 
 
 enum {
@@ -29,8 +32,10 @@ enum {
 @interface HelloWorldLayer()
 -(void) initPhysics;
 -(void) addNewSpriteAtPosition:(CGPoint)p;
-@property (nonatomic, strong) CCAction *walkAction;
-@property (nonatomic, strong) CCAction *walkAction2;
+
+
+@property (nonatomic, strong) CCAction *hitAction;
+
 @end
 
 
@@ -57,98 +62,64 @@ enum {
 	if( (self=[super init])) {
 		
 
+        
 		// enable events
-		
 		self.touchEnabled = YES;
 		self.accelerometerEnabled = YES;
-		CGSize s = [CCDirector sharedDirector].winSize;
 		
 		// init physics
 		[self initPhysics];
         [self initBackground_iphone5];
-        //[self initSprites];
-        
-        
-//        CGSize winSize = [[CCDirector sharedDirector] winSize];
-//        CCSprite *player = [CCSprite spriteWithFile:@"sheet1.png" rect:CGRectMake(0, 0, 256, 256)];
-//        player.scale = 0.5;
-//        player.position = ccp(player.contentSize.width/2, winSize.height/2);
-//        [self addChild:player z:1];
-        
-        
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Girl_injure.plist"];
-        CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"Girl_injure.png"];
-        [self addChild:spriteSheet];
-        
-        NSMutableArray *walkAnimFrames = [NSMutableArray array];
-        for (int i=1; i<=19; i++) {
-            [walkAnimFrames addObject:
-             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-              [NSString stringWithFormat:@"sheet_256x256_%d.png",i]]];
-        }
-        
-        CCAnimation *walkAnim = [CCAnimation animationWithSpriteFrames:walkAnimFrames delay:0.07f];
-        CGSize winSize = [[CCDirector sharedDirector] winSize];
-        CCSprite *player = [CCSprite spriteWithFile:@"sheet1.png" rect:CGRectMake(0, 0, 256, 256)];
-        player.scale = 1;
-        player.position = ccp(player.contentSize.width/2+30, winSize.height/2+10);
-        
-      
-       
-        self.walkAction = [CCRepeatForever actionWithAction:
-                           [CCAnimate actionWithAnimation:walkAnim]];
-        [self addChild:player z:1];
-        [player runAction:self.walkAction];
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zombi_lv1.plist"];
-        CCSpriteBatchNode *spriteSheet2 = [CCSpriteBatchNode batchNodeWithFile:@"zombi_lv1.png"];
-        [self addChild:spriteSheet2];
-        
-        NSMutableArray *walkAnimFrames2 = [NSMutableArray array];
-        for (int i=1; i<=13; i++) {
-            [walkAnimFrames2 addObject:
-             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-              [NSString stringWithFormat:@"sheet_256x256_%d.png",i]]];
-        }
-        
-        CCAnimation *walkAnim2 = [CCAnimation animationWithSpriteFrames:walkAnimFrames2 delay:0.07f];
-        CGSize winSize2 = [[CCDirector sharedDirector] winSize];
-        CCSprite *player2 = [CCSprite spriteWithFile:@"sheet2.png" rect:CGRectMake(0, 0, 256, 256)];
-        player2.scale = 1;
-        player2.position = ccp(player2.contentSize.width/2+30, winSize2.height/2-100);
-        
-        
-        
-        self.walkAction2 = [CCRepeatForever actionWithAction:
-                           [CCAnimate actionWithAnimation:walkAnim2]];
-        [self addChild:player2 z:3];
-        [player2 runAction:self.walkAction2];
-        
-        
-        
-        //[spriteSheet addChild:self.bear];
 
+        CGSize winSize = [[CCDirector sharedDirector] winSize];
         
         
+        
+        Mary *mary = [Mary spriteWithFile];
+        if([mary initSprite]){
+            mary.position = ccp(mary.contentSize.width/2+30, winSize.height/2-100);
+            [self addChild:mary z:3];
+            [mary backToNormal];
+        }
+        
+
+        Zombi *zb = [Zombi spriteWithFile];
+        if([zb initSprite]){
+            zb.position = ccp(zb.contentSize.width/2+30, winSize.height/2-100);
+            [self addChild:zb z:12];
+            [zb backToNormal];
+        }
+        
+  
+        zf = [Zhangfei spriteWithFile];
+        if([zf initSprite]){
+          zf.position = ccp(zf.contentSize.width/2+140, winSize.height/2-60);
+          [self addChild:zf z:12];
+          [zf backToNormal];
+        }
+        
+        
+    
+        
+ 
+        //hitAnim.loops = 0;
+  
+        
+       
+     
+        
+
+
         // initialize the blade effect
         _deltaRemainder = 0.0;
         _blades = [[CCArray alloc] initWithCapacity:3];
-        CCTexture2D *texture = [[CCTextureCache sharedTextureCache] addImage:@"streak-hd.png"];
+        CCTexture2D *texture = [[CCTextureCache sharedTextureCache] addImage:@"Deco_shine_v1.png"];
         
         for (int i = 0; i < 3; i++)
         {
-            CCBlade *blade = [CCBlade bladeWithMaximumPoint:30];
+            CCBlade *blade = [CCBlade bladeWithMaximumPoint:20];
             blade.autoDim = YES;
             blade.texture = texture;
-            
             [self addChild:blade z:10];
             [_blades addObject:blade];
         }
@@ -158,8 +129,7 @@ enum {
         _bladeSparkle = [CCParticleSystemQuad particleWithFile:@"blade_sparkle.plist"];
         [_bladeSparkle stopSystem];
         [self addChild:_bladeSparkle z:10];
-        
-      
+        [self initHUD];
 
 		// create reset button
 		//[self createMenu];
@@ -187,6 +157,10 @@ enum {
 //        
         [self scheduleUpdate];
 	}
+    
+
+    self.touchEnabled = YES;
+    
 	return self;
 }
 
@@ -346,7 +320,7 @@ enum {
     CCSprite *background_01 = [CCSprite spriteWithFile:@"Bg_iPhone5_01.png"];
     background_01.position = ccp(screen.width/2,screen.height-background_01.contentSize.height/2);//415
     [self addChild:background_01 z:0];
-    
+
     height = background_01.contentSize.height;
     CCSprite *background_02 = [CCSprite spriteWithFile:@"Bg_iPhone5_02.png"];
     background_02.position = ccp(screen.width/2,screen.height - height - background_02.contentSize.height/2);
@@ -361,6 +335,7 @@ enum {
     CCSprite *background_04 = [CCSprite spriteWithFile:@"Bg_iPhone5_04.png"];
     background_04.position = ccp(screen.width/2,screen.height - height - background_04.contentSize.height/2);
     [self addChild:background_04 z:6];
+
 }
 
 #pragma mark - Controls
@@ -393,8 +368,43 @@ enum {
         // move the sparkle to the touch
         _bladeSparkle.position = location;
         [_bladeSparkle resetSystem];
+        
+        CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
+        if (CGRectContainsPoint(zf.boundingBox, touchLocation)) {
+            [zf hit];
+            //hit.position = location;
+            hit = [CCSprite spriteWithFile:@"hit_normal.png"];
+            hit.position = location;
+            [self addChild:hit z:15];
+            
+            [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"hit.plist"];
+            NSMutableArray *hitAnimFrames = [NSMutableArray array];
+            for (int i=0; i<=4; i++) {
+                [hitAnimFrames addObject:
+                 [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+                  [NSString stringWithFormat:@"sheet_256x256_%d.png",i]]];
+            }
+            hitAnim = [CCAnimation animationWithSpriteFrames:hitAnimFrames delay:0.07f];
+            
+            
+            id animation = [CCAnimate actionWithAnimation:hitAnim];
+            id repeat = [CCRepeat actionWithAction:animation times:1];
+            id callback = [CCCallFunc actionWithTarget:self selector:@selector(finishedAnimation)];
+            id sequence = [CCSequence actions:repeat, callback,nil];
+            [hit runAction:sequence];
+            break;
+        }
     }
 }
+
+
+-(void) finishedAnimation
+{
+    [hit removeFromParent];
+    hit = nil;
+    [hit release];
+}
+
 
 /*
  * The touch moved logic
@@ -525,6 +535,68 @@ enum {
             }
         }
      }
+}
+
+
+// Add these methods
+-(void)initHUD
+{
+    CGSize screen = [[CCDirector sharedDirector] winSize];
+    
+    CCSprite *pasueIcon = [CCSprite spriteWithFile:@"btn_pause.png"];
+    pasueIcon.position = ccp(screen.width - pasueIcon.contentSize.width/2-5, screen.height - pasueIcon.contentSize.height/2-5);
+    [self addChild:pasueIcon];
+    
+    for (int i = 0; i < 3; i++)
+    {
+        CCSprite *blood = [CCSprite spriteWithFile:@"Icon_heart.png"];
+        blood.position = ccp(screen.width-pasueIcon.contentSize.width*1.5-blood.contentSize.width/2-(blood.contentSize.width+2)*i,screen.height-blood.contentSize.height/2-5);
+        [self addChild:blood z:12];
+    }
+    
+    
+    _zombiIcon = [CCSprite spriteWithFile:@"Icon_zombie.png"];
+    _zombiIcon.position = ccp(_zombiIcon.contentSize.width/2+10,screen.height-_zombiIcon.contentSize.height/2-5);
+    [self addChild:_zombiIcon z:12];
+    
+
+    _coinIcon = [CCSprite spriteWithFile:@"Icon_coin.png"];
+    _coinIcon.position = ccp(_coinIcon.contentSize.width/2+10,_zombiIcon.position.y - _coinIcon.contentSize.height-5);
+    [self addChild:_coinIcon z:12];
+    
+    
+    _bossIcon = [CCSprite spriteWithFile:@"Icon_boss.png"];
+    _bossIcon.position = ccp(_bossIcon.contentSize.width/2+10,_coinIcon.position.y - _bossIcon.contentSize.height-5);
+    [self addChild:_bossIcon z:12];
+    
+    [self createLabel];
+    
+}
+
+-(void) createLabel
+{
+	if( _zombiLabel && _coinLabel ) {
+		CCTexture2D *texture = [_zombiLabel texture];
+        
+		[_zombiLabel release];
+		[_coinLabel release];
+		[[CCTextureCache sharedTextureCache ] removeTexture:texture];
+		_zombiLabel = nil;
+		_coinLabel = nil;
+	}
+    
+	CCTexture2DPixelFormat currentFormat = [CCTexture2D defaultAlphaPixelFormat];
+	[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
+	_zombiLabel =  [[CCLabelAtlas alloc]  initWithString:@"123" charMapFile:@"numbers.png" itemWidth:20 itemHeight:32 startCharMap:'.'];
+	_coinLabel =  [[CCLabelAtlas alloc]  initWithString:@"123" charMapFile:@"numbers.png" itemWidth:20 itemHeight:32 startCharMap:'.'];
+	
+	[CCTexture2D setDefaultAlphaPixelFormat:currentFormat];
+    _zombiLabel.position = ccp(_zombiIcon.position.x+20,_zombiIcon.position.y-15);
+    _coinLabel.position = ccp(_coinIcon.position.x+20,_coinIcon.position.y-15);
+
+    [self addChild:_zombiLabel z:14];
+    [self addChild:_coinLabel z:14];
+	
 }
 
 

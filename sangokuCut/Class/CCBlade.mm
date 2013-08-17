@@ -74,7 +74,7 @@ inline void CGPointSet(CGPoint *v, float x, float y){
     self = [super init];
         
     pointLimit = limit;
-	self.width = 5; //太さ
+	self.width = 8; //太さ
 	
     vertices = (CGPoint *)calloc(2*limit+5, sizeof(vertices[0]));
     coordinates = (CGPoint *)calloc(2*limit+5, sizeof(coordinates[0]));

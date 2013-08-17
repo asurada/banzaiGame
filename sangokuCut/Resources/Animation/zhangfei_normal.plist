@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>sheet_256x256_0.png</key>
+            <key>sheet_1.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1550,260},{256,256}}</string>
@@ -17,7 +17,7 @@
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_1.png</key>
+            <key>sheet_10.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1550,2},{256,256}}</string>
@@ -30,7 +30,7 @@
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_10.png</key>
+            <key>sheet_11.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1292,260},{256,256}}</string>
@@ -43,7 +43,7 @@
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_11.png</key>
+            <key>sheet_12.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1292,2},{256,256}}</string>
@@ -56,7 +56,7 @@
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_12.png</key>
+            <key>sheet_13.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1034,260},{256,256}}</string>
@@ -69,7 +69,7 @@
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_13.png</key>
+            <key>sheet_14.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1034,2},{256,256}}</string>
@@ -82,7 +82,7 @@
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_2.png</key>
+            <key>sheet_2.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{776,260},{256,256}}</string>
@@ -95,7 +95,7 @@
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_3.png</key>
+            <key>sheet_3.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{776,2},{256,256}}</string>
@@ -108,7 +108,7 @@
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_4.png</key>
+            <key>sheet_4.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{518,260},{256,256}}</string>
@@ -121,7 +121,7 @@
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_5.png</key>
+            <key>sheet_5.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{518,2},{256,256}}</string>
@@ -134,7 +134,7 @@
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_6.png</key>
+            <key>sheet_6.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{260,260},{256,256}}</string>
@@ -147,7 +147,7 @@
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_7.png</key>
+            <key>sheet_7.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{260,2},{256,256}}</string>
@@ -160,7 +160,7 @@
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_8.png</key>
+            <key>sheet_8.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,260},{256,256}}</string>
@@ -173,7 +173,7 @@
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_9.png</key>
+            <key>sheet_9.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,2},{256,256}}</string>
@@ -192,13 +192,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>Girl_normal.png</string>
+            <string>zhangfei_normal.png</string>
             <key>size</key>
             <string>{1808,518}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:a516d1476b733159cb53cb05e1100afc:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:c0aea93b83eb4095dd9325179d950703:1/1$</string>
             <key>textureFileName</key>
-            <string>Girl_normal.png</string>
+            <string>zhangfei_normal.png</string>
         </dict>
     </dict>
 </plist>

@@ -7,10 +7,43 @@
 //
 
 #import "CCSprite.h"
+#import "cocos2d.h"
+
+
+typedef enum {
+    healthy,
+    injure,
+    dead,
+} state;
+
+
 
 @interface BaseCharacter : CCSprite{
-    
-    
+    float _hp;
+    float _injureHp;
+    state _state;
+
+
 }
+
+@property (nonatomic, strong) CCAction *normalAction;
+@property (nonatomic, strong) CCAction *injureAction;
+@property (nonatomic, strong) CCAction *deadAction;
+@property (nonatomic, strong) CCAction *attackAction;
+
+
+
++(id)spriteWithFile;
+-(BOOL)initSprite;
+
+-(void)injure;
+-(void)dead;
+-(void)attack;
+-(void)backToNormal;
+-(void)action;
+-(void)hit;
+
+
+
 
 @end
