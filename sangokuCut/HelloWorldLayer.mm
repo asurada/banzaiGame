@@ -20,6 +20,8 @@
 #import "Zhangfei.h"
 #import "Zombi.h"
 #import "Mary.h"
+#import "Coin.h"
+#import "EnemyData.h"
 
 
 enum {
@@ -60,9 +62,6 @@ enum {
 -(id) init
 {
 	if( (self=[super init])) {
-		
-
-        
 		// enable events
 		self.touchEnabled = YES;
 		self.accelerometerEnabled = YES;
@@ -72,44 +71,34 @@ enum {
         [self initBackground_iphone5];
 
         CGSize winSize = [[CCDirector sharedDirector] winSize];
-        
-        
-        
-        Mary *mary = [Mary spriteWithFile];
-        if([mary initSprite]){
-            mary.position = ccp(mary.contentSize.width/2+30, winSize.height/2-100);
-            [self addChild:mary z:3];
-            [mary backToNormal];
-        }
-        
-
-        Zombi *zb = [Zombi spriteWithFile];
-        if([zb initSprite]){
-            zb.position = ccp(zb.contentSize.width/2+30, winSize.height/2-100);
-            [self addChild:zb z:12];
-            [zb backToNormal];
-        }
-        
+        enemyBox = [[NSMutableArray alloc]init];
   
-        zf = [Zhangfei spriteWithFile];
+        
+        for(int index = 0; index < 9;index++){
+            EnemyData *data = [[EnemyData alloc]init];
+            data.location = CGPointMake(60+(index%3)*110,60+(index/3)*105);
+            Zhangfei *zf = [Zhangfei spriteWithFile];
+            zf.charDelegate = self;
+              
+            if([zf initSprite]){
+                zf.position = data.location;
+                int z = 5-(index/3)*2;
+                [self addChild:zf z:z];
+            }
+            [enemyBox addObject:zf];
+            
+        }
+        /*
+        Zhangfei *zf = [Zhangfei spriteWithFile];
+        zf.charDelegate = self;
         if([zf initSprite]){
-          zf.position = ccp(zf.contentSize.width/2+140, winSize.height/2-60);
-          [self addChild:zf z:12];
-          [zf backToNormal];
+            zf.position = ccp(zf.contentSize.width/2+30,winSize.height/2-100);
+            [self addChild:zf z:12];
         }
+        [zf backToNormal];
+        */
         
         
-    
-        
- 
-        //hitAnim.loops = 0;
-  
-        
-       
-     
-        
-
-
         // initialize the blade effect
         _deltaRemainder = 0.0;
         _blades = [[CCArray alloc] initWithCapacity:3];
@@ -120,7 +109,7 @@ enum {
             CCBlade *blade = [CCBlade bladeWithMaximumPoint:20];
             blade.autoDim = YES;
             blade.texture = texture;
-            [self addChild:blade z:10];
+            [self addChild:blade z:14];
             [_blades addObject:blade];
         }
         
@@ -128,10 +117,10 @@ enum {
         // initialize the blade sparkle particle effect
         _bladeSparkle = [CCParticleSystemQuad particleWithFile:@"blade_sparkle.plist"];
         [_bladeSparkle stopSystem];
-        [self addChild:_bladeSparkle z:10];
+        [self addChild:_bladeSparkle z:14];
         [self initHUD];
 
-		// create reset button
+        // create reset button
 		//[self createMenu];
 		
 		//Set up sprite
@@ -154,7 +143,7 @@ enum {
 //		[self addChild:label z:0];
 //		[label setColor:ccc3(0,0,255)];
 //		label.position = ccp( s.width/2, s.height-50);
-//        
+        
         [self scheduleUpdate];
 	}
     
@@ -360,7 +349,7 @@ enum {
             if (blade.path.count == 0)
             {
                 _blade = blade;
-                [_blade push:location];
+                //[_blade push:location];
                 break;
             }
         }
@@ -369,10 +358,12 @@ enum {
         _bladeSparkle.position = location;
         [_bladeSparkle resetSystem];
         
+        
+        [self hit:touch at:location];
+        /*
         CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
         if (CGRectContainsPoint(zf.boundingBox, touchLocation)) {
             [zf hit];
-            //hit.position = location;
             hit = [CCSprite spriteWithFile:@"hit_normal.png"];
             hit.position = location;
             [self addChild:hit z:15];
@@ -384,27 +375,44 @@ enum {
                  [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
                   [NSString stringWithFormat:@"sheet_256x256_%d.png",i]]];
             }
-            hitAnim = [CCAnimation animationWithSpriteFrames:hitAnimFrames delay:0.07f];
-            
+            hitAnim = [CCAnimation animationWithSpriteFrames:hitAnimFrames delay:0.02f];
             
             id animation = [CCAnimate actionWithAnimation:hitAnim];
             id repeat = [CCRepeat actionWithAction:animation times:1];
-            id callback = [CCCallFunc actionWithTarget:self selector:@selector(finishedAnimation)];
+            id callback =   [CCCallFuncO actionWithTarget:hit selector:@selector(removeFromParentAndCleanup:) object:[CCNode node]];//[CCCallFuncN actionWithTarget:self selector:@selector(removeFromParentAndCleanup:) data:(void*)YES];
             id sequence = [CCSequence actions:repeat, callback,nil];
+          
+            
             [hit runAction:sequence];
             break;
         }
+         */
     }
 }
 
 
--(void) finishedAnimation
+-(void) hitFinishedAnimation:(CCSprite *)mHit
 {
-    [hit removeFromParent];
-    hit = nil;
-    [hit release];
+
+    [mHit removeFromParent];
+    mHit = nil;
+    [mHit release];
 }
 
+
+-(void)onCharacterDead:(CGPoint)location sender:(CCSprite *)sender{
+    [sender removeFromParentAndCleanup:YES];
+    sender = nil;
+    [sender release];
+    
+    /*
+    Coin *coin = [Coin spriteWithFile];
+    if([coin initSprite]){
+        coin.position = location;
+        [self addChild:coin z:13];
+        [coin runAction:coin.coinAction];
+    }*/
+}
 
 /*
  * The touch moved logic
@@ -446,6 +454,11 @@ enum {
         // sparkle follows the touch
         _bladeSparkle.position = location;
         
+       
+
+        [self hit:touch at:location];
+
+
         
         /*
         // play the sound if velocity is past a certain value
@@ -460,11 +473,50 @@ enum {
     }
 }
 
+
+-(void)hit:(UITouch *)touch at:(CGPoint )location{
+    for (BaseCharacter *enemy in enemyBox) {
+      CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
+      CGRect particularSpriteRect = CGRectMake(enemy.position.x - 25, enemy.position.y-20, 50,50);
+      if (CGRectContainsPoint(particularSpriteRect, touchLocation)) {
+        if(!isMovedin){
+           isMovedin = YES;
+           [enemy hit];
+            hit = [CCSprite spriteWithFile:@"hit_normal.png"];
+            hit.position = location;
+            [self addChild:hit z:15];
+           
+            [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"hit.plist"];
+            NSMutableArray *hitAnimFrames = [NSMutableArray array];
+            for (int i=0; i<=4; i++) {
+               [hitAnimFrames addObject:
+               [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+               [NSString stringWithFormat:@"sheet_256x256_%d.png",i]]];
+            }
+            
+            hitAnim = [CCAnimation animationWithSpriteFrames:hitAnimFrames delay:0.07f];
+            id hitAnimation = [CCAnimate actionWithAnimation:hitAnim];
+            id repeat = [CCRepeat actionWithAction:hitAnimation times:1];
+            id callback = [CCCallFuncO actionWithTarget:hit selector:@selector(removeFromParentAndCleanup:) object:[CCNode node]];
+            id sequence = [CCSequence actions:repeat, callback,nil];
+            [hit runAction:sequence];
+         }
+
+      }else{
+         isMovedin = NO;
+      }
+   }
+    
+}
+
+
+
 /*
  * The touch end logic
  */
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    isMovedin = NO;
 	//Add a new body/atlas sprite at the touched location
 	for( UITouch *touch in touches ) {
 		CGPoint location = [touch locationInView: [touch view]];

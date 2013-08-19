@@ -6,10 +6,15 @@
 //  Copyright (c) 2013年 厳 巍. All rights reserved.
 //
 
-#import "BaseCharacter.h"
+#import "cocos2d.h"
 
-@interface Coin : BaseCharacter
 
-@property (nonatomic, strong) CCAction *normalAction;
+@interface Coin : CCSprite
+
+@property (nonatomic, strong) CCAction *coinAction;
+
+
++(id)spriteWithFile;
+-(BOOL)initSprite;
 
 @end

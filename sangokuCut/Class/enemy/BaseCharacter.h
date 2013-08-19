@@ -8,9 +8,11 @@
 
 #import "CCSprite.h"
 #import "cocos2d.h"
+#import "CharacterDelegate.h"
 
 
 typedef enum {
+    standby,
     healthy,
     injure,
     dead,
@@ -22,7 +24,7 @@ typedef enum {
     float _hp;
     float _injureHp;
     state _state;
-
+    
 
 }
 
@@ -30,7 +32,7 @@ typedef enum {
 @property (nonatomic, strong) CCAction *injureAction;
 @property (nonatomic, strong) CCAction *deadAction;
 @property (nonatomic, strong) CCAction *attackAction;
-
+@property (nonatomic, strong) id<CharacterDelegate> charDelegate;
 
 
 +(id)spriteWithFile;

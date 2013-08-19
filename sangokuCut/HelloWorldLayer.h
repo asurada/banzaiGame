@@ -15,6 +15,7 @@
 #import "GLES-Render.h"
 #import "CCBlade.h"
 #import "Zhangfei.h"
+#import "CharacterDelegate.h"
 
 //Pixel to metres ratio. Box2D uses metres as the unit for measurement.
 //This ratio defines how many pixels correspond to 1 Box2D "metre"
@@ -23,7 +24,7 @@
 #define PTM_RATIO 32
 
 // HelloWorldLayer
-@interface HelloWorldLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
+@interface HelloWorldLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate,CharacterDelegate>
 {
 	CCTexture2D *spriteTexture_;	// weak ref
 	b2World* world;					// strong ref
@@ -50,10 +51,14 @@
     CCLabelAtlas *_zombiLabel;
 	CCLabelAtlas *_coinLabel;
     
-    Zhangfei *zf;
+  //  Zhangfei *zf;
     CCSprite *hit;
     
     CCAnimation *hitAnim;
+    bool isMovedin;
+    
+    NSMutableArray *enemyBox;
+    
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child

@@ -8,37 +8,33 @@
 
 #import "Coin.h"
 
+
 @implementation Coin
 
 
 +(id)spriteWithFile{
-    
     return [super spriteWithFile:@"coin.png" rect:CGRectMake(0, 0, 64, 64)];
 }
 
 
 -(BOOL)initSprite{
-    [super initSprite];
-    _hp = 10;
-    _injureHp = 4;
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_normal.plist"];
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"coin.plist"];
     NSMutableArray *normalAnimFrames = [NSMutableArray array];
-    for (int i=1; i<=14; i++) {
+    for (int i=0; i<=15; i++) {
         [normalAnimFrames addObject:
          [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-          [NSString stringWithFormat:@"sheet_%d.png",i]]];
+          [NSString stringWithFormat:@"sheet_64x64_%d.png",i]]];
     }
     
-    CCAnimation *normalAnim = [CCAnimation animationWithSpriteFrames:normalAnimFrames delay:0.07f];
+    CCAnimation *coinAnim = [CCAnimation animationWithSpriteFrames:normalAnimFrames delay:0.1f];
     
-    self.normalAction = [CCRepeatForever actionWithAction:
-                         [CCAnimate actionWithAnimation:normalAnim]];
+    self.coinAction = [CCRepeatForever actionWithAction:
+                         [CCAnimate actionWithAnimation:coinAnim]];
     
-    
+  
     
     return YES;
-    
-    
+
 }
 
 

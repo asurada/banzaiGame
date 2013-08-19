@@ -43,18 +43,16 @@
 -(void)hit{
     if(_hp > 0){
        _hp--;
-    }
-    
-    if(_hp <= _injureHp && _state != injure){
-      _state = injure;
-      [self stopAction:self.normalAction];
-      [self injure];
-      
+       [self stopAction:self.attackAction];
+       [self stopAction:self.normalAction];
+       [self stopAction:self.injureAction];
+       [self injure];
     }else if(_hp == 0 && _state != dead){
       _state = dead;
-      [self stopAction:self.normalAction];
-      [self stopAction:self.injureAction];
-      [self dead];
+       [self stopAction:self.attackAction];
+       [self stopAction:self.normalAction];
+       [self stopAction:self.injureAction];
+       [self dead];
     }
 }
 

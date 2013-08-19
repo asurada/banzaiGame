@@ -265,6 +265,7 @@
 		9C8E58A417BF5B86004CACDA /* coin.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E58A217BF5B83004CACDA /* coin.plist */; };
 		9C8E58A517BF5B86004CACDA /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E58A317BF5B84004CACDA /* coin.png */; };
 		9C8E58A717BF5DB1004CACDA /* hit_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E58A617BF5DAF004CACDA /* hit_normal.png */; };
+		9C8E58B217C0CC32004CACDA /* EnemyData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E58B117C0CC32004CACDA /* EnemyData.mm */; };
 		9C97B7E617AB7F4000B0012D /* sheet1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C97B7E517AB7F4000B0012D /* sheet1.png */; };
 		9C97B7EB17AB878400B0012D /* zombi_lv1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C97B7EA17AB878400B0012D /* zombi_lv1.png */; };
 		9C97B7ED17AB87EA00B0012D /* zombi_lv1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C97B7EC17AB87EA00B0012D /* zombi_lv1.plist */; };
@@ -749,6 +750,9 @@
 		9C8E58A217BF5B83004CACDA /* coin.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = coin.plist; sourceTree = "<group>"; };
 		9C8E58A317BF5B84004CACDA /* coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin.png; sourceTree = "<group>"; };
 		9C8E58A617BF5DAF004CACDA /* hit_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hit_normal.png; sourceTree = "<group>"; };
+		9C8E58AC17C0A5FC004CACDA /* CharacterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterDelegate.h; sourceTree = "<group>"; };
+		9C8E58B017C0CC32004CACDA /* EnemyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyData.h; sourceTree = "<group>"; };
+		9C8E58B117C0CC32004CACDA /* EnemyData.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EnemyData.mm; sourceTree = "<group>"; };
 		9C97B7E517AB7F4000B0012D /* sheet1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sheet1.png; path = sangokuCut/Resources/sheet1.png; sourceTree = SOURCE_ROOT; };
 		9C97B7EA17AB878400B0012D /* zombi_lv1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zombi_lv1.png; sourceTree = "<group>"; };
 		9C97B7EC17AB87EA00B0012D /* zombi_lv1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zombi_lv1.plist; sourceTree = "<group>"; };
@@ -1470,6 +1474,8 @@
 		9C8DDC0317AA320700BC144B /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				9C8E58AF17C0CC20004CACDA /* Data */,
+				9C8E58A817C0A548004CACDA /* callback */,
 				9C8DDC4C17AA761700BC144B /* enemy */,
 				9C8DDC3517AA69A900BC144B /* PRKit */,
 				9C8DDC0417AA321400BC144B /* CCBlade.h */,
@@ -1535,6 +1541,23 @@
 				9C8E585817BB45E0004CACDA /* mike_normal.plist */,
 			);
 			name = physics;
+			sourceTree = "<group>";
+		};
+		9C8E58A817C0A548004CACDA /* callback */ = {
+			isa = PBXGroup;
+			children = (
+				9C8E58AC17C0A5FC004CACDA /* CharacterDelegate.h */,
+			);
+			name = callback;
+			sourceTree = "<group>";
+		};
+		9C8E58AF17C0CC20004CACDA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9C8E58B017C0CC32004CACDA /* EnemyData.h */,
+				9C8E58B117C0CC32004CACDA /* EnemyData.mm */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 		9C97B7E917AB878200B0012D /* Animation */ = {
@@ -1899,6 +1922,7 @@
 				9C8E589317BE418B004CACDA /* Zombi.mm in Sources */,
 				9C8E589617BE41BA004CACDA /* Mary.mm in Sources */,
 				9C8E589B17BF58FC004CACDA /* Coin.m in Sources */,
+				9C8E58B217C0CC32004CACDA /* EnemyData.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
