@@ -14,6 +14,7 @@
 typedef enum {
     standby,
     healthy,
+    attack,
     injure,
     dead,
 } state;
@@ -25,14 +26,17 @@ typedef enum {
     float _injureHp;
     state _state;
     
-
+    CCAction *_normalAction;
+    CCAction *_injureAction;
+    CCAction *_deadAction;
+    CCAction *_attackAction;
 }
 
-@property (nonatomic, strong) CCAction *normalAction;
-@property (nonatomic, strong) CCAction *injureAction;
-@property (nonatomic, strong) CCAction *deadAction;
-@property (nonatomic, strong) CCAction *attackAction;
-@property (nonatomic, strong) id<CharacterDelegate> charDelegate;
+@property (nonatomic, retain) CCAction *normalAction;
+@property (nonatomic, retain) CCAction *injureAction;
+@property (nonatomic, retain) CCAction *deadAction;
+@property (nonatomic, retain) CCAction *attackAction;
+@property (nonatomic, retain) id<CharacterDelegate> charDelegate;
 
 
 +(id)spriteWithFile;
@@ -44,6 +48,7 @@ typedef enum {
 -(void)backToNormal;
 -(void)action;
 -(void)hit;
+-(state)getState;
 
 
 

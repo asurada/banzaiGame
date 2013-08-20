@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>sheet_1.png</key>
+            <key>zf_dead_1.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,2},{512,512}}</string>
@@ -17,7 +17,7 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>sheet_10.png</key>
+            <key>zf_dead_10.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{516,2},{512,512}}</string>
@@ -40,7 +40,7 @@
             <key>size</key>
             <string>{1030,516}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:a30de89c6af88e58b0a1e073abef4ddf:6/6$</string>
+            <string>$TexturePacker:SmartUpdate:c698b27152d840fb26aa3329dbec061b:6/6$</string>
             <key>textureFileName</key>
             <string>zhangfei_dead5.png</string>
         </dict>

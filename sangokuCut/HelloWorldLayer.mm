@@ -65,8 +65,21 @@ enum {
 		// enable events
 		self.touchEnabled = YES;
 		self.accelerometerEnabled = YES;
-		
-		// init physics
+        
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_injure.plist"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_normal.plist"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_attack.plist"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead0.plist"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead1.plist"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead2.plist"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead3.plist"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead4.plist"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead5.plist"];
+        
+        CCSpriteBatchNode *batchNode = [CCSpriteBatchNode batchNodeWithFile:@"zhangfei_normal.png"];
+        [self addChild:batchNode];
+        
+        // init physics
 		[self initPhysics];
         [self initBackground_iphone5];
 
@@ -88,17 +101,7 @@ enum {
             [enemyBox addObject:zf];
             
         }
-        /*
-        Zhangfei *zf = [Zhangfei spriteWithFile];
-        zf.charDelegate = self;
-        if([zf initSprite]){
-            zf.position = ccp(zf.contentSize.width/2+30,winSize.height/2-100);
-            [self addChild:zf z:12];
-        }
-        [zf backToNormal];
-        */
-        
-        
+   
         // initialize the blade effect
         _deltaRemainder = 0.0;
         _blades = [[CCArray alloc] initWithCapacity:3];
@@ -106,7 +109,7 @@ enum {
         
         for (int i = 0; i < 3; i++)
         {
-            CCBlade *blade = [CCBlade bladeWithMaximumPoint:20];
+            CCBlade *blade = [CCBlade bladeWithMaximumPoint:30];
             blade.autoDim = YES;
             blade.texture = texture;
             [self addChild:blade z:14];
@@ -479,8 +482,7 @@ enum {
       CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
       CGRect particularSpriteRect = CGRectMake(enemy.position.x - 25, enemy.position.y-20, 50,50);
       if (CGRectContainsPoint(particularSpriteRect, touchLocation)) {
-        if(!isMovedin){
-           isMovedin = YES;
+        if([enemy getState] != injure && [enemy getState] != dead){
            [enemy hit];
             hit = [CCSprite spriteWithFile:@"hit_normal.png"];
             hit.position = location;
@@ -493,7 +495,6 @@ enum {
                [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
                [NSString stringWithFormat:@"sheet_256x256_%d.png",i]]];
             }
-            
             hitAnim = [CCAnimation animationWithSpriteFrames:hitAnimFrames delay:0.07f];
             id hitAnimation = [CCAnimate actionWithAnimation:hitAnim];
             id repeat = [CCRepeat actionWithAction:hitAnimation times:1];
@@ -501,9 +502,8 @@ enum {
             id sequence = [CCSequence actions:repeat, callback,nil];
             [hit runAction:sequence];
          }
-
       }else{
-         isMovedin = NO;
+          
       }
    }
     
@@ -516,7 +516,7 @@ enum {
  */
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    isMovedin = NO;
+
 	//Add a new body/atlas sprite at the touched location
 	for( UITouch *touch in touches ) {
 		CGPoint location = [touch locationInView: [touch view]];

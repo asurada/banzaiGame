@@ -8,36 +8,58 @@
 
 #import "BaseCharacter.h"
 
+
+
+
 @implementation BaseCharacter
 
--(BOOL)initSprite{
-    _state = healthy;
-   
+@synthesize normalAction=_normalAction;
+@synthesize injureAction =_injureAction;
+@synthesize deadAction=_deadAction;
+@synthesize attackAction=_attackAction;
+@synthesize charDelegate;
 
-    
+-(BOOL)initSprite{  
     return YES;
 }
 
 
 -(void)injure{
-    [self runAction:self.injureAction];
+    if(_state != injure){
+      _state = injure;
+      [self stopAction];
+      [self runAction:self.injureAction];
+    }
 }
 
 
 -(void)backToNormal{
-    [self runAction:self.normalAction];
+    if(_state != healthy){
+        _state = healthy;
+        [self runAction:self.normalAction];
+    }
 }
 
 
 -(void)dead{
-    [self runAction:self.deadAction];
+    if(_state != dead){
+      _state = dead;
+      [self runAction:self.deadAction];
+    }
 }
 
 -(void)attack{
-    [self runAction:self.attackAction];
+    if(_state != attack){
+       _state = attack;
+      [self stopAction];
+      [self runAction:self.attackAction];
+    }
   
 }
 
+-(state)getState{
+    return _state;
+}
 
 
 -(void)hit{
@@ -48,12 +70,18 @@
        [self stopAction:self.injureAction];
        [self injure];
     }else if(_hp == 0 && _state != dead){
-      _state = dead;
        [self stopAction:self.attackAction];
        [self stopAction:self.normalAction];
        [self stopAction:self.injureAction];
        [self dead];
     }
+}
+
+-(void)stopAction{
+    [self stopAction:self.attackAction];
+    [self stopAction:self.normalAction];
+    [self stopAction:self.injureAction];
+
 }
 
 @end

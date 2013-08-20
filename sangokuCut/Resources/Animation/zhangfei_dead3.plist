@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>sheet_2.png</key>
+            <key>zf_dead_2.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,2},{512,512}}</string>
@@ -17,7 +17,7 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>sheet_20.png</key>
+            <key>zf_dead_20.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,516},{512,512}}</string>
@@ -30,7 +30,7 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>sheet_21.png</key>
+            <key>zf_dead_21.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,1030},{512,512}}</string>
@@ -43,7 +43,7 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>sheet_22.png</key>
+            <key>zf_dead_22.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{516,2},{512,512}}</string>
@@ -56,7 +56,7 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>sheet_23.png</key>
+            <key>zf_dead_23.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1030,2},{512,512}}</string>
@@ -69,7 +69,7 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>sheet_24.png</key>
+            <key>zf_dead_24.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{516,516},{512,512}}</string>
@@ -82,7 +82,7 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>sheet_25.png</key>
+            <key>zf_dead_25.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{516,1030},{512,512}}</string>
@@ -95,7 +95,7 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>sheet_26.png</key>
+            <key>zf_dead_26.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1030,516},{512,512}}</string>
@@ -108,7 +108,7 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>sheet_27.png</key>
+            <key>zf_dead_27.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1030,1030},{512,512}}</string>
@@ -131,7 +131,7 @@
             <key>size</key>
             <string>{1544,1544}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:a30de89c6af88e58b0a1e073abef4ddf:4/6$</string>
+            <string>$TexturePacker:SmartUpdate:c698b27152d840fb26aa3329dbec061b:4/6$</string>
             <key>textureFileName</key>
             <string>zhangfei_dead3.png</string>
         </dict>

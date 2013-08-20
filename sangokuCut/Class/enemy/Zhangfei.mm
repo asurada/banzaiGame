@@ -11,7 +11,11 @@
 @implementation Zhangfei
 
 
-
+@synthesize normalAction;
+@synthesize injureAction;
+@synthesize deadAction;
+@synthesize attackAction;
+@synthesize charDelegate;
 
 +(id)spriteWithFile{
 
@@ -24,20 +28,66 @@
     _hp = 4;
     _injureHp = 2;
    
-    id moveTo = [CCMoveTo actionWithDuration:1.0f position:ccp(self.position.x,self.position.y+40)];
-    [self runAction:moveTo];
+
+
+    NSMutableArray *attackAnimFrames = [NSMutableArray array];
+    for (int i=1; i<=12; i++) {
+        [attackAnimFrames addObject:
+         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+          [NSString stringWithFormat:@"zf_attack_%d.png",i]]];
+    }
+    CCAnimation *attackAnim = [CCAnimation animationWithSpriteFrames:attackAnimFrames delay:0.041f];
+    self.attackAction = [CCRepeatForever actionWithAction:
+                         [CCAnimate actionWithAnimation:attackAnim]];
+
     
     
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_normal.plist"];
+    
+    NSMutableArray *deadAnimFrames = [NSMutableArray array];
+    for (int i=1; i<=47; i++) {
+        [deadAnimFrames addObject:
+         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+          [NSString stringWithFormat:@"zf_dead_%d.png",i]]];
+    }
+    
+    CCAnimation *deadAnim = [CCAnimation animationWithSpriteFrames:deadAnimFrames delay:0.041f];
+    id animation = [CCAnimate actionWithAnimation:deadAnim];
+    id repeat = [CCRepeat actionWithAction:animation times:1];
+    id callback = [CCCallFunc actionWithTarget:self selector:@selector(finishedAnimation)];
+    self.deadAction = [[CCSequence actions:repeat,callback,nil]retain];
+    
+    
     NSMutableArray *normalAnimFrames = [NSMutableArray array];
     for (int i=1; i<=14; i++) {
         [normalAnimFrames addObject:
          [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-          [NSString stringWithFormat:@"sheet_%d.png",i]]];
+          [NSString stringWithFormat:@"zf_normal_%d.png",i]]];
     }
-    CCAnimation *normalAnim = [CCAnimation animationWithSpriteFrames:normalAnimFrames delay:0.02f];
+    CCAnimation *normalAnim = [CCAnimation animationWithSpriteFrames:normalAnimFrames delay:0.041f];
     self.normalAction = [CCRepeatForever actionWithAction:
                          [CCAnimate actionWithAnimation:normalAnim]];
+    
+    
+    NSMutableArray *injureAnimFrames = [NSMutableArray array];
+    for (int i=1; i<=10; i++) {
+        [injureAnimFrames addObject:
+         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+          [NSString stringWithFormat:@"zf_injure_%d.png",i]]];
+    }
+    
+    CCAnimation *injureAnim = [CCAnimation animationWithSpriteFrames:injureAnimFrames delay:0.041f];
+    
+    id injureAnimation = [CCAnimate actionWithAnimation:injureAnim];
+    id injureRepeat = [CCRepeat actionWithAction:injureAnimation times:1];
+    id injureCallback = [CCCallFunc actionWithTarget:self selector:@selector(injureFinishedAnimation)];
+    self.injureAction = [[CCSequence actions:injureRepeat,injureCallback,nil]retain];
+
+
+    
+    id moveTo = [CCMoveTo actionWithDuration:1.0f position:ccp(self.position.x,self.position.y+40)];
+    [self runAction:moveTo];
+    
+    
     
     [self backToNormal];
     
@@ -59,18 +109,6 @@ int tickCnt;
       [self runAction:moveTo];
     
     }else if(tickCnt == 4){
-      [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_attack.plist"];
-      NSMutableArray *attackAnimFrames = [NSMutableArray array];
-       for (int i=1; i<=12; i++) {
-            [attackAnimFrames addObject:
-             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-              [NSString stringWithFormat:@"sheet_%d.png",i]]];
-        }
-        
-        CCAnimation *attackAnim = [CCAnimation animationWithSpriteFrames:attackAnimFrames delay:0.02f];
-        
-        self.attackAction = [CCRepeatForever actionWithAction:
-                             [CCAnimate actionWithAnimation:attackAnim]];
       [self attack];
     }
     /*
@@ -92,80 +130,9 @@ int tickCnt;
 {
    [self.charDelegate onCharacterDead:self.position sender:self];
    [self removeFromParentAndCleanup:YES];
-   
-
 }
 
 
--(void)attack{
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_attack.plist"];
-    NSMutableArray *attackAnimFrames = [NSMutableArray array];
-    for (int i=1; i<=12; i++) {
-        [attackAnimFrames addObject:
-         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-          [NSString stringWithFormat:@"sheet_%d.png",i]]];
-    }
-    
-    CCAnimation *attackAnim = [CCAnimation animationWithSpriteFrames:attackAnimFrames delay:0.02f];
-    
-    self.attackAction = [CCRepeatForever actionWithAction:
-                         [CCAnimate actionWithAnimation:attackAnim]];
-   
-    [self runAction:self.attackAction];
-
-}
-
--(void)dead{
-    
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead0.plist"];
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead1.plist"];
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead2.plist"];
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead3.plist"];
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead4.plist"];
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead5.plist"];
-    NSMutableArray *deadAnimFrames = [NSMutableArray array];
-    for (int i=1; i<=47; i++) {
-        [deadAnimFrames addObject:
-         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-          [NSString stringWithFormat:@"sheet_%d.png",i]]];
-    }
-    
-    CCAnimation *deadAnim = [CCAnimation animationWithSpriteFrames:deadAnimFrames delay:0.02f];
-    
-    id animation = [CCAnimate actionWithAnimation:deadAnim];
-    id repeat = [CCRepeat actionWithAction:animation times:1];
-    id callback = [CCCallFunc actionWithTarget:self selector:@selector(finishedAnimation)];
-    self.deadAction = [CCSequence actions:repeat,callback,nil];
-    [self runAction:self.deadAction];
-}
-
-
-
--(void)backToNormal{
-    [self stopAction:self.injureAction];
-   
-    [self runAction:self.normalAction];
-
-}
-
-
--(void)injure{
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_injure.plist"];
-    NSMutableArray *injureAnimFrames = [NSMutableArray array];
-    for (int i=1; i<=10; i++) {
-        [injureAnimFrames addObject:
-         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-          [NSString stringWithFormat:@"sheet_%d.png",i]]];
-    }
-    
-    CCAnimation *injureAnim = [CCAnimation animationWithSpriteFrames:injureAnimFrames delay:0.03f];
-    
-    id injureAnimation = [CCAnimate actionWithAnimation:injureAnim];
-    id injureRepeat = [CCRepeat actionWithAction:injureAnimation times:1];
-    id injureCallback = [CCCallFunc actionWithTarget:self selector:@selector(injureFinishedAnimation)];
-    self.injureAction = [CCSequence actions:injureRepeat,injureCallback,nil];
-    [self runAction:self.injureAction];
-}
 
 -(void) injureFinishedAnimation
 {

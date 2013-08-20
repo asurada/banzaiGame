@@ -15,6 +15,7 @@
 #import "GLES-Render.h"
 #import "CCBlade.h"
 #import "Zhangfei.h"
+#import "BaseCharacter.h"
 #import "CharacterDelegate.h"
 
 //Pixel to metres ratio. Box2D uses metres as the unit for measurement.
@@ -55,9 +56,10 @@
     CCSprite *hit;
     
     CCAnimation *hitAnim;
-    bool isMovedin;
     
     NSMutableArray *enemyBox;
+    BaseCharacter *hitTarget;
+    
     
 }
 

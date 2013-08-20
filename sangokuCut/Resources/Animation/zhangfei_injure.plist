@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>sheet_1.png</key>
+            <key>zf_injure_1.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1034,260},{256,256}}</string>
@@ -17,7 +17,7 @@
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_10.png</key>
+            <key>zf_injure_10.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1034,2},{256,256}}</string>
@@ -30,7 +30,7 @@
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_2.png</key>
+            <key>zf_injure_2.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{776,260},{256,256}}</string>
@@ -43,7 +43,7 @@
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_3.png</key>
+            <key>zf_injure_3.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{776,2},{256,256}}</string>
@@ -56,7 +56,7 @@
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_4.png</key>
+            <key>zf_injure_4.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{518,260},{256,256}}</string>
@@ -69,7 +69,7 @@
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_5.png</key>
+            <key>zf_injure_5.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{518,2},{256,256}}</string>
@@ -82,7 +82,7 @@
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_6.png</key>
+            <key>zf_injure_6.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{260,260},{256,256}}</string>
@@ -95,7 +95,7 @@
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_7.png</key>
+            <key>zf_injure_7.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{260,2},{256,256}}</string>
@@ -108,7 +108,7 @@
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_8.png</key>
+            <key>zf_injure_8.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,260},{256,256}}</string>
@@ -121,7 +121,7 @@
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_9.png</key>
+            <key>zf_injure_9.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,2},{256,256}}</string>
@@ -144,7 +144,7 @@
             <key>size</key>
             <string>{1293,518}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:d9f8b1de8cc5359a7b5184c3df160199:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:7e9f150436f36dd3810f215bad1a643d:1/1$</string>
             <key>textureFileName</key>
             <string>zhangfei_injure.png</string>
         </dict>
