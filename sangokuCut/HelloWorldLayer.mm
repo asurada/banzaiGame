@@ -65,9 +65,8 @@ enum {
 		// enable events
 		self.touchEnabled = YES;
 		self.accelerometerEnabled = YES;
-        
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_injure.plist"];
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_normal.plist"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_injure.plist"];
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_attack.plist"];
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead0.plist"];
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead1.plist"];
@@ -76,8 +75,7 @@ enum {
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead4.plist"];
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead5.plist"];
         
-        CCSpriteBatchNode *batchNode = [CCSpriteBatchNode batchNodeWithFile:@"zhangfei_normal.png"];
-        [self addChild:batchNode];
+      
         
         // init physics
 		[self initPhysics];
@@ -87,9 +85,9 @@ enum {
         enemyBox = [[NSMutableArray alloc]init];
   
         
-        for(int index = 0; index < 9;index++){
+        for(int index = 0; index < 6;index++){
             EnemyData *data = [[EnemyData alloc]init];
-            data.location = CGPointMake(60+(index%3)*110,60+(index/3)*105);
+            data.location = CGPointMake(120+(index%3)*110,-55+(index/3)*105);
             Zhangfei *zf = [Zhangfei spriteWithFile];
             zf.charDelegate = self;
               
@@ -122,12 +120,12 @@ enum {
         [_bladeSparkle stopSystem];
         [self addChild:_bladeSparkle z:14];
         [self initHUD];
-
+        [self schedule:@selector(hogehoge) interval:4.0f];
+        
+        
         // create reset button
 		//[self createMenu];
-		
 		//Set up sprite
-		
 //#if 1
 //		// Use batch node. Faster
 //		CCSpriteBatchNode *parent = [CCSpriteBatchNode batchNodeWithFile:@"blocks.png" capacity:100];
@@ -242,6 +240,48 @@ enum {
 	
 	kmGLPopMatrix();
 }
+
+int tickCnt;
+int cnt=0;
+- (void)hogehoge
+{
+    //intervalで指定した値ごとに呼ばれる
+    
+    tickCnt++;
+    if (tickCnt==5) {
+        tickCnt =0;
+     //20秒後からは３秒間隔で呼ばれるようになる
+     //[self unschedule:_cmd];
+     //[self schedule:@selector(hogehoge) interval:3.0f];
+
+           for (BaseCharacter *enemy in enemyBox) {
+             if(cnt <3){
+                if([enemy getState] == standby){
+                   [enemy setState:healthy];
+                   [enemy moveUp];
+                    cnt++;
+                }
+             }else{
+                 if(cnt >0){
+                     if([enemy getState] == healthy){
+                         [enemy setState:standby];
+                         [enemy moveDown];
+                         cnt--;
+                     }
+                 }
+             }
+           }
+     }
+    /*if (tickCnt==20) {
+     //50秒後からは4秒間隔で呼ばれるようになる
+     [self unschedule:_cmd];
+     [self schedule:@selector(hogehoge) interval:4.0f];
+    }*/
+    
+}
+
+
+
 
 -(void) addNewSpriteAtPosition:(CGPoint)p
 {

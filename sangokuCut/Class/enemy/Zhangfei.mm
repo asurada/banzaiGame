@@ -83,35 +83,34 @@
     self.injureAction = [[CCSequence actions:injureRepeat,injureCallback,nil]retain];
 
 
-    
-    id moveTo = [CCMoveTo actionWithDuration:1.0f position:ccp(self.position.x,self.position.y+40)];
+    /*
+    id moveTo = [CCMoveTo actionWithDuration:.9f position:ccp(self.position.x,self.position.y+100)];
     [self runAction:moveTo];
-    
-    
-    
     [self backToNormal];
+    */
     
-    [self schedule:@selector(hogehoge) interval:10.0f];
+
     return YES;
     
     
 }
 
+/*
 int tickCnt;
 - (void)hogehoge
 {
 
     //intervalで指定した値ごとに呼ばれる
     tickCnt ++;
-    if(tickCnt == 10){
+    if(self){
       //[self unschedule:_cmd];
-      id moveTo = [CCMoveTo actionWithDuration:1.0f position:ccp(self.position.x,self.position.y-100)];
+      id moveTo = [CCMoveTo actionWithDuration:.9f position:ccp(self.position.x,self.position.y-100)];
       [self runAction:moveTo];
-    
+        
     }else if(tickCnt == 4){
       [self attack];
     }
-    /*
+
     if (tickCnt==10) {
         //20秒後からは３秒間隔で呼ばれるようになる
         [self unschedule:_cmd];
@@ -121,9 +120,10 @@ int tickCnt;
         //50秒後からは4秒間隔で呼ばれるようになる
         [self unschedule:_cmd];
         [self schedule:@selector(hogehoge) interval:4.0f];
-    }*/
+    }
     
 }
+*/
 
 
 -(void) finishedAnimation

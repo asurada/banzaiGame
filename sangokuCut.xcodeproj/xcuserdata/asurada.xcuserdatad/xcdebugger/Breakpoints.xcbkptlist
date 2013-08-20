@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sangokuCut/HelloWorldLayer.mm"
-         timestampString = "398688923.548465"
+         timestampString = "398697046.041234"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "400"
-         endingLineNumber = "400"
+         startingLineNumber = "440"
+         endingLineNumber = "440"
          landmarkName = "-hitFinishedAnimation:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sangokuCut/HelloWorldLayer.mm"
-         timestampString = "398688923.548465"
+         timestampString = "398697046.041234"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "485"
-         endingLineNumber = "485"
+         startingLineNumber = "525"
+         endingLineNumber = "525"
          landmarkName = "-hit:at:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sangokuCut/Class/enemy/BaseCharacter.mm"
-         timestampString = "398689522.262084"
+         timestampString = "398696192.186205"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "73"
-         endingLineNumber = "73"
+         startingLineNumber = "125"
+         endingLineNumber = "125"
          landmarkName = "-hit"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sangokuCut/Class/enemy/BaseCharacter.mm"
-         timestampString = "398689522.262084"
+         timestampString = "398696192.186205"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "69"
-         endingLineNumber = "69"
+         startingLineNumber = "121"
+         endingLineNumber = "121"
          landmarkName = "-hit"
          landmarkType = "5">
       </FileBreakpoint>
@@ -59,13 +59,39 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "sangokuCut/Class/enemy/BaseCharacter.mm"
-         timestampString = "398689522.262084"
+         filePath = "sangokuCut/HelloWorldLayer.mm"
+         timestampString = "398697046.041234"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "31"
-         endingLineNumber = "31"
-         landmarkName = "-injure"
+         startingLineNumber = "265"
+         endingLineNumber = "265"
+         landmarkName = "-hogehoge"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sangokuCut/HelloWorldLayer.mm"
+         timestampString = "398697046.041234"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "258"
+         endingLineNumber = "258"
+         landmarkName = "-hogehoge"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sangokuCut/HelloWorldLayer.mm"
+         timestampString = "398697046.041234"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "267"
+         endingLineNumber = "267"
+         landmarkName = "-hogehoge"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

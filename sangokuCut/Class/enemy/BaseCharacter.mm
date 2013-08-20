@@ -19,7 +19,9 @@
 @synthesize attackAction=_attackAction;
 @synthesize charDelegate;
 
--(BOOL)initSprite{  
+-(BOOL)initSprite{
+    _state = standby;
+   // [self schedule:@selector(hogehoge) interval:10];
     return YES;
 }
 
@@ -57,10 +59,60 @@
   
 }
 
+-(void)moveUp{
+    id moveTo = [CCMoveTo actionWithDuration:.9f position:ccp(self.position.x,self.position.y+95)];
+    [self runAction:moveTo];
+}
+
+
+
+-(void)moveDown{
+    id moveTo = [CCMoveTo actionWithDuration:.9f position:ccp(self.position.x,self.position.y-95)];
+    [self runAction:moveTo];
+}
+
+/*
+
+- (void)hogehoge
+{
+    //intervalで指定した値ごとに呼ばれる
+    if(_state == standby){
+        _state = healthy;
+        id moveTo = [CCMoveTo actionWithDuration:.9f position:ccp(self.position.x,self.position.y+100)];
+        [self runAction:moveTo];
+        [self backToNormal];
+    }else if(_state == healthy){
+        _state = standby;
+        id moveTo = [CCMoveTo actionWithDuration:.9f position:ccp(self.position.x,self.position.y-100)];
+        [self runAction:moveTo];
+    }else if(_state == attack){
+        [self attack];
+    }
+    
+    /*
+     if (tickCnt==10) {
+     //20秒後からは３秒間隔で呼ばれるようになる
+     [self unschedule:_cmd];
+     [self schedule:@selector(hogehoge) interval:3.0f];
+     }
+     if (tickCnt==20) {
+     //50秒後からは4秒間隔で呼ばれるようになる
+     [self unschedule:_cmd];
+     [self schedule:@selector(hogehoge) interval:4.0f];
+     }
+    
+}
+
+*/
+
+
 -(state)getState{
     return _state;
 }
 
+-(void)setState:(state)stt{
+    _state = stt;
+}
 
 -(void)hit{
     if(_hp > 0){

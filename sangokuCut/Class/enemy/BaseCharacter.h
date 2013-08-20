@@ -48,7 +48,10 @@ typedef enum {
 -(void)backToNormal;
 -(void)action;
 -(void)hit;
+-(void)moveUp;
+-(void)moveDown;
 -(state)getState;
+-(void)setState:(state)stt;
 
 
 
