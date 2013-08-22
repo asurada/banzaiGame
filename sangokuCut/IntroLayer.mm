@@ -38,6 +38,39 @@
 {
 	if( (self=[super init])) {
 		
+        [[CCTextureCache sharedTextureCache]addImage:@"coin.png"];
+        [[CCTextureCache sharedTextureCache]addImage:@"zhangfei_normal.png"];
+        [[CCTextureCache sharedTextureCache]addImage:@"zhangfei_injure.png"];
+        [[CCTextureCache sharedTextureCache]addImage:@"zhangfei_attack.png"];
+        [[CCTextureCache sharedTextureCache]addImage:@"zhangfei_dead0.png"];
+        [[CCTextureCache sharedTextureCache]addImage:@"zhangfei_dead1.png"];
+        [[CCTextureCache sharedTextureCache]addImage:@"zhangfei_dead2.png"];
+        [[CCTextureCache sharedTextureCache]addImage:@"zombi_lv1_dead.png"];
+        [[CCTextureCache sharedTextureCache]addImage:@"zombi_lv1.png"];
+        
+        
+        
+        CCTextureCache *cache = [CCTextureCache sharedTextureCache];
+        CCTexture2D* texture2D = [cache textureForKey:@"coin.png"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"coin.plist" texture:texture2D];
+        
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"bg.plist"];
+        texture2D = [cache textureForKey:@"zhangfei_normal.png"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_normal.plist" texture:texture2D];
+        texture2D = [cache textureForKey:@"zhangfei_injure.png"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_injure.plist" texture:texture2D];
+        texture2D = [cache textureForKey:@"zhangfei_attack.png"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_attack.plist" texture:texture2D];
+        texture2D = [cache textureForKey:@"zhangfei_dead0.png"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead0.plist" texture:texture2D];
+        texture2D = [cache textureForKey:@"zhangfei_dead1.png"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead1.plist"];
+        texture2D = [cache textureForKey:@"zhangfei_dead2.png"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead2.plist"];
+        texture2D = [cache textureForKey:@"zombi_lv1_dead.png"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zombi_lv1_dead.plist"];
+        texture2D = [cache textureForKey:@"zombi_lv1.png"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zombi_lv1.plist"];
 		// ask director for the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
 		

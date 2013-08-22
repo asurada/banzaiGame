@@ -54,7 +54,8 @@ enum {
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
-	
+    
+   
 	// return the scene
 	return scene;
 }
@@ -63,43 +64,21 @@ enum {
 {
 	if( (self=[super init])) {
 		// enable events
-		self.touchEnabled = YES;
-		self.accelerometerEnabled = YES;
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_normal.plist"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_injure.plist"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_attack.plist"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead0.plist"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead1.plist"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead2.plist"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead3.plist"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead4.plist"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead5.plist"];
-        
-      
         
         // init physics
 		[self initPhysics];
+  
+        logic = [[[Logic_Showup_01 alloc]init]iniLogic:nil];
+        logic.layer = self;
+        
+        
         [self initBackground_iphone5];
-
+       
+       
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         enemyBox = [[NSMutableArray alloc]init];
   
         
-        for(int index = 0; index < 6;index++){
-            EnemyData *data = [[EnemyData alloc]init];
-            data.location = CGPointMake(120+(index%3)*110,-55+(index/3)*105);
-            Zhangfei *zf = [Zhangfei spriteWithFile];
-            zf.charDelegate = self;
-              
-            if([zf initSprite]){
-                zf.position = data.location;
-                int z = 5-(index/3)*2;
-                [self addChild:zf z:z];
-            }
-            [enemyBox addObject:zf];
-            
-        }
-   
         // initialize the blade effect
         _deltaRemainder = 0.0;
         _blades = [[CCArray alloc] initWithCapacity:3];
@@ -120,8 +99,32 @@ enum {
         [_bladeSparkle stopSystem];
         [self addChild:_bladeSparkle z:14];
         [self initHUD];
-        [self schedule:@selector(hogehoge) interval:4.0f];
+        [self schedule:@selector(hogehoge) interval:0.1f];
         
+        
+        [logic loadEnmey];
+        
+        /*
+        for(int index = 0; index < 9;index++){
+            EnemyData *data = [[EnemyData alloc]init];
+            data.location = CGPointMake(50+(index%3)*110,5+(index/3)*105);
+            Zhangfei *zf =  [Zhangfei spriteWithFile];
+            zf.charDelegate = self;
+            
+            if([zf initSprite]){
+                zf.position = data.location;
+                int z = 5-(index/3)*2;
+                [self addChild:zf z:z];
+               
+            }
+            [enemyBox addObject:zf];
+            
+        }*/
+
+        self.touchEnabled = YES;
+        
+        
+		//self.accelerometerEnabled = YES;
         
         // create reset button
 		//[self createMenu];
@@ -163,7 +166,15 @@ enum {
 	m_debugDraw = NULL;
 	
 	[super dealloc];
-}	
+}
+
+
+
+
+
+-(void)updateInfo{
+    
+}
 
 
 -(void) initPhysics
@@ -242,42 +253,12 @@ enum {
 }
 
 int tickCnt;
-int cnt=0;
+
+
 - (void)hogehoge
 {
-    //intervalで指定した値ごとに呼ばれる
-    
     tickCnt++;
-    if (tickCnt==5) {
-        tickCnt =0;
-     //20秒後からは３秒間隔で呼ばれるようになる
-     //[self unschedule:_cmd];
-     //[self schedule:@selector(hogehoge) interval:3.0f];
-
-           for (BaseCharacter *enemy in enemyBox) {
-             if(cnt <3){
-                if([enemy getState] == standby){
-                   [enemy setState:healthy];
-                   [enemy moveUp];
-                    cnt++;
-                }
-             }else{
-                 if(cnt >0){
-                     if([enemy getState] == healthy){
-                         [enemy setState:standby];
-                         [enemy moveDown];
-                         cnt--;
-                     }
-                 }
-             }
-           }
-     }
-    /*if (tickCnt==20) {
-     //50秒後からは4秒間隔で呼ばれるようになる
-     [self unschedule:_cmd];
-     [self schedule:@selector(hogehoge) interval:4.0f];
-    }*/
-    
+    tickCnt = [logic showEnemey:tickCnt];
 }
 
 
@@ -348,23 +329,25 @@ int cnt=0;
     CGSize screen = [[CCDirector sharedDirector] winSize];
     int height = 0;
     
+    CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"bg.png"];
+    [self addChild:spriteSheet];
     // add the background image
-    CCSprite *background_01 = [CCSprite spriteWithFile:@"Bg_iPhone5_01.png"];
+    CCSprite *background_01 =[CCSprite spriteWithSpriteFrameName:@"Bg_iPhone5_01.png"];// [CCSprite spriteWithFile:@"Bg_iPhone5_01.png"];
     background_01.position = ccp(screen.width/2,screen.height-background_01.contentSize.height/2);//415
     [self addChild:background_01 z:0];
 
     height = background_01.contentSize.height;
-    CCSprite *background_02 = [CCSprite spriteWithFile:@"Bg_iPhone5_02.png"];
+    CCSprite *background_02 = [CCSprite spriteWithSpriteFrameName:@"Bg_iPhone5_02.png"];
     background_02.position = ccp(screen.width/2,screen.height - height - background_02.contentSize.height/2);
     [self addChild:background_02 z:2];
     
     height = height + background_02.contentSize.height;
-    CCSprite *background_03 = [CCSprite spriteWithFile:@"Bg_iPhone5_03.png"];
+    CCSprite *background_03 = [CCSprite spriteWithSpriteFrameName:@"Bg_iPhone5_03.png"];
     background_03.position = ccp(screen.width/2,screen.height - height - background_03.contentSize.height/2);
     [self addChild:background_03 z:4];
     
     height = height + background_03.contentSize.height;
-    CCSprite *background_04 = [CCSprite spriteWithFile:@"Bg_iPhone5_04.png"];
+    CCSprite *background_04 = [CCSprite spriteWithSpriteFrameName:@"Bg_iPhone5_04.png"];
     background_04.position = ccp(screen.width/2,screen.height - height - background_04.contentSize.height/2);
     [self addChild:background_04 z:6];
 
@@ -400,9 +383,8 @@ int cnt=0;
         // move the sparkle to the touch
         _bladeSparkle.position = location;
         [_bladeSparkle resetSystem];
-        
-        
         [self hit:touch at:location];
+        
         /*
         CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
         if (CGRectContainsPoint(zf.boundingBox, touchLocation)) {
@@ -443,19 +425,7 @@ int cnt=0;
 }
 
 
--(void)onCharacterDead:(CGPoint)location sender:(CCSprite *)sender{
-    [sender removeFromParentAndCleanup:YES];
-    sender = nil;
-    [sender release];
-    
-    /*
-    Coin *coin = [Coin spriteWithFile];
-    if([coin initSprite]){
-        coin.position = location;
-        [self addChild:coin z:13];
-        [coin runAction:coin.coinAction];
-    }*/
-}
+
 
 /*
  * The touch moved logic
@@ -522,7 +492,7 @@ int cnt=0;
       CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
       CGRect particularSpriteRect = CGRectMake(enemy.position.x - 25, enemy.position.y-20, 50,50);
       if (CGRectContainsPoint(particularSpriteRect, touchLocation)) {
-        if([enemy getState] != injure && [enemy getState] != dead){
+        if([enemy getState] != injure && [enemy getState] != dead && [enemy getState] != standby){
            [enemy hit];
             hit = [CCSprite spriteWithFile:@"hit_normal.png"];
             hit.position = location;
@@ -572,28 +542,6 @@ int cnt=0;
 	}
 }
 
-
--(void)initSprites
-{
-    PolygonSprite *sprite = [[Zombi_Lv1 alloc] initWithWorld:world];
-    sprite.position = ccp(200,600);
-    [self addChild:sprite z:1];
-    [self addChild:sprite.splurt z:3];
-    
-    /*// allocate the a cache
-    _cache = [[CCArray alloc] initWithCapacity:53];
-    
-    
-    // create fruits
-    for (int i = 0; i < 2; i++)
-    {
-        PolygonSprite *sprite = [[Zombi_Lv1 alloc] initWithWorld:world];
-        sprite.position = ccp(200,600);
-        [self addChild:sprite z:2];
-        [self addChild:sprite.splurt z:3];
-        [_cache addObject:sprite];
-    }*/
-}
 
 
 
@@ -669,7 +617,6 @@ int cnt=0;
 {
 	if( _zombiLabel && _coinLabel ) {
 		CCTexture2D *texture = [_zombiLabel texture];
-        
 		[_zombiLabel release];
 		[_coinLabel release];
 		[[CCTextureCache sharedTextureCache ] removeTexture:texture];

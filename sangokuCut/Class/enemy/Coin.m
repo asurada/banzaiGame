@@ -13,20 +13,20 @@
 
 
 +(id)spriteWithFile{
-    return [super spriteWithFile:@"coin.png" rect:CGRectMake(0, 0, 64, 64)];
+   return [super spriteWithSpriteFrameName:@"coin_0.png"];
 }
 
 
 -(BOOL)initSprite{
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"coin.plist"];
+
     NSMutableArray *normalAnimFrames = [NSMutableArray array];
     for (int i=0; i<=15; i++) {
         [normalAnimFrames addObject:
          [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-          [NSString stringWithFormat:@"sheet_64x64_%d.png",i]]];
+          [NSString stringWithFormat:@"coin_%d.png",i]]];
     }
     
-    CCAnimation *coinAnim = [CCAnimation animationWithSpriteFrames:normalAnimFrames delay:0.1f];
+    CCAnimation *coinAnim = [CCAnimation animationWithSpriteFrames:normalAnimFrames delay:0.041f];
     
     self.coinAction = [CCRepeatForever actionWithAction:
                          [CCAnimate actionWithAnimation:coinAnim]];

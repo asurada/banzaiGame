@@ -13,15 +13,22 @@
 
 @implementation BaseCharacter
 
-@synthesize normalAction=_normalAction;
-@synthesize injureAction =_injureAction;
-@synthesize deadAction=_deadAction;
-@synthesize attackAction=_attackAction;
+@synthesize injureAnim=_injureAnim;
+@synthesize normalAnim=_normalAnim;
+@synthesize deadAnim=_deadAnim;
+@synthesize attackAnim=_attackAnim;
+@synthesize intervalSpaceMove = _intervalSpaceMove;
+@synthesize intervalTimeMove = _intervalTimeMove;
 @synthesize charDelegate;
+
+@synthesize name = _name;
 
 -(BOOL)initSprite{
     _state = standby;
-   // [self schedule:@selector(hogehoge) interval:10];
+    [self loadNormalAnim];
+    [self loadInjureAnim];
+    [self loadDeadAnim];
+    [self loadAttackAnim];
     return YES;
 }
 
@@ -30,23 +37,32 @@
     if(_state != injure){
       _state = injure;
       [self stopAction];
-      [self runAction:self.injureAction];
+      id injureAnimation = [CCAnimate actionWithAnimation:self.injureAnim];
+      id injureRepeat = [CCRepeat actionWithAction:injureAnimation times:1];
+      id injureCallback = [CCCallFunc actionWithTarget:self selector:@selector(finishInjure)];
+      _injureAction = [[CCSequence actions:injureRepeat,injureCallback,nil]retain];
+      [self runAction:_injureAction];
     }
 }
 
 
--(void)backToNormal{
+-(void)normal{
     if(_state != healthy){
         _state = healthy;
-        [self runAction:self.normalAction];
+        _normalAction = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:self.normalAnim]];
+        [self runAction:_normalAction];
     }
 }
 
 
 -(void)dead{
     if(_state != dead){
-      _state = dead;
-      [self runAction:self.deadAction];
+       _state = dead;
+       id animation = [CCAnimate actionWithAnimation:self.deadAnim];
+       id action = [CCRepeat actionWithAction:animation times:1];
+       id callback = [CCCallFunc actionWithTarget:self selector:@selector(finishDead)];
+       _deadAction = [[CCSequence actions:action,callback,nil]retain];
+       [self runAction:_deadAction];
     }
 }
 
@@ -54,56 +70,78 @@
     if(_state != attack){
        _state = attack;
       [self stopAction];
-      [self runAction:self.attackAction];
+       _attackAction = [CCRepeatForever actionWithAction:
+                             [CCAnimate actionWithAnimation:self.attackAnim]];
+      [self runAction:_attackAction];
     }
   
 }
 
 -(void)moveUp{
-    id moveTo = [CCMoveTo actionWithDuration:.9f position:ccp(self.position.x,self.position.y+95)];
-    [self runAction:moveTo];
+    _state = moving;
+    id moveTo = [CCMoveTo actionWithDuration:self.intervalTimeMove position:ccp(self.position.x,self.position.y+self.intervalSpaceMove)];
+    id callback = [CCCallFunc actionWithTarget:self selector:@selector(finishMoveUp)];
+    [self runAction:[CCSequence actions:moveTo,callback,nil]];
+    [self normal];
+    [self schedule:@selector(moveDown) interval:9];
 }
+
 
 
 
 -(void)moveDown{
-    id moveTo = [CCMoveTo actionWithDuration:.9f position:ccp(self.position.x,self.position.y-95)];
-    [self runAction:moveTo];
+    _state = moving;
+    id moveTo = [CCMoveTo actionWithDuration:self.intervalTimeMove position:ccp(self.position.x,self.position.y-self.intervalSpaceMove)];
+    id callback = [CCCallFunc actionWithTarget:self selector:@selector(finishMoveDown)];
+    [self runAction:[CCSequence actions:moveTo,callback,nil]];
+
 }
 
-/*
 
-- (void)hogehoge
-{
-    //intervalで指定した値ごとに呼ばれる
-    if(_state == standby){
-        _state = healthy;
-        id moveTo = [CCMoveTo actionWithDuration:.9f position:ccp(self.position.x,self.position.y+100)];
-        [self runAction:moveTo];
-        [self backToNormal];
-    }else if(_state == healthy){
-        _state = standby;
-        id moveTo = [CCMoveTo actionWithDuration:.9f position:ccp(self.position.x,self.position.y-100)];
-        [self runAction:moveTo];
-    }else if(_state == attack){
-        [self attack];
-    }
+-(void)finishMoveDown{
+    _state = standby;
+    [self stopAction];
+}
+
+
+-(void)finishMoveUp{
+     [self normal];
+  
+}
+
+-(void)finishDead{
+    _injureAnim = nil;
+    _normalAnim = nil;;
+    _deadAnim = nil;
+    _attackAnim = nil;
+    _normalAction = nil;
+    _injureAction = nil;
+    _deadAction = nil;
+    _attackAction = nil;
+    _upAction = nil;
+     _downAction = nil;
     
-    /*
-     if (tickCnt==10) {
-     //20秒後からは３秒間隔で呼ばれるようになる
-     [self unschedule:_cmd];
-     [self schedule:@selector(hogehoge) interval:3.0f];
-     }
-     if (tickCnt==20) {
-     //50秒後からは4秒間隔で呼ばれるようになる
-     [self unschedule:_cmd];
-     [self schedule:@selector(hogehoge) interval:4.0f];
-     }
+    [_injureAnim release];
+    [_normalAnim release];
+    [_deadAnim release];
+    [_attackAnim release];
+    [_normalAction release];
+    [_injureAction release];
+    [_deadAction release];
+    [_attackAction release];
+    [_upAction release];
+    [_downAction release];
+    [charDelegate onCharacterDead:self.position sender:self];
     
 }
 
-*/
+
+-(void)finishInjure{
+    [self normal];
+}
+
+
+
 
 
 -(state)getState{
@@ -117,22 +155,22 @@
 -(void)hit{
     if(_hp > 0){
        _hp--;
-       [self stopAction:self.attackAction];
-       [self stopAction:self.normalAction];
-       [self stopAction:self.injureAction];
+       [_attackAction stop];
+       [_injureAction stop];
+       [_normalAction stop];
        [self injure];
     }else if(_hp == 0 && _state != dead){
-       [self stopAction:self.attackAction];
-       [self stopAction:self.normalAction];
-       [self stopAction:self.injureAction];
+       [_attackAction stop];
+       [_injureAction stop];
+       [_normalAction stop];
        [self dead];
     }
 }
 
 -(void)stopAction{
-    [self stopAction:self.attackAction];
-    [self stopAction:self.normalAction];
-    [self stopAction:self.injureAction];
+    [self stopAction:_attackAction];
+    [self stopAction:_normalAction];
+    [self stopAction:_injureAction];
 
 }
 

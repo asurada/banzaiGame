@@ -11,84 +11,78 @@
 @implementation Zombi
 
 
-
 +(id)spriteWithFile{
-    return [super spriteWithFile:@"zombi_normal.png" rect:CGRectMake(0, 0, 256, 256)];
+    return [super spriteWithSpriteFrameName:@"sheet_256x256_0.png"];
 }
 
 
 -(BOOL)initSprite{
+    [super initSprite];
+    _hp = 4;
+    _injureHp = 2;
+    _intervalSpaceMove = 98;
+    _intervalTimeMove =.5f;
+    _name = @"zombi";
+    return YES;
     
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zombi_lv1.plist"];
-    NSMutableArray *normalAnimFrames = [NSMutableArray array];
-    for (int i=1; i<=13; i++) {
-        [normalAnimFrames addObject:
-         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-          [NSString stringWithFormat:@"sheet_256x256_%d.png",i]]];
-    }
-    
-    CCAnimation *normalAnim = [CCAnimation animationWithSpriteFrames:normalAnimFrames delay:0.07f];
-    
-    self.normalAction = [CCRepeatForever actionWithAction:
-                         [CCAnimate actionWithAnimation:normalAnim]];
-    
-    
-    
+}
+
+
+-(void)loadInjureAnim{
     /*
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_injure.plist"];
     NSMutableArray *injureAnimFrames = [NSMutableArray array];
     for (int i=1; i<=10; i++) {
         [injureAnimFrames addObject:
          [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-          [NSString stringWithFormat:@"sheet_%d.png",i]]];
+          [NSString stringWithFormat:@"zf_injure_%d.png",i]]];
     }
-    
-    CCAnimation *injureAnim = [CCAnimation animationWithSpriteFrames:injureAnimFrames delay:0.07f];
-    
-    self.injureAction = [CCRepeatForever actionWithAction:
-                         [CCAnimate actionWithAnimation:injureAnim]];
-    
-    
-    
-    
-    
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_attack.plist"];
+    self.injureAnim = [CCAnimation animationWithSpriteFrames:injureAnimFrames delay:0.041f];*/
+}
+
+
+
+-(void)loadAttackAnim{
+    /*
     NSMutableArray *attackAnimFrames = [NSMutableArray array];
     for (int i=1; i<=12; i++) {
         [attackAnimFrames addObject:
          [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-          [NSString stringWithFormat:@"sheet_%d.png",i]]];
+          [NSString stringWithFormat:@"zf_attack_%d.png",i]]];
     }
-    
-    CCAnimation *attackAnim = [CCAnimation animationWithSpriteFrames:attackAnimFrames delay:0.07f];
-    
-    self.attackAction = [CCRepeatForever actionWithAction:
-                         [CCAnimate actionWithAnimation:attackAnim]];
-    
-    */
-    
-    
+    self.attackAnim = [CCAnimation animationWithSpriteFrames:attackAnimFrames delay:0.041f];
+     */
+}
 
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zombi_lv1_dead.plist"];
+
+
+-(void)loadDeadAnim{
     NSMutableArray *deadAnimFrames = [NSMutableArray array];
     for (int i=0; i<=31; i++) {
         [deadAnimFrames addObject:
          [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
           [NSString stringWithFormat:@"sheet_372x305_%d.png",i]]];
     }
-    
-    CCAnimation *deadAnim = [CCAnimation animationWithSpriteFrames:deadAnimFrames delay:0.07f];
-    
-    self.deadAction = [CCRepeatForever actionWithAction:
-                       [CCAnimate actionWithAnimation:deadAnim]];
-    
-    
-    
-    return YES;
-    
+    self.deadAnim = [CCAnimation animationWithSpriteFrames:deadAnimFrames delay:0.041f];
+}
+
+
+-(void)loadNormalAnim{
+    NSMutableArray *normalAnimFrames = [NSMutableArray array];
+    for (int i=0; i<=13; i++) {
+        [normalAnimFrames addObject:
+         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+          [NSString stringWithFormat:@"sheet_256x256_%d.png",i]]];
+    }
+    self.normalAnim = [CCAnimation animationWithSpriteFrames:normalAnimFrames delay:0.041f];
     
 }
 
+
+
+
+-(void)dealloc{
+    [super dealloc];
+}
 
 
 

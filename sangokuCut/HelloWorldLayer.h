@@ -17,6 +17,7 @@
 #import "Zhangfei.h"
 #import "BaseCharacter.h"
 #import "CharacterDelegate.h"
+#import "Logic_Showup_01.h"
 
 //Pixel to metres ratio. Box2D uses metres as the unit for measurement.
 //This ratio defines how many pixels correspond to 1 Box2D "metre"
@@ -59,6 +60,8 @@
     
     NSMutableArray *enemyBox;
     BaseCharacter *hitTarget;
+    
+    Logic_Showup_01 *logic;
     
     
 }

@@ -7,156 +7,156 @@
             <key>zf_attack_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{776,518},{256,256}}</string>
+                <string>{{646,192},{162,188}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{-3,-27}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{44,61},{162,188}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
             <key>zf_attack_10.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{776,260},{256,256}}</string>
+                <string>{{162,194},{158,186}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{2,-29}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{51,64},{158,186}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
             <key>zf_attack_11.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{518,518},{256,256}}</string>
+                <string>{{810,192},{158,188}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{1,-28}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{50,62},{158,188}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
             <key>zf_attack_12.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{518,260},{256,256}}</string>
+                <string>{{2,194},{158,186}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{0,-28}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{49,63},{158,186}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
             <key>zf_attack_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{776,2},{256,256}}</string>
+                <string>{{484,194},{160,180}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{-6,-31}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{42,69},{160,180}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
             <key>zf_attack_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{518,2},{256,256}}</string>
+                <string>{{826,2},{160,170}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{-9,-36}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{39,79},{160,170}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
             <key>zf_attack_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{260,518},{256,256}}</string>
+                <string>{{322,194},{160,182}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{0,-31}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{48,68},{160,182}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
             <key>zf_attack_5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{260,260},{256,256}}</string>
+                <string>{{2,2},{166,190}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{5,-26}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{50,59},{166,190}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
             <key>zf_attack_6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{260,2},{256,256}}</string>
+                <string>{{170,2},{164,190}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{5,-26}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{51,59},{164,190}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
             <key>zf_attack_7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,518},{256,256}}</string>
+                <string>{{336,2},{162,190}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{4,-27}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{51,60},{162,190}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
             <key>zf_attack_8.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,260},{256,256}}</string>
+                <string>{{500,2},{162,188}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{3,-28}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{50,62},{162,188}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
             <key>zf_attack_9.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{256,256}}</string>
+                <string>{{664,2},{160,188}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{3,-28}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{51,62},{160,188}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
@@ -168,9 +168,9 @@
             <key>realTextureFileName</key>
             <string>zhangfei_attack.png</string>
             <key>size</key>
-            <string>{1034,776}</string>
+            <string>{988,382}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:c574d6e528f682e95c755632a60282b6:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:6defa737559fbc72e3998d679eae8389:1/1$</string>
             <key>textureFileName</key>
             <string>zhangfei_attack.png</string>
         </dict>

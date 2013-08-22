@@ -7,130 +7,130 @@
             <key>zf_injure_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1034,260},{256,256}}</string>
+                <string>{{176,188},{162,180}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{17,-31}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{64,69},{162,180}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
             <key>zf_injure_10.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1034,2},{256,256}}</string>
+                <string>{{340,186},{166,176}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{14,-33}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{59,73},{166,176}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
             <key>zf_injure_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{776,260},{256,256}}</string>
+                <string>{{170,2},{164,184}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{17,-29}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{63,65},{164,184}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
             <key>zf_injure_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{776,2},{256,256}}</string>
+                <string>{{2,2},{166,188}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{17,-27}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{62,61},{166,188}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
             <key>zf_injure_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{518,260},{256,256}}</string>
+                <string>{{336,2},{168,182}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{16,-30}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{60,67},{168,182}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
             <key>zf_injure_5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{518,2},{256,256}}</string>
+                <string>{{2,192},{172,176}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{15,-33}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{57,73},{172,176}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
             <key>zf_injure_6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{260,260},{256,256}}</string>
+                <string>{{688,174},{178,170}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{17,-37}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{56,80},{178,170}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
             <key>zf_injure_7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{260,2},{256,256}}</string>
+                <string>{{506,2},{180,172}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{16,-37}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{54,79},{180,172}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
             <key>zf_injure_8.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,260},{256,256}}</string>
+                <string>{{688,2},{178,170}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{16,-36}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{55,79},{178,170}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
             <key>zf_injure_9.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{256,256}}</string>
+                <string>{{508,176},{166,170}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{13,-36}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{58,79},{166,170}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
@@ -142,9 +142,9 @@
             <key>realTextureFileName</key>
             <string>zhangfei_injure.png</string>
             <key>size</key>
-            <string>{1293,518}</string>
+            <string>{868,370}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:7e9f150436f36dd3810f215bad1a643d:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:b587afc7b208db810b4b11769583e3c2:1/1$</string>
             <key>textureFileName</key>
             <string>zhangfei_injure.png</string>
         </dict>

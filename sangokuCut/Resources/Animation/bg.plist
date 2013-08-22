@@ -62,13 +62,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>bg_iphone.png</string>
+            <string>bg.png</string>
             <key>size</key>
             <string>{644,1144}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:7a7a2f5c900e13e2f6bc8d88b5383ae1:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:9f7b562260acb6a13c182a6c8c3e98d7:1/1$</string>
             <key>textureFileName</key>
-            <string>bg_iphone.png</string>
+            <string>bg.png</string>
         </dict>
     </dict>
 </plist>

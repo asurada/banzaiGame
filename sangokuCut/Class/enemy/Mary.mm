@@ -27,7 +27,7 @@
     }
     
     CCAnimation *normalAnim = [CCAnimation animationWithSpriteFrames:normalAnimFrames delay:0.07f];
-    
+    /*
     self.normalAction = [CCRepeatForever actionWithAction:
                          [CCAnimate actionWithAnimation:normalAnim]];
     
@@ -48,7 +48,7 @@
     
     self.injureAction = [CCRepeatForever actionWithAction:
                          [CCAnimate actionWithAnimation:injureAnim]];
-    
+    */
     
     
       /*
