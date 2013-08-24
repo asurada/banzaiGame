@@ -40,37 +40,38 @@
 
 
 -(void)gotCoin{
-    id moveTo = [CCMoveTo actionWithDuration:.9f position:ccp(100,400)];
-    [self runAction:[CCSequence actions:moveTo,nil]];
+
+    //id moveTo = [CCMoveTo actionWithDuration:.9f position:ccp(100,400)];
+    //[self runAction:[CCSequence actions:moveTo,nil]];
+    ballShapeDef.density = 0.0f;
+    ballBody->SetLinearVelocity(b2Vec2(0/PTM_RATIO,1000/PTM_RATIO));
 }
 
 
 
 -(void)initPhysics{
-    b2Fixture *_ballFixture;
-    // Create ball body
-    b2BodyDef ballBodyDef;
+    
     ballBodyDef.type = b2_dynamicBody;
     ballBodyDef.position.Set(self.position.x/PTM_RATIO, self.position.y/PTM_RATIO);
     ballBodyDef.userData = self;
-    b2Body * ballBody = _world->CreateBody(&ballBodyDef);
+    ballBody = _world->CreateBody(&ballBodyDef);
     
     // Create circle shape
     b2CircleShape circle;
     circle.m_radius = 8.0/PTM_RATIO;
-    
+
     // Create shape definition and add to body
-    b2FixtureDef ballShapeDef;
     ballShapeDef.shape = &circle;
     ballShapeDef.density = 10.0f;
-    ballShapeDef.friction = 6.f;
-    ballShapeDef.restitution = 1.0f;
+    ballShapeDef.friction = 0.f;
+    ballShapeDef.restitution = 0.6f;
+    
     _ballFixture = ballBody->CreateFixture(&ballShapeDef);
     
     // b2Vec2 force = b2Vec2(10, 10);
     // ballBody->ApplyLinearImpulse(force, ballBodyDef.position);
-    ballBody->SetAngularVelocity(1);
-    ballBody->SetLinearVelocity(b2Vec2(12/PTM_RATIO,32/PTM_RATIO));
+    ballBody->SetAngularVelocity(0);
+    ballBody->SetLinearVelocity(b2Vec2(0/PTM_RATIO,100/PTM_RATIO));
 }
 
 @end

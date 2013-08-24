@@ -58,9 +58,12 @@
             return [Zhangfei spriteWithFile];
             break;
         case 1:
+            return [Zhangfei spriteWithFile];
             return [Zombi spriteWithFile];
             break;
         case 2:
+            
+            return [Zhangfei spriteWithFile];
             return [Mary spriteWithFile];
             
         default:
@@ -79,7 +82,7 @@
    
     Coin *coin = [Coin spriteWithFile];
     if([coin initSprite]){
-        coin.position = location;
+        coin.position = ccp(location.x,location.y+40);
         coin.world = self.world;
         [coin initPhysics];
         [_layer addChild:coin z:sender.zOrder+10];

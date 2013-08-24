@@ -11,6 +11,8 @@
 		9C52471E17AF4F30001291C7 /* Deco_cloud_v1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C52471D17AF4F30001291C7 /* Deco_cloud_v1.png */; };
 		9C52472017AF5298001291C7 /* sheet_64x64_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C52471F17AF5298001291C7 /* sheet_64x64_2.png */; };
 		9C623F1417C632FD004704FB /* Logic_Showup_01.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C623F1317C632FD004704FB /* Logic_Showup_01.mm */; };
+		9C623F1717C91166004704FB /* Siheng.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C623F1617C91166004704FB /* Siheng.m */; };
+		9C623F1A17C911D7004704FB /* Siha.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C623F1917C911D6004704FB /* Siha.m */; };
 		9C8DD8AF17AA2A2000BC144B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8DD8AE17AA2A2000BC144B /* QuartzCore.framework */; };
 		9C8DD8B117AA2A2000BC144B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8DD8B017AA2A2000BC144B /* OpenGLES.framework */; };
 		9C8DD8B317AA2A2000BC144B /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8DD8B217AA2A2000BC144B /* OpenAL.framework */; };
@@ -286,6 +288,10 @@
 		9C52471F17AF5298001291C7 /* sheet_64x64_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sheet_64x64_2.png; sourceTree = "<group>"; };
 		9C623F1217C632FD004704FB /* Logic_Showup_01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logic_Showup_01.h; sourceTree = "<group>"; };
 		9C623F1317C632FD004704FB /* Logic_Showup_01.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Logic_Showup_01.mm; sourceTree = "<group>"; };
+		9C623F1517C91165004704FB /* Siheng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Siheng.h; sourceTree = "<group>"; };
+		9C623F1617C91166004704FB /* Siheng.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Siheng.m; sourceTree = "<group>"; };
+		9C623F1817C911D6004704FB /* Siha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Siha.h; sourceTree = "<group>"; };
+		9C623F1917C911D6004704FB /* Siha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Siha.m; sourceTree = "<group>"; };
 		9C8DD8AB17AA2A2000BC144B /* sangokuCut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sangokuCut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8DD8AE17AA2A2000BC144B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9C8DD8B017AA2A2000BC144B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1527,6 +1533,10 @@
 				9C8E589517BE41BA004CACDA /* Mary.mm */,
 				9C8E589917BF58FA004CACDA /* Coin.h */,
 				9C8E589A17BF58FB004CACDA /* Coin.mm */,
+				9C623F1517C91165004704FB /* Siheng.h */,
+				9C623F1617C91166004704FB /* Siheng.m */,
+				9C623F1817C911D6004704FB /* Siha.h */,
+				9C623F1917C911D6004704FB /* Siha.m */,
 			);
 			path = enemy;
 			sourceTree = "<group>";
@@ -1927,6 +1937,8 @@
 				9C8E58BE17C5F56F004CACDA /* ResourceLoad.mm in Sources */,
 				9C8E58C117C618C1004CACDA /* UserData.mm in Sources */,
 				9C623F1417C632FD004704FB /* Logic_Showup_01.mm in Sources */,
+				9C623F1717C91166004704FB /* Siheng.m in Sources */,
+				9C623F1A17C911D7004704FB /* Siha.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

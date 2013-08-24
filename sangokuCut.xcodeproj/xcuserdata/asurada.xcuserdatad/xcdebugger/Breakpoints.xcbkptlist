@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sangokuCut/HelloWorldLayer.mm"
-         timestampString = "399020425.838767"
+         timestampString = "399038768.805521"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "410"
-         endingLineNumber = "410"
+         startingLineNumber = "383"
+         endingLineNumber = "383"
          landmarkName = "-hitFinishedAnimation:"
          landmarkType = "5">
       </FileBreakpoint>

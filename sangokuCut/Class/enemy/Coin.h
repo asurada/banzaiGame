@@ -14,7 +14,11 @@
 
 
 @interface Coin : CCSprite{
-       b2World *_world;
+      b2World *_world;
+      b2Fixture *_ballFixture;
+      b2BodyDef ballBodyDef;
+      b2Body * ballBody;
+      b2FixtureDef ballShapeDef;
 }
 
 @property (nonatomic, strong) CCAction *coinAction;

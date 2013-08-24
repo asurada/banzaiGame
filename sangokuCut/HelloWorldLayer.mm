@@ -161,7 +161,7 @@ enum {
 	CGSize s = [[CCDirector sharedDirector] winSize];
 	
 	b2Vec2 gravity;
-	gravity.Set(0.0f, -10.0f);
+	gravity.Set(0.0f, -16.0f);
 	world = new b2World(gravity);
 	
 	
@@ -301,6 +301,7 @@ int tickCnt;
             ballData.position = ccp(b->GetPosition().x * PTM_RATIO,
                                     b->GetPosition().y * PTM_RATIO);
             ballData.rotation = -1 * CC_RADIANS_TO_DEGREES(b->GetAngle());
+            
         }
     }
 }
@@ -372,34 +373,6 @@ int tickCnt;
         _bladeSparkle.position = location;
         [_bladeSparkle resetSystem];
         [self hit:touch at:location];
-        
-        /*
-        CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
-        if (CGRectContainsPoint(zf.boundingBox, touchLocation)) {
-            [zf hit];
-            hit = [CCSprite spriteWithFile:@"hit_normal.png"];
-            hit.position = location;
-            [self addChild:hit z:15];
-            
-            [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"hit.plist"];
-            NSMutableArray *hitAnimFrames = [NSMutableArray array];
-            for (int i=0; i<=4; i++) {
-                [hitAnimFrames addObject:
-                 [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-                  [NSString stringWithFormat:@"sheet_256x256_%d.png",i]]];
-            }
-            hitAnim = [CCAnimation animationWithSpriteFrames:hitAnimFrames delay:0.02f];
-            
-            id animation = [CCAnimate actionWithAnimation:hitAnim];
-            id repeat = [CCRepeat actionWithAction:animation times:1];
-            id callback =   [CCCallFuncO actionWithTarget:hit selector:@selector(removeFromParentAndCleanup:) object:[CCNode node]];//[CCCallFuncN actionWithTarget:self selector:@selector(removeFromParentAndCleanup:) data:(void*)YES];
-            id sequence = [CCSequence actions:repeat, callback,nil];
-          
-            
-            [hit runAction:sequence];
-            break;
-        }
-         */
     }
 }
 
@@ -477,10 +450,18 @@ int tickCnt;
 
 -(void)hit:(UITouch *)touch at:(CGPoint )location{
     for (BaseCharacter *enemy in logic.enemyBox) {
+      if([enemy isEqual:[NSNull null]]){
+         continue;
+      }
       CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
       CGRect particularSpriteRect = CGRectMake(enemy.position.x - 25, enemy.position.y-20, 50,50);
       if (CGRectContainsPoint(particularSpriteRect, touchLocation)) {
-        if([enemy getState] != injure && [enemy getState] != dead && [enemy getState] != standby){
+        if(enemy!= nil &&
+           ![enemy isEqual:[NSNull null]] &&
+           [enemy getState] != injure &&
+           [enemy getState] != dead &&
+           [enemy getState] != standby){
+            
            [enemy hit];
             hit = [CCSprite spriteWithFile:@"hit_normal.png"];
             hit.position = location;
