@@ -20,7 +20,7 @@
     [super initSprite];
     _hp = 4;
     _injureHp = 2;
-    _intervalSpaceMove = 98;
+    _intervalSpaceMove = 94;
     _intervalTimeMove =.5f;
     _name = @"zombi";
     return YES;
@@ -78,7 +78,13 @@
 }
 
 
+-(void)injure{
+    _state = injure;
+}
 
+-(void)attack{
+    
+}
 
 -(void)dealloc{
     [super dealloc];

@@ -8,25 +8,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sangokuCut/HelloWorldLayer.mm"
-         timestampString = "398866900.377748"
+         timestampString = "399020425.838767"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "422"
-         endingLineNumber = "422"
+         startingLineNumber = "410"
+         endingLineNumber = "410"
          landmarkName = "-hitFinishedAnimation:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "sangokuCut/HelloWorldLayer.mm"
-         timestampString = "398866900.377748"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "507"
-         endingLineNumber = "507"
-         landmarkName = "-hit:at:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -47,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sangokuCut/Class/enemy/BaseCharacter.mm"
-         timestampString = "398866900.377748"
+         timestampString = "399025291.364212"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "138"
-         endingLineNumber = "138"
+         startingLineNumber = "140"
+         endingLineNumber = "140"
          landmarkName = "@implementation BaseCharacter"
          landmarkType = "3">
       </FileBreakpoint>
@@ -60,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sangokuCut/Class/enemy/BaseCharacter.mm"
-         timestampString = "398866900.377748"
+         timestampString = "399025291.364212"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "159"
-         endingLineNumber = "159"
+         startingLineNumber = "161"
+         endingLineNumber = "161"
          landmarkName = "-hit"
          landmarkType = "5">
       </FileBreakpoint>
@@ -86,20 +73,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sangokuCut/Class/Logic_Showup_01.m"
-         timestampString = "398867621.012902"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "28"
-         endingLineNumber = "28"
-         landmarkName = "-showEnemey:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "sangokuCut/Class/Logic_Showup_01.m"
-         timestampString = "398867621.012902"
+         timestampString = "398871905.228319"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "34"
@@ -112,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sangokuCut/Class/Logic_Showup_01.m"
-         timestampString = "398867621.012902"
+         timestampString = "398871905.228319"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "26"
-         endingLineNumber = "26"
+         startingLineNumber = "42"
+         endingLineNumber = "42"
          landmarkName = "-showEnemey:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -125,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sangokuCut/Class/Logic_Showup_01.m"
-         timestampString = "398867680.791459"
+         timestampString = "398871905.228319"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "33"
-         endingLineNumber = "33"
+         startingLineNumber = "32"
+         endingLineNumber = "32"
          landmarkName = "-showEnemey:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -138,11 +112,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sangokuCut/Class/Logic_Showup_01.m"
-         timestampString = "398867687.957752"
+         timestampString = "398871905.228319"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "25"
-         endingLineNumber = "25"
+         startingLineNumber = "41"
+         endingLineNumber = "41"
+         landmarkName = "-showEnemey:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sangokuCut/Class/Logic_Showup_01.m"
+         timestampString = "398871905.228319"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "31"
+         endingLineNumber = "31"
          landmarkName = "-showEnemey:"
          landmarkType = "5">
       </FileBreakpoint>

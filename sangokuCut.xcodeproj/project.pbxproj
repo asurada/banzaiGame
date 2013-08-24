@@ -10,7 +10,7 @@
 		9C52471C17AF4E7C001291C7 /* Deco_shine_v1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C52471B17AF4E7C001291C7 /* Deco_shine_v1.png */; };
 		9C52471E17AF4F30001291C7 /* Deco_cloud_v1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C52471D17AF4F30001291C7 /* Deco_cloud_v1.png */; };
 		9C52472017AF5298001291C7 /* sheet_64x64_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C52471F17AF5298001291C7 /* sheet_64x64_2.png */; };
-		9C623F1417C632FD004704FB /* Logic_Showup_01.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C623F1317C632FD004704FB /* Logic_Showup_01.m */; };
+		9C623F1417C632FD004704FB /* Logic_Showup_01.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C623F1317C632FD004704FB /* Logic_Showup_01.mm */; };
 		9C8DD8AF17AA2A2000BC144B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8DD8AE17AA2A2000BC144B /* QuartzCore.framework */; };
 		9C8DD8B117AA2A2000BC144B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8DD8B017AA2A2000BC144B /* OpenGLES.framework */; };
 		9C8DD8B317AA2A2000BC144B /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8DD8B217AA2A2000BC144B /* OpenAL.framework */; };
@@ -251,7 +251,7 @@
 		9C8E589317BE418B004CACDA /* Zombi.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E589217BE418B004CACDA /* Zombi.mm */; };
 		9C8E589617BE41BA004CACDA /* Mary.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E589517BE41BA004CACDA /* Mary.mm */; };
 		9C8E589817BF0F62004CACDA /* mary_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E589717BF0F5D004CACDA /* mary_normal.png */; };
-		9C8E589B17BF58FC004CACDA /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E589A17BF58FB004CACDA /* Coin.m */; };
+		9C8E589B17BF58FC004CACDA /* Coin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E589A17BF58FB004CACDA /* Coin.mm */; };
 		9C8E58A017BF5B47004CACDA /* hit.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E589E17BF5B44004CACDA /* hit.plist */; };
 		9C8E58A117BF5B47004CACDA /* hit.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E589F17BF5B45004CACDA /* hit.png */; };
 		9C8E58A417BF5B86004CACDA /* coin.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E58A217BF5B83004CACDA /* coin.plist */; };
@@ -285,7 +285,7 @@
 		9C52471D17AF4F30001291C7 /* Deco_cloud_v1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Deco_cloud_v1.png; sourceTree = "<group>"; };
 		9C52471F17AF5298001291C7 /* sheet_64x64_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sheet_64x64_2.png; sourceTree = "<group>"; };
 		9C623F1217C632FD004704FB /* Logic_Showup_01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logic_Showup_01.h; sourceTree = "<group>"; };
-		9C623F1317C632FD004704FB /* Logic_Showup_01.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Logic_Showup_01.m; sourceTree = "<group>"; };
+		9C623F1317C632FD004704FB /* Logic_Showup_01.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Logic_Showup_01.mm; sourceTree = "<group>"; };
 		9C8DD8AB17AA2A2000BC144B /* sangokuCut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sangokuCut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8DD8AE17AA2A2000BC144B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9C8DD8B017AA2A2000BC144B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -734,7 +734,7 @@
 		9C8E589517BE41BA004CACDA /* Mary.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Mary.mm; sourceTree = "<group>"; };
 		9C8E589717BF0F5D004CACDA /* mary_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mary_normal.png; sourceTree = "<group>"; };
 		9C8E589917BF58FA004CACDA /* Coin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coin.h; sourceTree = "<group>"; };
-		9C8E589A17BF58FB004CACDA /* Coin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coin.m; sourceTree = "<group>"; };
+		9C8E589A17BF58FB004CACDA /* Coin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Coin.mm; sourceTree = "<group>"; };
 		9C8E589E17BF5B44004CACDA /* hit.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hit.plist; sourceTree = "<group>"; };
 		9C8E589F17BF5B45004CACDA /* hit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hit.png; sourceTree = "<group>"; };
 		9C8E58A217BF5B83004CACDA /* coin.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = coin.plist; sourceTree = "<group>"; };
@@ -1526,7 +1526,7 @@
 				9C8E589417BE41B9004CACDA /* Mary.h */,
 				9C8E589517BE41BA004CACDA /* Mary.mm */,
 				9C8E589917BF58FA004CACDA /* Coin.h */,
-				9C8E589A17BF58FB004CACDA /* Coin.m */,
+				9C8E589A17BF58FB004CACDA /* Coin.mm */,
 			);
 			path = enemy;
 			sourceTree = "<group>";
@@ -1566,7 +1566,7 @@
 				9C8E58BF17C618C0004CACDA /* UserData.h */,
 				9C8E58C017C618C0004CACDA /* UserData.mm */,
 				9C623F1217C632FD004704FB /* Logic_Showup_01.h */,
-				9C623F1317C632FD004704FB /* Logic_Showup_01.m */,
+				9C623F1317C632FD004704FB /* Logic_Showup_01.mm */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
@@ -1921,12 +1921,12 @@
 				9C8E589017BE4178004CACDA /* Zhangfei.mm in Sources */,
 				9C8E589317BE418B004CACDA /* Zombi.mm in Sources */,
 				9C8E589617BE41BA004CACDA /* Mary.mm in Sources */,
-				9C8E589B17BF58FC004CACDA /* Coin.m in Sources */,
+				9C8E589B17BF58FC004CACDA /* Coin.mm in Sources */,
 				9C8E58B217C0CC32004CACDA /* EnemyData.mm in Sources */,
 				9C8E58BB17C5F559004CACDA /* Logic.mm in Sources */,
 				9C8E58BE17C5F56F004CACDA /* ResourceLoad.mm in Sources */,
 				9C8E58C117C618C1004CACDA /* UserData.mm in Sources */,
-				9C623F1417C632FD004704FB /* Logic_Showup_01.m in Sources */,
+				9C623F1417C632FD004704FB /* Logic_Showup_01.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

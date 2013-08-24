@@ -58,7 +58,6 @@
     
     CCAnimation *hitAnim;
     
-    NSMutableArray *enemyBox;
     BaseCharacter *hitTarget;
     
     Logic_Showup_01 *logic;

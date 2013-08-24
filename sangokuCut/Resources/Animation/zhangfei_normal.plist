@@ -7,7 +7,7 @@
             <key>zf_normal_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{330,192},{162,188}}</string>
+                <string>{{324,188},{162,188}}</string>
                 <key>offset</key>
                 <string>{-3,-27}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>zf_normal_10.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{330,758},{162,186}}</string>
+                <string>{{324,748},{162,186}}</string>
                 <key>offset</key>
                 <string>{-4,-28}</string>
                 <key>rotated</key>
@@ -33,7 +33,7 @@
             <key>zf_normal_11.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{330,570},{162,186}}</string>
+                <string>{{324,562},{162,186}}</string>
                 <key>offset</key>
                 <string>{-4,-28}</string>
                 <key>rotated</key>
@@ -46,7 +46,7 @@
             <key>zf_normal_12.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,380},{162,188}}</string>
+                <string>{{0,374},{162,188}}</string>
                 <key>offset</key>
                 <string>{-4,-27}</string>
                 <key>rotated</key>
@@ -59,7 +59,7 @@
             <key>zf_normal_13.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{166,192},{162,188}}</string>
+                <string>{{162,188},{162,188}}</string>
                 <key>offset</key>
                 <string>{-3,-27}</string>
                 <key>rotated</key>
@@ -72,7 +72,7 @@
             <key>zf_normal_14.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,190},{162,188}}</string>
+                <string>{{0,186},{162,188}}</string>
                 <key>offset</key>
                 <string>{-3,-27}</string>
                 <key>rotated</key>
@@ -85,7 +85,7 @@
             <key>zf_normal_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{168,2},{162,188}}</string>
+                <string>{{164,0},{162,188}}</string>
                 <key>offset</key>
                 <string>{-3,-27}</string>
                 <key>rotated</key>
@@ -98,7 +98,7 @@
             <key>zf_normal_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{166,758},{162,186}}</string>
+                <string>{{162,748},{162,186}}</string>
                 <key>offset</key>
                 <string>{-3,-28}</string>
                 <key>rotated</key>
@@ -111,7 +111,7 @@
             <key>zf_normal_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{166,570},{162,186}}</string>
+                <string>{{162,562},{162,186}}</string>
                 <key>offset</key>
                 <string>{-3,-28}</string>
                 <key>rotated</key>
@@ -124,7 +124,7 @@
             <key>zf_normal_5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,758},{162,186}}</string>
+                <string>{{0,748},{162,186}}</string>
                 <key>offset</key>
                 <string>{-2,-28}</string>
                 <key>rotated</key>
@@ -137,7 +137,7 @@
             <key>zf_normal_6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{164,186}}</string>
+                <string>{{0,0},{164,186}}</string>
                 <key>offset</key>
                 <string>{-3,-28}</string>
                 <key>rotated</key>
@@ -150,7 +150,7 @@
             <key>zf_normal_7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,570},{162,186}}</string>
+                <string>{{0,562},{162,186}}</string>
                 <key>offset</key>
                 <string>{-3,-28}</string>
                 <key>rotated</key>
@@ -163,7 +163,7 @@
             <key>zf_normal_8.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{330,382},{162,186}}</string>
+                <string>{{324,376},{162,186}}</string>
                 <key>offset</key>
                 <string>{-3,-28}</string>
                 <key>rotated</key>
@@ -176,7 +176,7 @@
             <key>zf_normal_9.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{166,382},{162,186}}</string>
+                <string>{{162,376},{162,186}}</string>
                 <key>offset</key>
                 <string>{-3,-28}</string>
                 <key>rotated</key>
@@ -194,9 +194,9 @@
             <key>realTextureFileName</key>
             <string>zhangfei_normal.png</string>
             <key>size</key>
-            <string>{494,946}</string>
+            <string>{486,934}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:fa4715ecb39f331d45cf8fcde5c1d0c2:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:05e559cd6e25e05d2eaabf9c85497eda:1/1$</string>
             <key>textureFileName</key>
             <string>zhangfei_normal.png</string>
         </dict>

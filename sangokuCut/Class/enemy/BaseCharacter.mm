@@ -83,13 +83,14 @@
     id callback = [CCCallFunc actionWithTarget:self selector:@selector(finishMoveUp)];
     [self runAction:[CCSequence actions:moveTo,callback,nil]];
     [self normal];
-    [self schedule:@selector(moveDown) interval:9];
+    [self schedule:@selector(moveDown) interval:5.3];
 }
 
 
 
 
 -(void)moveDown{
+    [self unscheduleAllSelectors];
     _state = moving;
     id moveTo = [CCMoveTo actionWithDuration:self.intervalTimeMove position:ccp(self.position.x,self.position.y-self.intervalSpaceMove)];
     id callback = [CCCallFunc actionWithTarget:self selector:@selector(finishMoveDown)];
@@ -110,6 +111,7 @@
 }
 
 -(void)finishDead{
+    [self unscheduleAllSelectors];
     _injureAnim = nil;
     _normalAnim = nil;;
     _deadAnim = nil;
@@ -168,9 +170,9 @@
 }
 
 -(void)stopAction{
-    [self stopAction:_attackAction];
-    [self stopAction:_normalAction];
-    [self stopAction:_injureAction];
+    [_attackAction stop];
+    [_injureAction stop];
+    [_normalAction stop];
 
 }
 

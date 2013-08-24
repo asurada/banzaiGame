@@ -12,86 +12,78 @@
 
 
 +(id)spriteWithFile{
-    return [super spriteWithFile:@"mary_normal.png" rect:CGRectMake(0, 0, 256, 256)];
+    return [super spriteWithSpriteFrameName:@"girl_injure_0.png"];
 }
 
 
 -(BOOL)initSprite{
-    
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Girl_normal.plist"];
-    NSMutableArray *normalAnimFrames = [NSMutableArray array];
-    for (int i=1; i<=13; i++) {
-        [normalAnimFrames addObject:
-         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-          [NSString stringWithFormat:@"sheet_256x256_%d.png",i]]];
-    }
-    
-    CCAnimation *normalAnim = [CCAnimation animationWithSpriteFrames:normalAnimFrames delay:0.07f];
-    /*
-    self.normalAction = [CCRepeatForever actionWithAction:
-                         [CCAnimate actionWithAnimation:normalAnim]];
-    
-    
-    
-    
-    
-  
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Girl_injure.plist"];
-    NSMutableArray *injureAnimFrames = [NSMutableArray array];
-    for (int i=0; i<=19; i++) {
-        [injureAnimFrames addObject:
-         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-          [NSString stringWithFormat:@"sheet_256x256_%d.png",i]]];
-    }
-    
-    CCAnimation *injureAnim = [CCAnimation animationWithSpriteFrames:injureAnimFrames delay:0.07f];
-    
-    self.injureAction = [CCRepeatForever actionWithAction:
-                         [CCAnimate actionWithAnimation:injureAnim]];
-    */
-    
-    
-      /*
-    
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_attack.plist"];
-    NSMutableArray *attackAnimFrames = [NSMutableArray array];
-    for (int i=1; i<=12; i++) {
-        [attackAnimFrames addObject:
-         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-          [NSString stringWithFormat:@"sheet_%d.png",i]]];
-    }
-    
-    CCAnimation *attackAnim = [CCAnimation animationWithSpriteFrames:attackAnimFrames delay:0.07f];
-    
-    self.attackAction = [CCRepeatForever actionWithAction:
-                         [CCAnimate actionWithAnimation:attackAnim]];
-    
-    
-    
-    
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead0.plist"];
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead1.plist"];
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead2.plist"];
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead3.plist"];
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead4.plist"];
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead5.plist"];
-    NSMutableArray *deadAnimFrames = [NSMutableArray array];
-    for (int i=1; i<=47; i++) {
-        [deadAnimFrames addObject:
-         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-          [NSString stringWithFormat:@"sheet_%d.png",i]]];
-    }
-    
-    CCAnimation *deadAnim = [CCAnimation animationWithSpriteFrames:deadAnimFrames delay:0.07f];
-    
-    self.deadAction = [CCRepeatForever actionWithAction:
-                       [CCAnimate actionWithAnimation:deadAnim]];
-    
-    */
-    
+    [super initSprite];
+    _hp = 10;
+    _injureHp = 2;
+    _intervalSpaceMove = 98;
+    _intervalTimeMove =.5f;
+    _name = @"mary";
     return YES;
     
+}
+
+
+-(void)loadInjureAnim{
     
+     NSMutableArray *injureAnimFrames = [NSMutableArray array];
+     for (int i=1; i<=10; i++) {
+     [injureAnimFrames addObject:
+     [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+     [NSString stringWithFormat:@"girl_injure_%d.png",i]]];
+     }
+     self.injureAnim = [CCAnimation animationWithSpriteFrames:injureAnimFrames delay:0.041f];
+}
+
+
+
+-(void)loadAttackAnim{
+    /*
+     NSMutableArray *attackAnimFrames = [NSMutableArray array];
+     for (int i=1; i<=12; i++) {
+     [attackAnimFrames addObject:
+     [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+     [NSString stringWithFormat:@"zf_attack_%d.png",i]]];
+     }
+     self.attackAnim = [CCAnimation animationWithSpriteFrames:attackAnimFrames delay:0.041f];
+     */
+}
+
+
+
+-(void)loadDeadAnim{
+    /*
+    NSMutableArray *deadAnimFrames = [NSMutableArray array];
+    for (int i=0; i<=31; i++) {
+        [deadAnimFrames addObject:
+         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+          [NSString stringWithFormat:@"sheet_372x305_%d.png",i]]];
+    }
+    self.deadAnim = [CCAnimation animationWithSpriteFrames:deadAnimFrames delay:0.041f];
+     */
+}
+
+
+-(void)loadNormalAnim{
+    NSMutableArray *normalAnimFrames = [NSMutableArray array];
+    for (int i=0; i<=13; i++) {
+        [normalAnimFrames addObject:
+         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+          [NSString stringWithFormat:@"girl_normal_%d.png",i]]];
+    }
+    self.normalAnim = [CCAnimation animationWithSpriteFrames:normalAnimFrames delay:0.041f];
+    
+}
+
+
+
+
+-(void)dealloc{
+    [super dealloc];
 }
 
 

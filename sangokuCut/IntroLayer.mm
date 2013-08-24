@@ -47,7 +47,8 @@
         [[CCTextureCache sharedTextureCache]addImage:@"zhangfei_dead2.png"];
         [[CCTextureCache sharedTextureCache]addImage:@"zombi_lv1_dead.png"];
         [[CCTextureCache sharedTextureCache]addImage:@"zombi_lv1.png"];
-        
+        [[CCTextureCache sharedTextureCache]addImage:@"Girl_injure.png"];
+        [[CCTextureCache sharedTextureCache]addImage:@"Girl_normal.png"];
         
         
         CCTextureCache *cache = [CCTextureCache sharedTextureCache];
@@ -71,6 +72,12 @@
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zombi_lv1_dead.plist"];
         texture2D = [cache textureForKey:@"zombi_lv1.png"];
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zombi_lv1.plist"];
+        texture2D = [cache textureForKey:@"Girl_injure.png"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Girl_injure.plist"];
+        texture2D = [cache textureForKey:@"Girl_normal.png"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Girl_normal.plist"];
+        
+        
 		// ask director for the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
 		

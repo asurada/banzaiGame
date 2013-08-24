@@ -70,13 +70,14 @@ enum {
   
         logic = [[[Logic_Showup_01 alloc]init]iniLogic:nil];
         logic.layer = self;
+        logic.world = world;
         
         
         [self initBackground_iphone5];
        
        
         CGSize winSize = [[CCDirector sharedDirector] winSize];
-        enemyBox = [[NSMutableArray alloc]init];
+
   
         
         // initialize the blade effect
@@ -123,30 +124,7 @@ enum {
 
         self.touchEnabled = YES;
         
-        
-		//self.accelerometerEnabled = YES;
-        
-        // create reset button
-		//[self createMenu];
-		//Set up sprite
-//#if 1
-//		// Use batch node. Faster
-//		CCSpriteBatchNode *parent = [CCSpriteBatchNode batchNodeWithFile:@"blocks.png" capacity:100];
-//		spriteTexture_ = [parent texture];
-//#else
-//		// doesn't use batch node. Slower
-//		spriteTexture_ = [[CCTextureCache sharedTextureCache] addImage:@"blocks.png"];
-//		CCNode *parent = [CCNode node];
-//#endif
-//		[self addChild:parent z:0 tag:kTagParentNode];
-//		
-//		
-//		[self addNewSpriteAtPosition:ccp(s.width/2, s.height/2)];
-//		
-//		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Tap screen" fontName:@"Marker Felt" fontSize:32];
-//		[self addChild:label z:0];
-//		[label setColor:ccc3(0,0,255)];
-//		label.position = ccp( s.width/2, s.height-50);
+
         
         [self scheduleUpdate];
 	}
@@ -300,6 +278,9 @@ int tickCnt;
 	[sprite setPosition: ccp( p.x, p.y)];
 }
 
+
+
+
 -(void) update: (ccTime) dt
 {
 	//It is recommended that a fixed time step is used with Box2D for stability
@@ -309,12 +290,19 @@ int tickCnt;
 	
 	int32 velocityIterations = 8;
 	int32 positionIterations = 1;
-    
-    [self spriteLoop];
 	
 	// Instruct the world to perform a single step of simulation. It is
 	// generally best to keep the time step and iterations fixed.
-	world->Step(dt, velocityIterations, positionIterations);	
+	world->Step(dt, velocityIterations, positionIterations);
+	
+    for(b2Body *b = world->GetBodyList(); b; b=b->GetNext()) {
+        if (b->GetUserData() != NULL) {
+            CCSprite *ballData = (CCSprite *)b->GetUserData();
+            ballData.position = ccp(b->GetPosition().x * PTM_RATIO,
+                                    b->GetPosition().y * PTM_RATIO);
+            ballData.rotation = -1 * CC_RADIANS_TO_DEGREES(b->GetAngle());
+        }
+    }
 }
 
 
@@ -488,7 +476,7 @@ int tickCnt;
 
 
 -(void)hit:(UITouch *)touch at:(CGPoint )location{
-    for (BaseCharacter *enemy in enemyBox) {
+    for (BaseCharacter *enemy in logic.enemyBox) {
       CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
       CGRect particularSpriteRect = CGRectMake(enemy.position.x - 25, enemy.position.y-20, 50,50);
       if (CGRectContainsPoint(particularSpriteRect, touchLocation)) {
@@ -505,6 +493,7 @@ int tickCnt;
                [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
                [NSString stringWithFormat:@"sheet_256x256_%d.png",i]]];
             }
+            
             hitAnim = [CCAnimation animationWithSpriteFrames:hitAnimFrames delay:0.07f];
             id hitAnimation = [CCAnimate actionWithAnimation:hitAnim];
             id repeat = [CCRepeat actionWithAction:hitAnimation times:1];
@@ -516,6 +505,16 @@ int tickCnt;
           
       }
    }
+    
+    
+    
+    for (Coin *coin in logic.coinBox) {
+        CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
+        CGRect particularSpriteRect = CGRectMake(coin.position.x, coin.position.y, 60,60);
+        if (CGRectContainsPoint(particularSpriteRect, touchLocation)) {
+            [coin gotCoin];
+        }
+    }
     
 }
 
@@ -544,38 +543,6 @@ int tickCnt;
 
 
 
-
-/*
- * The main loop for tossing sprites. Picks out random fruits to be tossed based on a toss type.
- */
--(void)spriteLoop
-{
-    //double curTime = CACurrentMediaTime();
-    
-    //execute only when it's time to toss sprites again
-    if (true)
-    {
-        PolygonSprite *sprite;
-        
-        int chance = arc4random()%8;
-        if (chance == 0)
-        {
-            CCARRAY_FOREACH(_cache, sprite)
-            {
-                //if (sprite.state == kStateIdle && sprite.type == kTypeBomb)
-                {
-                  
-                    //CGPoint randomPosition = ccp(0,0);
-                    //sprite.position = randomPosition;
-                    //sprite.body->SetLinearVelocity(b2Vec2(randomXVelocity/PTM_RATIO,randomYVelocity/PTM_RATIO));
-                    //sprite.body->SetAngularVelocity(randomAngularVelocity);
-
-                    break;
-                }
-            }
-        }
-     }
-}
 
 
 // Add these methods

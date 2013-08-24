@@ -4,185 +4,185 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>sheet_256x256_0.png</key>
+            <key>girl_normal_0.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1550,260},{256,256}}</string>
+                <string>{{306,426},{150,210}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{1,-13}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{54,36},{150,210}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_1.png</key>
+            <key>girl_normal_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1550,2},{256,256}}</string>
+                <string>{{154,426},{150,210}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{2,-13}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{55,36},{150,210}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_10.png</key>
+            <key>girl_normal_10.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1292,260},{256,256}}</string>
+                <string>{{458,214},{150,210}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{-5,-13}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{48,36},{150,210}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_11.png</key>
+            <key>girl_normal_11.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1292,2},{256,256}}</string>
+                <string>{{306,214},{150,210}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{-4,-13}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{49,36},{150,210}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_12.png</key>
+            <key>girl_normal_12.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1034,260},{256,256}}</string>
+                <string>{{154,214},{150,210}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{-2,-13}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{51,36},{150,210}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_13.png</key>
+            <key>girl_normal_13.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1034,2},{256,256}}</string>
+                <string>{{2,424},{150,210}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{-1,-13}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{52,36},{150,210}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_2.png</key>
+            <key>girl_normal_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{776,260},{256,256}}</string>
+                <string>{{458,636},{150,208}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{3,-14}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{56,38},{150,208}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_3.png</key>
+            <key>girl_normal_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{776,2},{256,256}}</string>
+                <string>{{458,426},{150,208}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{4,-14}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{57,38},{150,208}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_4.png</key>
+            <key>girl_normal_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{518,260},{256,256}}</string>
+                <string>{{2,2},{152,208}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{4,-14}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{56,38},{152,208}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_5.png</key>
+            <key>girl_normal_5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{518,2},{256,256}}</string>
+                <string>{{2,636},{150,208}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{2,-14}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{55,38},{150,208}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_6.png</key>
+            <key>girl_normal_6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{260,260},{256,256}}</string>
+                <string>{{308,2},{150,210}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{-1,-13}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{52,36},{150,210}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_7.png</key>
+            <key>girl_normal_7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{260,2},{256,256}}</string>
+                <string>{{2,212},{150,210}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{-4,-13}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{49,36},{150,210}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_8.png</key>
+            <key>girl_normal_8.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,260},{256,256}}</string>
+                <string>{{460,2},{148,210}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{-4,-13}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{50,36},{148,210}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
-            <key>sheet_256x256_9.png</key>
+            <key>girl_normal_9.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{256,256}}</string>
+                <string>{{156,2},{150,210}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{-5,-13}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{256,256}}</string>
+                <string>{{48,36},{150,210}}</string>
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
@@ -194,9 +194,9 @@
             <key>realTextureFileName</key>
             <string>Girl_normal.png</string>
             <key>size</key>
-            <string>{1808,518}</string>
+            <string>{610,846}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:a516d1476b733159cb53cb05e1100afc:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:54fa49bab480667edadcfd1021d0f8a6:1/1$</string>
             <key>textureFileName</key>
             <string>Girl_normal.png</string>
         </dict>

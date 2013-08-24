@@ -8,6 +8,8 @@
 
 #import "Logic.h"
 
-@interface Logic_Showup_01 : Logic
+@interface Logic_Showup_01 : Logic{
+
+}
 
 @end

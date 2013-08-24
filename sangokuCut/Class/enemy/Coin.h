@@ -7,14 +7,23 @@
 //
 
 #import "cocos2d.h"
+#import "Box2D.h"
+#import "GLES-Render.h"
+
+#define PTM_RATIO 32
 
 
-@interface Coin : CCSprite
+@interface Coin : CCSprite{
+       b2World *_world;
+}
 
 @property (nonatomic, strong) CCAction *coinAction;
 
+@property(nonatomic,assign)b2World *world;
 
 +(id)spriteWithFile;
 -(BOOL)initSprite;
+-(void)gotCoin;
+-(void)initPhysics;
 
 @end
