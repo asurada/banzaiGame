@@ -71,6 +71,7 @@ enum {
         logic = [[[Logic_Showup_01 alloc]init]iniLogic:nil];
         logic.layer = self;
         logic.world = world;
+        logic.charDelegate = self;
         
         
         [self initBackground_iphone5];
@@ -448,6 +449,15 @@ int tickCnt;
 }
 
 
+
+-(void)onBeforeCharacterDead:(CCSprite *)sender{
+    enemyCount++;
+    [_zombiLabel setString:[NSString stringWithFormat:@"%d",enemyCount]];
+    
+}
+
+
+
 -(void)hit:(UITouch *)touch at:(CGPoint )location{
     for (BaseCharacter *enemy in logic.enemyBox) {
       if([enemy isEqual:[NSNull null]]){
@@ -488,15 +498,20 @@ int tickCnt;
    }
     
     
-    
-    for (Coin *coin in logic.coinBox) {
-        CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
-        CGRect particularSpriteRect = CGRectMake(coin.position.x, coin.position.y, 60,60);
-        if (CGRectContainsPoint(particularSpriteRect, touchLocation)) {
-            [coin gotCoin];
+        NSLog(@"coinBox count: %d",logic.coinBox.count);
+        for (int index=0; index<logic.coinBox.count; index++) {
+            Coin *coin = [logic.coinBox objectAtIndex:index];
+            NSLock *arrayLock = [[NSLock alloc] init];
+            CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
+            CGRect particularSpriteRect = CGRectMake(coin.position.x, coin.position.y, coin.contentSize.width,coin.contentSize.height);
+            if (CGRectContainsPoint(particularSpriteRect, touchLocation)) {
+                coinCount++;
+                [_coinLabel setString:[NSString stringWithFormat:@"%d",coinCount]];
+                [coin gotCoin];
+                coin = nil;
+                return;
+            }
         }
-    }
-    
 }
 
 
@@ -574,9 +589,10 @@ int tickCnt;
     
 	CCTexture2DPixelFormat currentFormat = [CCTexture2D defaultAlphaPixelFormat];
 	[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
-	_zombiLabel =  [[CCLabelAtlas alloc]  initWithString:@"123" charMapFile:@"numbers.png" itemWidth:20 itemHeight:32 startCharMap:'.'];
-	_coinLabel =  [[CCLabelAtlas alloc]  initWithString:@"123" charMapFile:@"numbers.png" itemWidth:20 itemHeight:32 startCharMap:'.'];
-	
+	_zombiLabel =  [[CCLabelAtlas alloc]  initWithString:@"0" charMapFile:@"numbers.png" itemWidth:20 itemHeight:32 startCharMap:'.'];
+	_coinLabel =  [[CCLabelAtlas alloc]  initWithString:@"0" charMapFile:@"numbers.png" itemWidth:20 itemHeight:32 startCharMap:'.'];
+
+ 
 	[CCTexture2D setDefaultAlphaPixelFormat:currentFormat];
     _zombiLabel.position = ccp(_zombiIcon.position.x+20,_zombiIcon.position.y-15);
     _coinLabel.position = ccp(_coinIcon.position.x+20,_coinIcon.position.y-15);
@@ -585,6 +601,8 @@ int tickCnt;
     [self addChild:_coinLabel z:14];
 	
 }
+
+
 
 
 

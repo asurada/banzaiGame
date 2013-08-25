@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "CharacterDelegate.h"
+#import "ItemDelegate.h"
 #import "Box2D.h"
 #import "GLES-Render.h"
 #import "BaseCharacter.h"
-@interface Logic : NSObject<CharacterDelegate>{
+@interface Logic : NSObject<CharacterDelegate,ItemDelegate>{
     int cnt;
     NSMutableArray *_enemyBox;
     NSMutableArray *_coinBox;
@@ -27,6 +28,7 @@
 @property(nonatomic,retain)CCLayer *layer;
 @property(nonatomic,retain)Logic *logic;
 @property(nonatomic,assign)b2World *world;
+@property (nonatomic, retain) id<CharacterDelegate> charDelegate;
 
 -(Logic*)iniLogic:(Logic *)logic;
 -(int)showEnemey:(int)tickCnt;

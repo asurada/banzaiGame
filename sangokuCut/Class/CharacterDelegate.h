@@ -12,4 +12,5 @@
 @optional
 
 - (void)onCharacterDead:(CGPoint)location sender:(CCSprite *)sender;
+- (void)onBeforeCharacterDead:(CCSprite *)sender;
 @end

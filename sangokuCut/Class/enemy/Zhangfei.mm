@@ -16,22 +16,26 @@
 
 +(id)spriteWithFile{
     return [super spriteWithSpriteFrameName:@"zf_normal_1.png"];
+    
 }
 
 
 -(BOOL)initSprite{
     [super initSprite];
-    _hp = 4;
+    _hp = 5;
     _injureHp = 2;
     _intervalSpaceMove = 98;
     _intervalTimeMove =.5f;
     _name = @"zhangfei";
+    _hasAttack = TRUE;
+    [self setScaleX:-1];
     return YES;
 
 }
 
 
 -(void)loadInjureAnim{
+    
     NSMutableArray *injureAnimFrames = [NSMutableArray array];
     for (int i=1; i<=10; i++) {
         [injureAnimFrames addObject:
@@ -39,6 +43,7 @@
           [NSString stringWithFormat:@"zf_injure_%d.png",i]]];
     }
     self.injureAnim = [CCAnimation animationWithSpriteFrames:injureAnimFrames delay:0.041f];
+     
 }
 
 

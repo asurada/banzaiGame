@@ -12,6 +12,8 @@
 #import "BaseCharacter.h"
 #import "Coin.h"
 #import "Mary.h"
+#import "Siha.h"
+#import "Siheng.h"
 #import "CCPhysicsSprite.h"
 #import "Box2D.h"
 
@@ -22,10 +24,11 @@
 @synthesize logic = _logic;
 @synthesize coinBox = _coinBox;
 @synthesize world = _world;
+@synthesize charDelegate;
 
 -(Logic*)iniLogic:(Logic *)lgc{
     self.logic = lgc;
-    _enemyBox  = [[NSMutableArray alloc] init];
+    _enemyBox = [[NSMutableArray alloc] init];
     _coinBox =[[NSMutableArray alloc] init];
     return [super init];
 }
@@ -43,7 +46,7 @@
     [enemy setState:standby];
     enemy.charDelegate = self;
     if([enemy initSprite]){
-        enemy.position =  CGPointMake(50+(index%3)*110,(index/3)*105);
+        enemy.position =  CGPointMake(50+(index%3)*110,-5+(index/3)*105);
         int z = 5-(index/3)*2;
         [_layer addChild:enemy z:z];
     }
@@ -58,12 +61,12 @@
             return [Zhangfei spriteWithFile];
             break;
         case 1:
-            return [Zhangfei spriteWithFile];
+            return [Siha spriteWithFile];
             return [Zombi spriteWithFile];
             break;
         case 2:
             
-            return [Zhangfei spriteWithFile];
+            return [Siheng spriteWithFile];
             return [Mary spriteWithFile];
             
         default:
@@ -73,24 +76,46 @@
 }
 
 -(void)onCharacterDead:(CGPoint)location sender:(CCSprite *)sender{
+    
     int index = [_enemyBox indexOfObject:sender];
     NSLog(@"dead at %d",index);
     [_enemyBox replaceObjectAtIndex:index withObject:[NSNull null]];
     [sender removeFromParentAndCleanup:YES];
     sender = nil;
     [sender release];
-   
+    
     Coin *coin = [Coin spriteWithFile];
     if([coin initSprite]){
+        coin.itemDelegate = self;
         coin.position = ccp(location.x,location.y+40);
         coin.world = self.world;
         [coin initPhysics];
         [_layer addChild:coin z:sender.zOrder+10];
         [_coinBox addObject:coin];
     }
+    
+    
 
 }
 
+
+-(void)onBeforeCharacterDead:(CCSprite *)sender{
+    [charDelegate onBeforeCharacterDead:sender];
+}
+
+-(void)onCoinDisappear:(CCSprite *)sender{
+      NSLock *arrayLock = [[NSLock alloc] init];
+      [arrayLock lock];
+      int index = [_coinBox indexOfObject:sender];
+        if(index >= 0){
+          NSMutableArray *copy = [_coinBox mutableCopy];
+          [copy removeObjectAtIndex:index];
+          _coinBox = [copy mutableCopy];
+          [copy release];
+
+        }
+       [arrayLock unlock];
+}
 
 -(int)showEnemey:(int)tickCnt{
     return 0;

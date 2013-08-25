@@ -13,6 +13,8 @@
 @implementation Coin
 
 @synthesize world = _world;
+@synthesize hasGot =_hasGot;
+@synthesize itemDelegate;
 
 +(id)spriteWithFile{
    return [super spriteWithSpriteFrameName:@"coin_0.png"];
@@ -33,7 +35,7 @@
     self.coinAction = [CCRepeatForever actionWithAction:
                          [CCAnimate actionWithAnimation:coinAnim]];
     [self runAction:self.coinAction];
-    
+    [self schedule:@selector(coinDisappear) interval:5.3];
     return YES;
 
 }
@@ -43,8 +45,12 @@
 
     //id moveTo = [CCMoveTo actionWithDuration:.9f position:ccp(100,400)];
     //[self runAction:[CCSequence actions:moveTo,nil]];
-    ballShapeDef.density = 0.0f;
-    ballBody->SetLinearVelocity(b2Vec2(0/PTM_RATIO,1000/PTM_RATIO));
+    //ballShapeDef.density = 0.0f;
+    //ballBody->SetLinearVelocity(b2Vec2(0/PTM_RATIO,1000/PTM_RATIO));
+    if(!_hasGot){
+      _hasGot = YES;
+      [self coinDisappear];
+    }
 }
 
 
@@ -72,6 +78,18 @@
     // ballBody->ApplyLinearImpulse(force, ballBodyDef.position);
     ballBody->SetAngularVelocity(0);
     ballBody->SetLinearVelocity(b2Vec2(0/PTM_RATIO,100/PTM_RATIO));
+}
+
+
+-(void)coinDisappear{
+   // delete _world;
+    _world->DestroyBody(ballBody);
+    [itemDelegate onCoinDisappear:self];
+    [self removeFromParentAndCleanup:YES];
+    _ballFixture = nil;
+    ballBody = nil;
+    self.coinAction = nil;
+    self.itemDelegate = nil;
 }
 
 @end

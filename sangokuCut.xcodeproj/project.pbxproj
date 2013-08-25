@@ -13,6 +13,18 @@
 		9C623F1417C632FD004704FB /* Logic_Showup_01.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C623F1317C632FD004704FB /* Logic_Showup_01.mm */; };
 		9C623F1717C91166004704FB /* Siheng.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C623F1617C91166004704FB /* Siheng.m */; };
 		9C623F1A17C911D7004704FB /* Siha.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C623F1917C911D6004704FB /* Siha.m */; };
+		9C623F1D17C9132E004704FB /* zhangfei_dead.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C623F1B17C9132D004704FB /* zhangfei_dead.plist */; };
+		9C623F1E17C9132E004704FB /* zhangfei_dead.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C623F1C17C9132D004704FB /* zhangfei_dead.png */; };
+		9C623F2517C91710004704FB /* Siheng_dead.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C623F1F17C9170D004704FB /* Siheng_dead.plist */; };
+		9C623F2617C91710004704FB /* Siheng_dead.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C623F2017C9170D004704FB /* Siheng_dead.png */; };
+		9C623F2717C91710004704FB /* Siheng_injure.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C623F2117C9170E004704FB /* Siheng_injure.plist */; };
+		9C623F2817C91710004704FB /* Siheng_injure.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C623F2217C9170E004704FB /* Siheng_injure.png */; };
+		9C623F2917C91710004704FB /* Siheng_normal.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C623F2317C9170F004704FB /* Siheng_normal.plist */; };
+		9C623F2A17C91710004704FB /* Siheng_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C623F2417C9170F004704FB /* Siheng_normal.png */; };
+		9C623F2F17C9C5F8004704FB /* Siha_dead.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C623F2B17C9C5F6004704FB /* Siha_dead.plist */; };
+		9C623F3017C9C5F8004704FB /* Siha_dead.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C623F2C17C9C5F6004704FB /* Siha_dead.png */; };
+		9C623F3117C9C5F8004704FB /* Siha_normal.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C623F2D17C9C5F7004704FB /* Siha_normal.plist */; };
+		9C623F3217C9C5F8004704FB /* Siha_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C623F2E17C9C5F7004704FB /* Siha_normal.png */; };
 		9C8DD8AF17AA2A2000BC144B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8DD8AE17AA2A2000BC144B /* QuartzCore.framework */; };
 		9C8DD8B117AA2A2000BC144B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8DD8B017AA2A2000BC144B /* OpenGLES.framework */; };
 		9C8DD8B317AA2A2000BC144B /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8DD8B217AA2A2000BC144B /* OpenAL.framework */; };
@@ -238,12 +250,6 @@
 		9C8E585F17BCF035004CACDA /* numbers.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E585E17BCF034004CACDA /* numbers.png */; };
 		9C8E587217BE31D7004CACDA /* zhangfei_attack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E586017BE31CF004CACDA /* zhangfei_attack.plist */; };
 		9C8E587317BE31D7004CACDA /* zhangfei_attack.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E586117BE31CF004CACDA /* zhangfei_attack.png */; };
-		9C8E587417BE31D7004CACDA /* zhangfei_dead0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E586217BE31D0004CACDA /* zhangfei_dead0.plist */; };
-		9C8E587517BE31D7004CACDA /* zhangfei_dead0.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E586317BE31D0004CACDA /* zhangfei_dead0.png */; };
-		9C8E587617BE31D7004CACDA /* zhangfei_dead1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E586417BE31D1004CACDA /* zhangfei_dead1.plist */; };
-		9C8E587717BE31D7004CACDA /* zhangfei_dead1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E586517BE31D1004CACDA /* zhangfei_dead1.png */; };
-		9C8E587817BE31D7004CACDA /* zhangfei_dead2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E586617BE31D2004CACDA /* zhangfei_dead2.plist */; };
-		9C8E587917BE31D7004CACDA /* zhangfei_dead2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E586717BE31D2004CACDA /* zhangfei_dead2.png */; };
 		9C8E588017BE31D7004CACDA /* zhangfei_injure.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E586E17BE31D6004CACDA /* zhangfei_injure.plist */; };
 		9C8E588117BE31D7004CACDA /* zhangfei_injure.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E586F17BE31D7004CACDA /* zhangfei_injure.png */; };
 		9C8E588217BE31D7004CACDA /* zhangfei_normal.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E587017BE31D7004CACDA /* zhangfei_normal.plist */; };
@@ -292,6 +298,19 @@
 		9C623F1617C91166004704FB /* Siheng.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Siheng.m; sourceTree = "<group>"; };
 		9C623F1817C911D6004704FB /* Siha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Siha.h; sourceTree = "<group>"; };
 		9C623F1917C911D6004704FB /* Siha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Siha.m; sourceTree = "<group>"; };
+		9C623F1B17C9132D004704FB /* zhangfei_dead.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zhangfei_dead.plist; sourceTree = "<group>"; };
+		9C623F1C17C9132D004704FB /* zhangfei_dead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhangfei_dead.png; sourceTree = "<group>"; };
+		9C623F1F17C9170D004704FB /* Siheng_dead.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Siheng_dead.plist; sourceTree = "<group>"; };
+		9C623F2017C9170D004704FB /* Siheng_dead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Siheng_dead.png; sourceTree = "<group>"; };
+		9C623F2117C9170E004704FB /* Siheng_injure.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Siheng_injure.plist; sourceTree = "<group>"; };
+		9C623F2217C9170E004704FB /* Siheng_injure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Siheng_injure.png; sourceTree = "<group>"; };
+		9C623F2317C9170F004704FB /* Siheng_normal.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Siheng_normal.plist; sourceTree = "<group>"; };
+		9C623F2417C9170F004704FB /* Siheng_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Siheng_normal.png; sourceTree = "<group>"; };
+		9C623F2B17C9C5F6004704FB /* Siha_dead.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Siha_dead.plist; sourceTree = "<group>"; };
+		9C623F2C17C9C5F6004704FB /* Siha_dead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Siha_dead.png; sourceTree = "<group>"; };
+		9C623F2D17C9C5F7004704FB /* Siha_normal.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Siha_normal.plist; sourceTree = "<group>"; };
+		9C623F2E17C9C5F7004704FB /* Siha_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Siha_normal.png; sourceTree = "<group>"; };
+		9C623F3317C9D9F7004704FB /* ItemDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemDelegate.h; sourceTree = "<group>"; };
 		9C8DD8AB17AA2A2000BC144B /* sangokuCut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sangokuCut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8DD8AE17AA2A2000BC144B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9C8DD8B017AA2A2000BC144B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -721,12 +740,6 @@
 		9C8E585E17BCF034004CACDA /* numbers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = numbers.png; sourceTree = "<group>"; };
 		9C8E586017BE31CF004CACDA /* zhangfei_attack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zhangfei_attack.plist; sourceTree = "<group>"; };
 		9C8E586117BE31CF004CACDA /* zhangfei_attack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhangfei_attack.png; sourceTree = "<group>"; };
-		9C8E586217BE31D0004CACDA /* zhangfei_dead0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zhangfei_dead0.plist; sourceTree = "<group>"; };
-		9C8E586317BE31D0004CACDA /* zhangfei_dead0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhangfei_dead0.png; sourceTree = "<group>"; };
-		9C8E586417BE31D1004CACDA /* zhangfei_dead1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zhangfei_dead1.plist; sourceTree = "<group>"; };
-		9C8E586517BE31D1004CACDA /* zhangfei_dead1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhangfei_dead1.png; sourceTree = "<group>"; };
-		9C8E586617BE31D2004CACDA /* zhangfei_dead2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zhangfei_dead2.plist; sourceTree = "<group>"; };
-		9C8E586717BE31D2004CACDA /* zhangfei_dead2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhangfei_dead2.png; sourceTree = "<group>"; };
 		9C8E586E17BE31D6004CACDA /* zhangfei_injure.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zhangfei_injure.plist; sourceTree = "<group>"; };
 		9C8E586F17BE31D7004CACDA /* zhangfei_injure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhangfei_injure.png; sourceTree = "<group>"; };
 		9C8E587017BE31D7004CACDA /* zhangfei_normal.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zhangfei_normal.plist; sourceTree = "<group>"; };
@@ -1553,6 +1566,7 @@
 			isa = PBXGroup;
 			children = (
 				9C8E58AC17C0A5FC004CACDA /* CharacterDelegate.h */,
+				9C623F3317C9D9F7004704FB /* ItemDelegate.h */,
 			);
 			name = callback;
 			sourceTree = "<group>";
@@ -1584,6 +1598,18 @@
 		9C97B7E917AB878200B0012D /* Animation */ = {
 			isa = PBXGroup;
 			children = (
+				9C623F2B17C9C5F6004704FB /* Siha_dead.plist */,
+				9C623F2C17C9C5F6004704FB /* Siha_dead.png */,
+				9C623F2D17C9C5F7004704FB /* Siha_normal.plist */,
+				9C623F2E17C9C5F7004704FB /* Siha_normal.png */,
+				9C623F1F17C9170D004704FB /* Siheng_dead.plist */,
+				9C623F2017C9170D004704FB /* Siheng_dead.png */,
+				9C623F2117C9170E004704FB /* Siheng_injure.plist */,
+				9C623F2217C9170E004704FB /* Siheng_injure.png */,
+				9C623F2317C9170F004704FB /* Siheng_normal.plist */,
+				9C623F2417C9170F004704FB /* Siheng_normal.png */,
+				9C623F1B17C9132D004704FB /* zhangfei_dead.plist */,
+				9C623F1C17C9132D004704FB /* zhangfei_dead.png */,
 				9C8E58B317C3BB43004CACDA /* bg.plist */,
 				9C8E58B417C3BB45004CACDA /* bg.png */,
 				9C8E58A217BF5B83004CACDA /* coin.plist */,
@@ -1592,12 +1618,6 @@
 				9C8E589F17BF5B45004CACDA /* hit.png */,
 				9C8E586017BE31CF004CACDA /* zhangfei_attack.plist */,
 				9C8E586117BE31CF004CACDA /* zhangfei_attack.png */,
-				9C8E586217BE31D0004CACDA /* zhangfei_dead0.plist */,
-				9C8E586317BE31D0004CACDA /* zhangfei_dead0.png */,
-				9C8E586417BE31D1004CACDA /* zhangfei_dead1.plist */,
-				9C8E586517BE31D1004CACDA /* zhangfei_dead1.png */,
-				9C8E586617BE31D2004CACDA /* zhangfei_dead2.plist */,
-				9C8E586717BE31D2004CACDA /* zhangfei_dead2.png */,
 				9C8E586E17BE31D6004CACDA /* zhangfei_injure.plist */,
 				9C8E586F17BE31D7004CACDA /* zhangfei_injure.png */,
 				9C8E587017BE31D7004CACDA /* zhangfei_normal.plist */,
@@ -1734,12 +1754,6 @@
 				9C8E585F17BCF035004CACDA /* numbers.png in Resources */,
 				9C8E587217BE31D7004CACDA /* zhangfei_attack.plist in Resources */,
 				9C8E587317BE31D7004CACDA /* zhangfei_attack.png in Resources */,
-				9C8E587417BE31D7004CACDA /* zhangfei_dead0.plist in Resources */,
-				9C8E587517BE31D7004CACDA /* zhangfei_dead0.png in Resources */,
-				9C8E587617BE31D7004CACDA /* zhangfei_dead1.plist in Resources */,
-				9C8E587717BE31D7004CACDA /* zhangfei_dead1.png in Resources */,
-				9C8E587817BE31D7004CACDA /* zhangfei_dead2.plist in Resources */,
-				9C8E587917BE31D7004CACDA /* zhangfei_dead2.png in Resources */,
 				9C8E588017BE31D7004CACDA /* zhangfei_injure.plist in Resources */,
 				9C8E588117BE31D7004CACDA /* zhangfei_injure.png in Resources */,
 				9C8E588217BE31D7004CACDA /* zhangfei_normal.plist in Resources */,
@@ -1753,6 +1767,18 @@
 				9C8E58A717BF5DB1004CACDA /* hit_normal.png in Resources */,
 				9C8E58B517C3BB46004CACDA /* bg.plist in Resources */,
 				9C8E58B617C3BB47004CACDA /* bg.png in Resources */,
+				9C623F1D17C9132E004704FB /* zhangfei_dead.plist in Resources */,
+				9C623F1E17C9132E004704FB /* zhangfei_dead.png in Resources */,
+				9C623F2517C91710004704FB /* Siheng_dead.plist in Resources */,
+				9C623F2617C91710004704FB /* Siheng_dead.png in Resources */,
+				9C623F2717C91710004704FB /* Siheng_injure.plist in Resources */,
+				9C623F2817C91710004704FB /* Siheng_injure.png in Resources */,
+				9C623F2917C91710004704FB /* Siheng_normal.plist in Resources */,
+				9C623F2A17C91710004704FB /* Siheng_normal.png in Resources */,
+				9C623F2F17C9C5F8004704FB /* Siha_dead.plist in Resources */,
+				9C623F3017C9C5F8004704FB /* Siha_dead.png in Resources */,
+				9C623F3117C9C5F8004704FB /* Siha_normal.plist in Resources */,
+				9C623F3217C9C5F8004704FB /* Siha_normal.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

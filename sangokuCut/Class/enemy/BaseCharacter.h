@@ -11,6 +11,7 @@
 #import "CharacterDelegate.h"
 
 
+
 typedef enum {
     moving,
     standby,
@@ -32,6 +33,7 @@ typedef enum {
     NSString *_name;
     
     state _state;
+    bool _hasAttack;
     
     CCAnimation *_injureAnim;
     CCAnimation *_normalAnim;

@@ -4,452 +4,452 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>Siheng_dead_1.png</key>
+            <key>Siha_dead_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1730,1406},{184,234}}</string>
+                <string>{{1014,1392},{190,222}}</string>
                 <key>offset</key>
-                <string>{-2,-117}</string>
+                <string>{-7,-121}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{162,256},{184,234}}</string>
+                <string>{{154,266},{190,222}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_10.png</key>
+            <key>Siha_dead_10.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1692,908},{222,246}}</string>
+                <string>{{562,1680},{224,276}}</string>
                 <key>offset</key>
-                <string>{48,-43}</string>
+                <string>{49,-59}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{193,176},{222,246}}</string>
+                <string>{{193,177},{224,276}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_11.png</key>
+            <key>Siha_dead_11.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1176,1100},{226,238}}</string>
+                <string>{{332,1682},{228,262}}</string>
                 <key>offset</key>
-                <string>{49,-47}</string>
+                <string>{50,-60}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{192,184},{226,238}}</string>
+                <string>{{192,185},{228,262}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_12.png</key>
+            <key>Siha_dead_12.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1464,908},{228,240}}</string>
+                <string>{{780,1392},{232,258}}</string>
                 <key>offset</key>
-                <string>{49,-54}</string>
+                <string>{50,-64}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{191,190},{228,240}}</string>
+                <string>{{190,191},{232,258}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_13.png</key>
+            <key>Siha_dead_13.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{916,1146},{230,224}}</string>
+                <string>{{788,1652},{234,238}}</string>
                 <key>offset</key>
-                <string>{49,-70}</string>
+                <string>{51,-77}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{190,214},{230,224}}</string>
+                <string>{{190,214},{234,238}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_14.png</key>
+            <key>Siha_dead_14.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1230,890},{234,210}}</string>
+                <string>{{928,1172},{250,218}}</string>
                 <key>offset</key>
-                <string>{48,-84}</string>
+                <string>{56,-89}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{187,235},{234,210}}</string>
+                <string>{{187,236},{250,218}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_15.png</key>
+            <key>Siha_dead_15.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{930,950},{246,196}}</string>
+                <string>{{1024,982},{258,188}}</string>
                 <key>offset</key>
-                <string>{52,-101}</string>
+                <string>{59,-96}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{185,259},{246,196}}</string>
+                <string>{{186,258},{258,188}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_16.png</key>
+            <key>Siha_dead_16.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{646,1178},{250,192}}</string>
+                <string>{{660,1204},{266,186}}</string>
                 <key>offset</key>
-                <string>{53,-116}</string>
+                <string>{61,-111}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{184,276},{250,192}}</string>
+                <string>{{184,274},{266,186}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_17.png</key>
+            <key>Siha_dead_17.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{664,990},{252,188}}</string>
+                <string>{{1332,1742},{270,182}}</string>
                 <key>offset</key>
-                <string>{55,-131}</string>
+                <string>{63,-126}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{185,293},{252,188}}</string>
+                <string>{{184,291},{270,182}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_18.png</key>
+            <key>Siha_dead_18.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{674,812},{256,178}}</string>
+                <string>{{1398,192},{272,174}}</string>
                 <key>offset</key>
-                <string>{57,-115}</string>
+                <string>{64,-112}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{185,282},{256,178}}</string>
+                <string>{{184,281},{272,174}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_19.png</key>
+            <key>Siha_dead_19.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1540,710},{260,198}}</string>
+                <string>{{1398,2},{278,188}}</string>
                 <key>offset</key>
-                <string>{59,-116}</string>
+                <string>{68,-110}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{185,273},{260,198}}</string>
+                <string>{{185,272},{278,188}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_2.png</key>
+            <key>Siha_dead_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1540,1406},{190,244}}</string>
+                <string>{{1114,690},{168,240}}</string>
                 <key>offset</key>
-                <string>{24,-96}</string>
+                <string>{13,-95}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{185,230},{190,244}}</string>
+                <string>{{185,231},{168,240}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_20.png</key>
+            <key>Siha_dead_20.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1602,488},{268,222}}</string>
+                <string>{{1308,1534},{280,206}}</string>
                 <key>offset</key>
-                <string>{61,-109}</string>
+                <string>{68,-104}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{183,254},{268,222}}</string>
+                <string>{{184,257},{280,206}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_21.png</key>
+            <key>Siha_dead_21.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1266,654},{274,236}}</string>
+                <string>{{1024,1616},{282,216}}</string>
                 <key>offset</key>
-                <string>{65,-96}</string>
+                <string>{68,-92}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{184,234},{274,236}}</string>
+                <string>{{183,240},{282,216}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_22.png</key>
+            <key>Siha_dead_22.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1680,258},{280,230}}</string>
-                <key>offset</key>
-                <string>{67,-93}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{183,234},{280,230}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>Siheng_dead_23.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{674,588},{288,224}}</string>
+                <string>{{1206,1322},{284,210}}</string>
                 <key>offset</key>
                 <string>{69,-89}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{181,233},{288,224}}</string>
+                <string>{{183,240},{284,210}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_24.png</key>
+            <key>Siha_dead_23.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1310,436},{292,218}}</string>
+                <string>{{1284,724},{290,204}}</string>
                 <key>offset</key>
-                <string>{71,-86}</string>
+                <string>{70,-87}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{181,233},{292,218}}</string>
+                <string>{{181,241},{290,204}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_25.png</key>
+            <key>Siha_dead_24.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{328,1288},{298,212}}</string>
+                <string>{{1284,930},{294,198}}</string>
                 <key>offset</key>
-                <string>{71,-92}</string>
+                <string>{72,-85}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{178,242},{298,212}}</string>
+                <string>{{181,242},{294,198}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_26.png</key>
+            <key>Siha_dead_25.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{962,616},{304,202}}</string>
+                <string>{{1284,1130},{298,190}}</string>
                 <key>offset</key>
-                <string>{72,-99}</string>
+                <string>{70,-91}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{176,254},{304,202}}</string>
+                <string>{{177,252},{298,190}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_27.png</key>
+            <key>Siha_dead_26.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{998,422},{312,194}}</string>
+                <string>{{680,982},{300,180}}</string>
                 <key>offset</key>
-                <string>{75,-104}</string>
+                <string>{71,-98}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{175,263},{312,194}}</string>
+                <string>{{177,264},{300,180}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_28.png</key>
+            <key>Siha_dead_27.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{328,1086},{318,202}}</string>
+                <string>{{1024,1834},{306,172}}</string>
                 <key>offset</key>
-                <string>{78,-108}</string>
+                <string>{73,-103}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{175,263},{318,202}}</string>
+                <string>{{176,273},{306,172}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_29.png</key>
+            <key>Siha_dead_28.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{342,876},{322,210}}</string>
+                <string>{{1018,208},{310,180}}</string>
                 <key>offset</key>
-                <string>{81,-111}</string>
+                <string>{75,-106}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{176,262},{322,210}}</string>
+                <string>{{176,272},{310,180}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_3.png</key>
+            <key>Siha_dead_29.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{636,1370},{238,260}}</string>
+                <string>{{696,208},{320,186}}</string>
                 <key>offset</key>
-                <string>{51,-76}</string>
+                <string>{79,-110}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{188,202},{238,260}}</string>
+                <string>{{175,273},{320,186}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_30.png</key>
+            <key>Siha_dead_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1352,218},{328,218}}</string>
+                <string>{{1130,390},{230,262}}</string>
                 <key>offset</key>
-                <string>{83,-115}</string>
+                <string>{42,-75}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{175,262},{328,218}}</string>
+                <string>{{183,200},{230,262}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_31.png</key>
+            <key>Siha_dead_30.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1024,204},{328,218}}</string>
+                <string>{{352,1008},{324,194}}</string>
                 <key>offset</key>
-                <string>{83,-115}</string>
+                <string>{81,-113}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{175,262},{328,218}}</string>
+                <string>{{175,272},{324,194}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_32.png</key>
+            <key>Siha_dead_31.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1390,0},{328,218}}</string>
+                <string>{{352,810},{326,196}}</string>
                 <key>offset</key>
-                <string>{83,-115}</string>
+                <string>{83,-113}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{175,262},{328,218}}</string>
+                <string>{{176,271},{326,196}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_33.png</key>
+            <key>Siha_dead_32.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{346,656},{328,220}}</string>
+                <string>{{350,612},{328,196}}</string>
                 <key>offset</key>
-                <string>{83,-115}</string>
+                <string>{83,-113}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{175,261},{328,220}}</string>
+                <string>{{175,271},{328,196}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_34.png</key>
+            <key>Siha_dead_33.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{346,436},{328,220}}</string>
+                <string>{{350,414},{328,196}}</string>
                 <key>offset</key>
-                <string>{83,-115}</string>
+                <string>{84,-113}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{175,261},{328,220}}</string>
+                <string>{{176,271},{328,196}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_35.png</key>
+            <key>Siha_dead_34.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{348,216},{328,220}}</string>
+                <string>{{350,214},{328,198}}</string>
                 <key>offset</key>
-                <string>{83,-115}</string>
+                <string>{84,-113}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{175,261},{328,220}}</string>
+                <string>{{176,270},{328,198}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_36.png</key>
+            <key>Siha_dead_35.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,1282},{328,220}}</string>
+                <string>{{2,1644},{328,198}}</string>
                 <key>offset</key>
-                <string>{83,-115}</string>
+                <string>{84,-113}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{175,261},{328,220}}</string>
+                <string>{{176,270},{328,198}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_37.png</key>
+            <key>Siha_dead_36.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,1062},{328,220}}</string>
+                <string>{{2,1444},{328,198}}</string>
                 <key>offset</key>
-                <string>{83,-115}</string>
+                <string>{84,-113}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{175,261},{328,220}}</string>
+                <string>{{176,270},{328,198}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_38.png</key>
+            <key>Siha_dead_37.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,0},{348,220}}</string>
+                <string>{{2,1244},{328,198}}</string>
                 <key>offset</key>
-                <string>{74,-115}</string>
+                <string>{84,-114}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{156,261},{348,220}}</string>
+                <string>{{176,271},{328,198}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_39.png</key>
+            <key>Siha_dead_38.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,220},{346,220}}</string>
+                <string>{{2,844},{348,198}}</string>
                 <key>offset</key>
-                <string>{75,-115}</string>
+                <string>{74,-114}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{158,261},{346,220}}</string>
+                <string>{{156,271},{348,198}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_4.png</key>
+            <key>Siha_dead_39.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1718,0},{240,258}}</string>
+                <string>{{2,220},{346,206}}</string>
                 <key>offset</key>
-                <string>{59,-67}</string>
+                <string>{75,-117}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{195,194},{240,258}}</string>
+                <string>{{158,270},{346,206}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_40.png</key>
+            <key>Siha_dead_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1042,0},{348,204}}</string>
+                <string>{{680,396},{230,280}}</string>
+                <key>offset</key>
+                <string>{54,-74}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{195,190},{230,280}}</string>
+                <key>sourceSize</key>
+                <string>{512,512}</string>
+            </dict>
+            <key>Siha_dead_40.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1048,2},{348,204}}</string>
                 <key>offset</key>
                 <string>{76,-121}</string>
                 <key>rotated</key>
@@ -459,10 +459,10 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_41.png</key>
+            <key>Siha_dead_41.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{692,0},{350,204}}</string>
+                <string>{{696,2},{350,204}}</string>
                 <key>offset</key>
                 <string>{76,-122}</string>
                 <key>rotated</key>
@@ -472,10 +472,10 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_42.png</key>
+            <key>Siha_dead_42.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,650},{346,204}}</string>
+                <string>{{2,428},{346,204}}</string>
                 <key>offset</key>
                 <string>{76,-121}</string>
                 <key>rotated</key>
@@ -485,10 +485,10 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_43.png</key>
+            <key>Siha_dead_43.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,440},{346,210}}</string>
+                <string>{{348,2},{346,210}}</string>
                 <key>offset</key>
                 <string>{74,-117}</string>
                 <key>rotated</key>
@@ -498,10 +498,10 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_44.png</key>
+            <key>Siha_dead_44.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{348,0},{344,216}}</string>
+                <string>{{2,2},{344,216}}</string>
                 <key>offset</key>
                 <string>{73,-114}</string>
                 <key>rotated</key>
@@ -511,10 +511,10 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_45.png</key>
+            <key>Siha_dead_45.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,854},{342,208}}</string>
+                <string>{{2,634},{342,208}}</string>
                 <key>offset</key>
                 <string>{71,-101}</string>
                 <key>rotated</key>
@@ -524,10 +524,10 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_46.png</key>
+            <key>Siha_dead_46.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{692,204},{332,198}}</string>
+                <string>{{2,1044},{332,198}}</string>
                 <key>offset</key>
                 <string>{71,-89}</string>
                 <key>rotated</key>
@@ -537,10 +537,10 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_47.png</key>
+            <key>Siha_dead_47.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{676,402},{322,186}}</string>
+                <string>{{336,1204},{322,186}}</string>
                 <key>offset</key>
                 <string>{70,-77}</string>
                 <key>rotated</key>
@@ -550,10 +550,10 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_48.png</key>
+            <key>Siha_dead_48.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,1502},{314,174}}</string>
+                <string>{{1362,368},{314,174}}</string>
                 <key>offset</key>
                 <string>{70,-65}</string>
                 <key>rotated</key>
@@ -563,10 +563,10 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_49.png</key>
+            <key>Siha_dead_49.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{328,1500},{308,178}}</string>
+                <string>{{1362,544},{308,178}}</string>
                 <key>offset</key>
                 <string>{71,-63}</string>
                 <key>rotated</key>
@@ -576,23 +576,23 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_5.png</key>
+            <key>Siha_dead_5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1092,1370},{234,254}}</string>
+                <string>{{332,1392},{226,288}}</string>
                 <key>offset</key>
-                <string>{61,-59}</string>
+                <string>{58,-73}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{200,188},{234,254}}</string>
+                <string>{{201,185},{226,288}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_50.png</key>
+            <key>Siha_dead_50.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{930,818},{300,132}}</string>
+                <string>{{2,1844},{300,132}}</string>
                 <key>offset</key>
                 <string>{72,-76}</string>
                 <key>rotated</key>
@@ -602,10 +602,10 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_51.png</key>
+            <key>Siha_dead_51.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1838,1154},{94,116}}</string>
+                <string>{{1576,724},{94,116}}</string>
                 <key>offset</key>
                 <string>{9,-74}</string>
                 <key>rotated</key>
@@ -615,10 +615,10 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_52.png</key>
+            <key>Siha_dead_52.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1870,488},{86,112}}</string>
+                <string>{{1180,1172},{86,112}}</string>
                 <key>offset</key>
                 <string>{8,-65}</string>
                 <key>rotated</key>
@@ -628,10 +628,10 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_53.png</key>
+            <key>Siha_dead_53.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1602,436},{46,44}}</string>
+                <string>{{1330,208},{46,44}}</string>
                 <key>offset</key>
                 <string>{-9,-88}</string>
                 <key>rotated</key>
@@ -641,10 +641,10 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_54.png</key>
+            <key>Siha_dead_54.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1540,654},{40,40}}</string>
+                <string>{{982,982},{40,40}}</string>
                 <key>offset</key>
                 <string>{-8,-70}</string>
                 <key>rotated</key>
@@ -654,10 +654,10 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_55.png</key>
+            <key>Siha_dead_55.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1230,818},{36,36}}</string>
+                <string>{{1114,932},{36,36}}</string>
                 <key>offset</key>
                 <string>{-9,-51}</string>
                 <key>rotated</key>
@@ -667,10 +667,10 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_56.png</key>
+            <key>Siha_dead_56.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1352,204},{1,1}}</string>
+                <string>{{346,634},{1,1}}</string>
                 <key>offset</key>
                 <string>{-255.5,255.5}</string>
                 <key>rotated</key>
@@ -680,55 +680,55 @@
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_6.png</key>
+            <key>Siha_dead_6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{874,1370},{218,256}}</string>
+                <string>{{680,678},{214,296}}</string>
                 <key>offset</key>
-                <string>{54,-48}</string>
+                <string>{52,-69}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{201,176},{218,256}}</string>
+                <string>{{201,177},{214,296}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_7.png</key>
+            <key>Siha_dead_7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1402,1148},{218,248}}</string>
+                <string>{{912,396},{216,292}}</string>
                 <key>offset</key>
-                <string>{50,-42}</string>
+                <string>{49,-65}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{197,174},{218,248}}</string>
+                <string>{{197,175},{216,292}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_8.png</key>
+            <key>Siha_dead_8.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1326,1396},{214,250}}</string>
+                <string>{{896,690},{216,290}}</string>
                 <key>offset</key>
-                <string>{47,-41}</string>
+                <string>{48,-62}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{196,172},{214,250}}</string>
+                <string>{{196,173},{216,290}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
-            <key>Siheng_dead_9.png</key>
+            <key>Siha_dead_9.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1620,1154},{218,252}}</string>
+                <string>{{560,1392},{218,286}}</string>
                 <key>offset</key>
-                <string>{47,-40}</string>
+                <string>{48,-59}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{194,170},{218,252}}</string>
+                <string>{{195,172},{218,286}}</string>
                 <key>sourceSize</key>
                 <string>{512,512}</string>
             </dict>
@@ -738,13 +738,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>Siheng_dead.png</string>
+            <string>Siha_dead.png</string>
             <key>size</key>
-            <string>{1960,1678}</string>
+            <string>{1678,2008}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:fbe18b80d85ff75df4a9ea32328af8c5:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:a8de13ab623c31d6d3444765fc69743f:1/1$</string>
             <key>textureFileName</key>
-            <string>Siheng_dead.png</string>
+            <string>Siha_dead.png</string>
         </dict>
     </dict>
 </plist>

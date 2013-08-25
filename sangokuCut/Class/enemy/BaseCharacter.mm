@@ -57,6 +57,8 @@
 
 -(void)dead{
     if(_state != dead){
+        [charDelegate onBeforeCharacterDead:self];
+       self.zOrder = 16;
        _state = dead;
        id animation = [CCAnimate actionWithAnimation:self.deadAnim];
        id action = [CCRepeat actionWithAction:animation times:1];
@@ -67,7 +69,7 @@
 }
 
 -(void)attack{
-    if(_state != attack){
+    if(_state != attack && _hasAttack){
        _state = attack;
       [self stopAction];
        _attackAction = [CCRepeatForever actionWithAction:
@@ -155,13 +157,13 @@
 }
 
 -(void)hit{
-    if(_hp > 0){
+    if(_hp > 1){
        _hp--;
        [_attackAction stop];
        [_injureAction stop];
        [_normalAction stop];
        [self injure];
-    }else if(_hp == 0 && _state != dead){
+    }else if(_hp == 1 && _state != dead){
        [_attackAction stop];
        [_injureAction stop];
        [_normalAction stop];
@@ -175,5 +177,6 @@
     [_normalAction stop];
 
 }
+
 
 @end
