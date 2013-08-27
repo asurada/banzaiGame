@@ -254,11 +254,9 @@
 		9C8E588117BE31D7004CACDA /* zhangfei_injure.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E586F17BE31D7004CACDA /* zhangfei_injure.png */; };
 		9C8E588217BE31D7004CACDA /* zhangfei_normal.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E587017BE31D7004CACDA /* zhangfei_normal.plist */; };
 		9C8E588317BE31D7004CACDA /* zhangfei_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E587117BE31D7004CACDA /* zhangfei_normal.png */; };
-		9C8E588917BE351B004CACDA /* zhangfei_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E588817BE351A004CACDA /* zhangfei_normal.png */; };
 		9C8E589017BE4178004CACDA /* Zhangfei.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E588F17BE4178004CACDA /* Zhangfei.mm */; };
 		9C8E589317BE418B004CACDA /* Zombi.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E589217BE418B004CACDA /* Zombi.mm */; };
 		9C8E589617BE41BA004CACDA /* Mary.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E589517BE41BA004CACDA /* Mary.mm */; };
-		9C8E589817BF0F62004CACDA /* mary_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E589717BF0F5D004CACDA /* mary_normal.png */; };
 		9C8E589B17BF58FC004CACDA /* Coin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E589A17BF58FB004CACDA /* Coin.mm */; };
 		9C8E58A017BF5B47004CACDA /* hit.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E589E17BF5B44004CACDA /* hit.plist */; };
 		9C8E58A117BF5B47004CACDA /* hit.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E589F17BF5B45004CACDA /* hit.png */; };
@@ -744,14 +742,12 @@
 		9C8E586F17BE31D7004CACDA /* zhangfei_injure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhangfei_injure.png; sourceTree = "<group>"; };
 		9C8E587017BE31D7004CACDA /* zhangfei_normal.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zhangfei_normal.plist; sourceTree = "<group>"; };
 		9C8E587117BE31D7004CACDA /* zhangfei_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhangfei_normal.png; sourceTree = "<group>"; };
-		9C8E588817BE351A004CACDA /* zhangfei_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhangfei_normal.png; sourceTree = "<group>"; };
 		9C8E588E17BE4178004CACDA /* Zhangfei.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zhangfei.h; sourceTree = "<group>"; };
 		9C8E588F17BE4178004CACDA /* Zhangfei.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Zhangfei.mm; sourceTree = "<group>"; };
 		9C8E589117BE418A004CACDA /* Zombi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zombi.h; sourceTree = "<group>"; };
 		9C8E589217BE418B004CACDA /* Zombi.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Zombi.mm; sourceTree = "<group>"; };
 		9C8E589417BE41B9004CACDA /* Mary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mary.h; sourceTree = "<group>"; };
 		9C8E589517BE41BA004CACDA /* Mary.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Mary.mm; sourceTree = "<group>"; };
-		9C8E589717BF0F5D004CACDA /* mary_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mary_normal.png; sourceTree = "<group>"; };
 		9C8E589917BF58FA004CACDA /* Coin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coin.h; sourceTree = "<group>"; };
 		9C8E589A17BF58FB004CACDA /* Coin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Coin.mm; sourceTree = "<group>"; };
 		9C8E589E17BF5B44004CACDA /* hit.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hit.plist; sourceTree = "<group>"; };
@@ -1410,8 +1406,6 @@
 			isa = PBXGroup;
 			children = (
 				9C8E58A617BF5DAF004CACDA /* hit_normal.png */,
-				9C8E589717BF0F5D004CACDA /* mary_normal.png */,
-				9C8E588817BE351A004CACDA /* zhangfei_normal.png */,
 				9C52471F17AF5298001291C7 /* sheet_64x64_2.png */,
 				9C52471D17AF4F30001291C7 /* Deco_cloud_v1.png */,
 				9C52471B17AF4E7C001291C7 /* Deco_shine_v1.png */,
@@ -1758,8 +1752,6 @@
 				9C8E588117BE31D7004CACDA /* zhangfei_injure.png in Resources */,
 				9C8E588217BE31D7004CACDA /* zhangfei_normal.plist in Resources */,
 				9C8E588317BE31D7004CACDA /* zhangfei_normal.png in Resources */,
-				9C8E588917BE351B004CACDA /* zhangfei_normal.png in Resources */,
-				9C8E589817BF0F62004CACDA /* mary_normal.png in Resources */,
 				9C8E58A017BF5B47004CACDA /* hit.plist in Resources */,
 				9C8E58A117BF5B47004CACDA /* hit.png in Resources */,
 				9C8E58A417BF5B86004CACDA /* coin.plist in Resources */,
@@ -1975,7 +1967,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: WEI YAN (EVRKY9E9CY)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1986,7 +1978,8 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1996,7 +1989,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: WEI YAN (EVRKY9E9CY)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -2005,7 +1998,8 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2015,6 +2009,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: WEI YAN (EVRKY9E9CY)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2033,6 +2029,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9200C1C8-D5C4-473C-94E6-E435AB900EA4";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"sangokuCut/libs\"";
 				WRAPPER_EXTENSION = app;
@@ -2043,6 +2040,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: WEI YAN (479CUL536Y)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = sangokuCut/Prefix.pch;
@@ -2060,6 +2059,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "00798E77-59AE-4FEF-9A9F-A027D09DE7E0";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"sangokuCut/libs\"";
 				VALIDATE_PRODUCT = YES;
