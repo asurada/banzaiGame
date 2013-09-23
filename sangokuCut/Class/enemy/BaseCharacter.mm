@@ -7,7 +7,7 @@
 //
 
 #import "BaseCharacter.h"
-
+#import "SimpleAudioEngine.h"
 
 
 
@@ -19,6 +19,8 @@
 @synthesize attackAnim=_attackAnim;
 @synthesize intervalSpaceMove = _intervalSpaceMove;
 @synthesize intervalTimeMove = _intervalTimeMove;
+@synthesize hidSound = _hidSound;
+@synthesize deadSound = _deadSound;
 @synthesize charDelegate;
 
 @synthesize name = _name;
@@ -34,6 +36,7 @@
 
 
 -(void)injure{
+    [[SimpleAudioEngine sharedEngine] playEffect:self.hidSound];
     if(_state != injure){
       _state = injure;
       [self stopAction];
@@ -56,7 +59,9 @@
 
 
 -(void)dead{
+    [[SimpleAudioEngine sharedEngine] playEffect:self.deadSound];
     if(_state != dead){
+       [self stopAction];
         [charDelegate onBeforeCharacterDead:self];
        self.zOrder = 16;
        _state = dead;

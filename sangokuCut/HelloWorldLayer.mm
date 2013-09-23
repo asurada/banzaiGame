@@ -16,12 +16,10 @@
 #import "AppDelegate.h"
 #import "CCBlade.h"
 #import "PolygonSprite.h"
-#import "Zombi_Lv1.h"
-#import "Zhangfei.h"
-#import "Zombi.h"
-#import "Mary.h"
 #import "Coin.h"
 #import "EnemyData.h"
+#import "CCButton.h"
+#import "SceneStartup.h"
 
 
 enum {
@@ -65,6 +63,18 @@ enum {
 	if( (self=[super init])) {
 		// enable events
         
+        //画面取得
+        UIScreen *sc = [UIScreen mainScreen];
+        
+        //ステータスバー込みのサイズ
+        CGRect rect = sc.bounds;
+        NSLog(@"%.1f, %.1f", rect.size.width, rect.size.height);
+        
+        //ステータスバーを除いたサイズ
+        rect = sc.applicationFrame;
+        NSLog(@"%.1f, %.1f", rect.size.width, rect.size.height);
+        
+        
         // init physics
 		[self initPhysics];
   
@@ -106,27 +116,8 @@ enum {
         
         [logic loadEnmey];
         
-        /*
-        for(int index = 0; index < 9;index++){
-            EnemyData *data = [[EnemyData alloc]init];
-            data.location = CGPointMake(50+(index%3)*110,5+(index/3)*105);
-            Zhangfei *zf =  [Zhangfei spriteWithFile];
-            zf.charDelegate = self;
-            
-            if([zf initSprite]){
-                zf.position = data.location;
-                int z = 5-(index/3)*2;
-                [self addChild:zf z:z];
-               
-            }
-            [enemyBox addObject:zf];
-            
-        }*/
-
         self.touchEnabled = YES;
-        
-
-        
+    
         [self scheduleUpdate];
 	}
     
@@ -318,27 +309,28 @@ int tickCnt;
 {
     CGSize screen = [[CCDirector sharedDirector] winSize];
     int height = 0;
+    int diff = 568.0 - screen.height;
     
     CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"bg.png"];
     [self addChild:spriteSheet];
     // add the background image
     CCSprite *background_01 =[CCSprite spriteWithSpriteFrameName:@"Bg_iPhone5_01.png"];// [CCSprite spriteWithFile:@"Bg_iPhone5_01.png"];
-    background_01.position = ccp(screen.width/2,screen.height-background_01.contentSize.height/2);//415
+    background_01.position = ccp(screen.width/2,screen.height + diff - background_01.contentSize.height/2);//415
     [self addChild:background_01 z:0];
 
     height = background_01.contentSize.height;
     CCSprite *background_02 = [CCSprite spriteWithSpriteFrameName:@"Bg_iPhone5_02.png"];
-    background_02.position = ccp(screen.width/2,screen.height - height - background_02.contentSize.height/2);
+    background_02.position = ccp(screen.width/2,screen.height + diff - height - background_02.contentSize.height/2);
     [self addChild:background_02 z:2];
     
     height = height + background_02.contentSize.height;
     CCSprite *background_03 = [CCSprite spriteWithSpriteFrameName:@"Bg_iPhone5_03.png"];
-    background_03.position = ccp(screen.width/2,screen.height - height - background_03.contentSize.height/2);
+    background_03.position = ccp(screen.width/2,screen.height + diff - height - background_03.contentSize.height/2);
     [self addChild:background_03 z:4];
     
     height = height + background_03.contentSize.height;
     CCSprite *background_04 = [CCSprite spriteWithSpriteFrameName:@"Bg_iPhone5_04.png"];
-    background_04.position = ccp(screen.width/2,screen.height - height - background_04.contentSize.height/2);
+    background_04.position = ccp(screen.width/2,screen.height + diff - height - background_04.contentSize.height/2);
     [self addChild:background_04 z:6];
 
 }
@@ -546,9 +538,27 @@ int tickCnt;
 {
     CGSize screen = [[CCDirector sharedDirector] winSize];
     
+    /*
     CCSprite *pasueIcon = [CCSprite spriteWithFile:@"btn_pause.png"];
-    pasueIcon.position = ccp(screen.width - pasueIcon.contentSize.width/2-5, screen.height - pasueIcon.contentSize.height/2-5);
-    [self addChild:pasueIcon];
+    CCSprite *selectedSprite = [CCSprite spriteWithFile:@"btn_pause.png"];
+    CCButton *button =[CCButton buttonWithNormalSprite:pasueIcon selectedSprite:selectedSprite target:self action:@selector(touchUpInSide:) forEvent:buttonEvent_TouchUpInside];
+    [button setTarget:self action:@selector(touchDown:) forEvent:buttonEvent_TouchDown];
+    button.position = ccp(screen.width - pasueIcon.contentSize.width/2-5, screen.height - pasueIcon.contentSize.height/2-5);
+    [self addChild:button];*/
+    
+    CCMenuItem * pasueIcon = [CCMenuItemImage itemWithNormalImage:@"btn_pause.png" selectedImage:@"btn_pause.png" target:self selector:@selector(pushSpriteButton:)];
+    pasueIcon.tag=11;
+    CCMenu * menu  = [CCMenu menuWithItems:pasueIcon, nil];
+    [menu alignItemsHorizontallyWithPadding:20];
+    [menu setPosition:ccp(screen.width - pasueIcon.contentSize.width/2-5, screen.height - pasueIcon.contentSize.height/2-5)];
+    [self addChild:menu];
+    
+    
+
+    
+    //CCSprite *pasueIcon = [CCSprite spriteWithFile:@"btn_pause.png"];
+    //pasueIcon.position = ccp(screen.width - pasueIcon.contentSize.width/2-5, screen.height - pasueIcon.contentSize.height/2-5);
+    //[self addChild:pasueIcon];
     
     for (int i = 0; i < 3; i++)
     {
@@ -572,9 +582,31 @@ int tickCnt;
     _bossIcon.position = ccp(_bossIcon.contentSize.width/2+10,_coinIcon.position.y - _bossIcon.contentSize.height-5);
     [self addChild:_bossIcon z:12];
     
+    
+        
     [self createLabel];
     
 }
+
+
+- (void)pushSpriteButton:(id)sender
+{
+    switch([sender tag]){
+        case 11:
+            CCLOG(@"spriteButtonUseSelector_pushed");
+            
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SceneStartup scene] ]];
+            break;
+        case 22:
+            CCLOG(@"spriteButtonUseBlock_pushed");
+            break;
+        default:
+            CCLOG(@"???");
+            break;
+    }
+}
+
+
 
 -(void) createLabel
 {

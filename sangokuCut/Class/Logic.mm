@@ -7,13 +7,16 @@
 //
 
 #import "Logic.h"
-#import "Zhangfei.h"
-#import "Zombi.h"
 #import "BaseCharacter.h"
 #import "Coin.h"
-#import "Mary.h"
 #import "Siha.h"
 #import "Siheng.h"
+#import "HuangjinSiha.h"
+#import "HuangjinSihei.h"
+#import "HuangjinSiheng.h"
+#import "BossZhangjiao.h"
+#import "Sibao.h"
+#import "Sihei.h"
 #import "CCPhysicsSprite.h"
 #import "Box2D.h"
 
@@ -54,21 +57,25 @@
 }
 
 -(BaseCharacter*)getEnemy{
-    int ran =  arc4random()%3;
+    int ran =  arc4random()%8;
     NSLog(@"回目= %2d",ran);
     switch (ran) {
         case 0:
-            return [Zhangfei spriteWithFile];
-            break;
+            return [Siheng spriteWithFile];
         case 1:
             return [Siha spriteWithFile];
-            return [Zombi spriteWithFile];
-            break;
         case 2:
-            
-            return [Siheng spriteWithFile];
-            return [Mary spriteWithFile];
-            
+            return [Sibao spriteWithFile];
+        case 3:
+            return [Sihei spriteWithFile];
+        case 4:
+            return [HuangjinSiha spriteWithFile];
+        case 5:
+            return [HuangjinSihei spriteWithFile];
+        case 6:
+            return [HuangjinSiheng spriteWithFile];
+        case 7:
+            return [BossZhangjiao spriteWithFile];
         default:
             return nil;
             break;

@@ -10,6 +10,8 @@
 // Import the interfaces
 #import "IntroLayer.h"
 #import "HelloWorldLayer.h"
+#import "SceneStartup.h"
+#import "ResourceLoad.h"
 
 
 #pragma mark - IntroLayer
@@ -38,59 +40,8 @@
 {
 	if( (self=[super init])) {
 		
-        [[CCTextureCache sharedTextureCache]addImage:@"coin.png"];
-        [[CCTextureCache sharedTextureCache]addImage:@"zhangfei_normal.png"];
-        [[CCTextureCache sharedTextureCache]addImage:@"zhangfei_injure.png"];
-        [[CCTextureCache sharedTextureCache]addImage:@"zhangfei_attack.png"];
-        [[CCTextureCache sharedTextureCache]addImage:@"zhangfei_dead.png"];
-        [[CCTextureCache sharedTextureCache]addImage:@"zombi_lv1_dead.png"];
-        [[CCTextureCache sharedTextureCache]addImage:@"zombi_lv1.png"];
-        [[CCTextureCache sharedTextureCache]addImage:@"Girl_injure.png"];
-        [[CCTextureCache sharedTextureCache]addImage:@"Girl_normal.png"];
-        [[CCTextureCache sharedTextureCache]addImage:@"Siheng_normal.png"];
-        [[CCTextureCache sharedTextureCache]addImage:@"Siheng_injure.png"];
-        [[CCTextureCache sharedTextureCache]addImage:@"Siheng_dead.png"];
-        [[CCTextureCache sharedTextureCache]addImage:@"Siha_dead.png"];
-        [[CCTextureCache sharedTextureCache]addImage:@"Siha_normal.png"];
-  
-        
-        CCTextureCache *cache = [CCTextureCache sharedTextureCache];
-        CCTexture2D* texture2D = [cache textureForKey:@"coin.png"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"coin.plist" texture:texture2D];
-        
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"bg.plist"];
-        texture2D = [cache textureForKey:@"zhangfei_normal.png"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_normal.plist" texture:texture2D];
-        texture2D = [cache textureForKey:@"zhangfei_injure.png"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_injure.plist" texture:texture2D];
-        texture2D = [cache textureForKey:@"zhangfei_attack.png"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_attack.plist" texture:texture2D];
-        texture2D = [cache textureForKey:@"zhangfei_dead.png"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead.plist"];
-        texture2D = [cache textureForKey:@"zombi_lv1_dead.png"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zombi_lv1_dead.plist"];
-        texture2D = [cache textureForKey:@"zombi_lv1.png"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zombi_lv1.plist"];
-        texture2D = [cache textureForKey:@"Girl_injure.png"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Girl_injure.plist"];
-        texture2D = [cache textureForKey:@"Girl_normal.png"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Girl_normal.plist"];
-        
-        
-        texture2D = [cache textureForKey:@"Siheng_normal.png"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Siheng_normal.plist"];
-        texture2D = [cache textureForKey:@"Siheng_injure.png"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Siheng_injure.plist"];
-        texture2D = [cache textureForKey:@"Siheng_dead.png"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Siheng_dead.plist"];
-        texture2D = [cache textureForKey:@"Siha_dead.png"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Siha_dead.plist"];
-        texture2D = [cache textureForKey:@"Siha_normal.png"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Siha_normal.plist"];
+        [ResourceLoad loadResource];
 
-        
-        
-        
 		// ask director for the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
 		
@@ -114,6 +65,6 @@
 -(void) onEnter
 {
 	[super onEnter];
-	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[HelloWorldLayer scene] ]];
+	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SceneStartup scene] ]];
 }
 @end

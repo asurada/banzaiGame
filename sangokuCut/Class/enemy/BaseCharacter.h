@@ -47,12 +47,16 @@ typedef enum {
     CCAction *_attackAction;
     CCAction *_upAction;
     CCAction *_downAction;
+    NSString *_hidSound;
+    NSString *_deadSound;
 }
 
 @property (nonatomic, retain) CCAnimation *injureAnim;
 @property (nonatomic, retain) CCAnimation *normalAnim;
 @property (nonatomic, retain) CCAnimation *deadAnim;
 @property (nonatomic, retain) CCAnimation *attackAnim;
+@property (nonatomic, retain) NSString *hidSound;
+@property (nonatomic, retain) NSString *deadSound;
 @property (nonatomic, retain) id<CharacterDelegate> charDelegate;
 @property (nonatomic, assign) float intervalTimeMove;
 @property (nonatomic, assign) float intervalSpaceMove;

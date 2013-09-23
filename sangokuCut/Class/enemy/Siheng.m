@@ -58,6 +58,7 @@
 
 
 -(void)loadDeadAnim{
+    self.hidSound = @"fingerHit_6.caf";
     NSMutableArray *deadAnimFrames = [NSMutableArray array];
     for (int i=1; i<=56; i++) {
         [deadAnimFrames addObject:

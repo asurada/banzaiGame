@@ -10,4 +10,6 @@
 
 @interface ResourceLoad : NSObject
 
++(void)loadResource;
+
 @end
