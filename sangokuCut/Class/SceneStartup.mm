@@ -100,6 +100,43 @@
     [self addChild:menu3];
     
     
+    CCMenuItem * v4 = [CCMenuItemImage itemWithNormalImage:@"Icon_battle_nameBg.png" selectedImage:@"Icon_battle_nameBg.png" target:self selector:@selector(pushSpriteButton:)];
+    v4.tag=11;
+    CCMenu * menu4  = [CCMenu menuWithItems:v4, nil];
+    [menu4 alignItemsHorizontallyWithPadding:20];
+    [menu4 setPosition:ccp(screen.width/2 + 70, screen.height/2 + 170)];
+    [self addChild:menu4];
+    
+    
+    CCMenuItem * v5 = [CCMenuItemImage itemWithNormalImage:@"Icon_battle_nameBg.png" selectedImage:@"Icon_battle_nameBg.png" target:self selector:@selector(pushSpriteButton:)];
+    v5.tag=11;
+    CCMenu * menu5  = [CCMenu menuWithItems:v5, nil];
+    [menu5 alignItemsHorizontallyWithPadding:20];
+    [menu5 setPosition:ccp(screen.width/2 + 70, screen.height/2 + 20)];
+    [self addChild:menu5];
+    
+    
+    CCMenuItem * v6 = [CCMenuItemImage itemWithNormalImage:@"Icon_battle_nameBg.png" selectedImage:@"Icon_battle_nameBg.png" target:self selector:@selector(pushSpriteButton:)];
+    v6.tag=11;
+    CCMenu * menu6  = [CCMenu menuWithItems:v6, nil];
+    [menu6 alignItemsHorizontallyWithPadding:20];
+    [menu6 setPosition:ccp(screen.width/2 + 90, screen.height/2 - 40 )];
+    [self addChild:menu6];
+    
+    
+    CCMenuItem * v7 = [CCMenuItemImage itemWithNormalImage:@"Icon_battle_nameBg.png" selectedImage:@"Icon_battle_nameBg.png" target:self selector:@selector(pushSpriteButton:)];
+    v7.tag=11;
+    CCMenu * menu7  = [CCMenu menuWithItems:v7, nil];
+    [menu7 alignItemsHorizontallyWithPadding:20];
+    [menu7 setPosition:ccp(screen.width/2 - 80, screen.height/2 - 10 )];
+    [self addChild:menu7];
+    
+    CCMenuItem * v8 = [CCMenuItemImage itemWithNormalImage:@"Icon_battle_nameBg.png" selectedImage:@"Icon_battle_nameBg.png" target:self selector:@selector(pushSpriteButton:)];
+    v8.tag=11;
+    CCMenu * menu8  = [CCMenu menuWithItems:v8, nil];
+    [menu8 alignItemsHorizontallyWithPadding:20];
+    [menu8 setPosition:ccp(screen.width/2 + 70, screen.height/2 - 140 )];
+    [self addChild:menu8];
 }
 
 

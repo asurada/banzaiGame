@@ -20,6 +20,7 @@
 #import "EnemyData.h"
 #import "CCButton.h"
 #import "SceneStartup.h"
+#import "SimpleAudioEngine.h"
 
 
 enum {
@@ -117,7 +118,7 @@ enum {
         [logic loadEnmey];
         
         self.touchEnabled = YES;
-    
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"bgMusic_loop_5.caf" loop:YES];
         [self scheduleUpdate];
 	}
     

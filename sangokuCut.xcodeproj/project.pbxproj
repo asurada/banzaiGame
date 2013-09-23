@@ -286,7 +286,6 @@
 		9C8DDC4117AA69A900BC144B /* PRRatcliffTriangulator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DDC3B17AA69A900BC144B /* PRRatcliffTriangulator.mm */; };
 		9C8DDC4217AA69A900BC144B /* triangulate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DDC3D17AA69A900BC144B /* triangulate.cpp */; };
 		9C8DDC4517AA6B3700BC144B /* PolygonSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DDC4417AA6B3700BC144B /* PolygonSprite.mm */; };
-		9C8DDC4F17AA763400BC144B /* Zombi_Lv1.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DDC4E17AA763400BC144B /* Zombi_Lv1.mm */; };
 		9C8E585917BB45E0004CACDA /* mike_normal.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E585817BB45E0004CACDA /* mike_normal.plist */; };
 		9C8E585D17BCE5C8004CACDA /* num-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E585C17BCE5C7004CACDA /* num-hd.png */; };
 		9C8E585F17BCF035004CACDA /* numbers.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E585E17BCF034004CACDA /* numbers.png */; };
@@ -828,8 +827,6 @@
 		9C8DDC3E17AA69A900BC144B /* triangulate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = triangulate.h; sourceTree = "<group>"; };
 		9C8DDC4317AA6B3700BC144B /* PolygonSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolygonSprite.h; sourceTree = "<group>"; };
 		9C8DDC4417AA6B3700BC144B /* PolygonSprite.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PolygonSprite.mm; sourceTree = "<group>"; };
-		9C8DDC4D17AA763400BC144B /* Zombi_Lv1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zombi_Lv1.h; sourceTree = "<group>"; };
-		9C8DDC4E17AA763400BC144B /* Zombi_Lv1.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Zombi_Lv1.mm; sourceTree = "<group>"; };
 		9C8E585817BB45E0004CACDA /* mike_normal.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = mike_normal.plist; path = Resources/physics/mike_normal.plist; sourceTree = "<group>"; };
 		9C8E585C17BCE5C7004CACDA /* num-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "num-hd.png"; sourceTree = "<group>"; };
 		9C8E585E17BCF034004CACDA /* numbers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = numbers.png; sourceTree = "<group>"; };
@@ -1657,8 +1654,6 @@
 		9C8DDC4C17AA761700BC144B /* enemy */ = {
 			isa = PBXGroup;
 			children = (
-				9C8DDC4D17AA763400BC144B /* Zombi_Lv1.h */,
-				9C8DDC4E17AA763400BC144B /* Zombi_Lv1.mm */,
 				9C97B7FA17AB944300B0012D /* BaseCharacter.h */,
 				9C97B7FB17AB944300B0012D /* BaseCharacter.mm */,
 				9C8E589917BF58FA004CACDA /* Coin.h */,
@@ -2177,7 +2172,6 @@
 				9C8DDC4117AA69A900BC144B /* PRRatcliffTriangulator.mm in Sources */,
 				9C8DDC4217AA69A900BC144B /* triangulate.cpp in Sources */,
 				9C8DDC4517AA6B3700BC144B /* PolygonSprite.mm in Sources */,
-				9C8DDC4F17AA763400BC144B /* Zombi_Lv1.mm in Sources */,
 				9C97B7FC17AB944300B0012D /* BaseCharacter.mm in Sources */,
 				9C8D1E8017F05FF300A2B1CF /* BossZhangjiao.m in Sources */,
 				9C8E589B17BF58FC004CACDA /* Coin.mm in Sources */,
