@@ -22,7 +22,7 @@
     [super initSprite];
     _hp = 10;
     _injureHp = 2;
-    _intervalSpaceMove = 105;
+    _intervalSpaceMove = 125;
     _intervalTimeMove =.5f;
     _name = @"BossZhangjiao";
     return YES;
@@ -59,6 +59,7 @@
 
 
 -(void)loadDeadAnim{
+    self.deadSound  = @"fingerHit_3.caf";
     NSMutableArray *deadAnimFrames = [NSMutableArray array];
     for (int i=1; i<=56; i++) {
         [deadAnimFrames addObject:

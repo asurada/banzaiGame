@@ -38,8 +38,8 @@
 
 -(void)loadEnmey{
     for(int index = 0; index < 9;index++){
-      BaseCharacter* enemy = [self createEnemey:index];
-      [_enemyBox addObject:enemy];
+       // BaseCharacter* enemy = ;[self createEnemey:index];
+      [_enemyBox addObject:[NSNull null]];
     }
 }
 
@@ -49,7 +49,7 @@
     [enemy setState:standby];
     enemy.charDelegate = self;
     if([enemy initSprite]){
-        enemy.position =  CGPointMake(50+(index%3)*110,-5+(index/3)*105);
+        enemy.position =  CGPointMake(50+(index%3)*110,-25+(index/3)*105);
         int z = 5-(index/3)*2;
         [_layer addChild:enemy z:z];
     }
@@ -87,9 +87,9 @@
     int index = [_enemyBox indexOfObject:sender];
     NSLog(@"dead at %d",index);
     [_enemyBox replaceObjectAtIndex:index withObject:[NSNull null]];
-    [sender removeFromParentAndCleanup:YES];
-    sender = nil;
-    [sender release];
+   // [sender removeFromParentAndCleanup:YES];
+   // sender = nil;
+   // [sender release];
     
     Coin *coin = [Coin spriteWithFile];
     if([coin initSprite]){
@@ -100,9 +100,6 @@
         [_layer addChild:coin z:sender.zOrder+10];
         [_coinBox addObject:coin];
     }
-    
-    
-
 }
 
 

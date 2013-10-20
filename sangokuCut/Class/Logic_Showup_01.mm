@@ -13,6 +13,7 @@
 
 bool stateMove;
 int cnt = 0;
+@synthesize enemyClearCount;
 
 
 
@@ -29,14 +30,17 @@ int cnt = 0;
           NSLog(@"look at %d",arr[cnt]);
           enemy =[self.enemyBox objectAtIndex:arr[cnt]];
           if(enemy != nil && ![enemy isEqual:[NSNull null]] && [enemy getState] == standby){
-            [enemy moveUp]; 
+            [enemy removeFromParentAndCleanup:YES];
+            enemy = [self createEnemey:arr[cnt]];
+            [self.enemyBox replaceObjectAtIndex:arr[cnt] withObject:enemy];
+            [enemy moveUp];
           }else if([enemy isEqual:[NSNull null]]){
              NSLog(@"insert at %d",arr[cnt]);
              enemy = [self createEnemey:arr[cnt]];
              [self.enemyBox replaceObjectAtIndex:arr[cnt] withObject:enemy];
              [enemy moveUp];
           }
-          cnt++;
+           cnt++;
         }else{
            cnt = 0;
         }

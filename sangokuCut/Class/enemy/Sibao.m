@@ -23,7 +23,7 @@
     [super initSprite];
     _hp = 10;
     _injureHp = 2;
-    _intervalSpaceMove = 105;
+    _intervalSpaceMove = 125;
     _intervalTimeMove =.5f;
     _name = @"Sibao";
     return YES;

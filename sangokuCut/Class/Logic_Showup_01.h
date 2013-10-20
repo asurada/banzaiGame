@@ -9,7 +9,9 @@
 #import "Logic.h"
 
 @interface Logic_Showup_01 : Logic{
-
+    int enemyClearCount;
+    
 }
+@property (nonatomic, assign) int enemyClearCount;
 
 @end

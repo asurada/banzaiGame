@@ -74,12 +74,10 @@ typedef enum {
 -(void)hit;
 -(void)moveUp;
 -(void)moveDown;
-
 -(void)loadNormalAnim;
 -(void)loadInjureAnim;
 -(void)loadDeadAnim;
 -(void)loadAttackAnim;
-
 -(void)finishDead;
 
 -(state)getState;

@@ -51,20 +51,20 @@
 
 -(void)normal{
     if(_state != healthy){
-        _state = healthy;
         _normalAction = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:self.normalAnim]];
         [self runAction:_normalAction];
+        _state = healthy;
     }
 }
 
 
 -(void)dead{
-    [[SimpleAudioEngine sharedEngine] playEffect:self.deadSound];
     if(_state != dead){
+        _state = dead;
+       [[SimpleAudioEngine sharedEngine] playEffect:self.deadSound];
        [self stopAction];
-        [charDelegate onBeforeCharacterDead:self];
+       [charDelegate onBeforeCharacterDead:self];
        self.zOrder = 16;
-       _state = dead;
        id animation = [CCAnimate actionWithAnimation:self.deadAnim];
        id action = [CCRepeat actionWithAction:animation times:1];
        id callback = [CCCallFunc actionWithTarget:self selector:@selector(finishDead)];
@@ -89,8 +89,8 @@
     id moveTo = [CCMoveTo actionWithDuration:self.intervalTimeMove position:ccp(self.position.x,self.position.y+self.intervalSpaceMove)];
     id callback = [CCCallFunc actionWithTarget:self selector:@selector(finishMoveUp)];
     [self runAction:[CCSequence actions:moveTo,callback,nil]];
-    [self normal];
     [self schedule:@selector(moveDown) interval:5.3];
+    [self normal];
 }
 
 
@@ -109,6 +109,7 @@
 -(void)finishMoveDown{
     _state = standby;
     [self stopAction];
+    [self removeFromParentAndCleanup:YES];
 }
 
 
@@ -141,6 +142,7 @@
     [_upAction release];
     [_downAction release];
     [charDelegate onCharacterDead:self.position sender:self];
+    [self removeFromParentAndCleanup:YES];
     
 }
 
@@ -177,9 +179,10 @@
 }
 
 -(void)stopAction{
+    [_normalAction stop];
     [_attackAction stop];
     [_injureAction stop];
-    [_normalAction stop];
+
 
 }
 

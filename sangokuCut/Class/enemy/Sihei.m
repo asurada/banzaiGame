@@ -23,7 +23,7 @@
     [super initSprite];
     _hp = 1;
     _injureHp = 2;
-    _intervalSpaceMove = 105;
+    _intervalSpaceMove = 125;
     _intervalTimeMove =.5f;
     _name = @"Sihei";
     return YES;
@@ -60,7 +60,7 @@
 
 
 -(void)loadDeadAnim{
-    self.hidSound = @"fingerHit_5.caf";
+    self.deadSound = @"fingerHit_5.caf";
     NSMutableArray *deadAnimFrames = [NSMutableArray array];
     for (int i=1; i<=56; i++) {
         [deadAnimFrames addObject:
