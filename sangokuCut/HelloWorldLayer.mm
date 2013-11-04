@@ -43,6 +43,9 @@ enum {
 
 @implementation HelloWorldLayer
 
+CGRect particularSpriteRect;
+CGRect original;
+
 +(CCScene *) scene
 {
 	// 'scene' is an autorelease object.
@@ -220,6 +223,24 @@ enum {
 	world->DrawDebugData();	
 	
 	kmGLPopMatrix();
+    
+    if(!CGRectIsEmpty(particularSpriteRect)){
+       // glEnable(GL_LINE_SMOOTH);
+      //  glColor4ub(255, 255, 255, 255);
+      //  glLineWidth(2);
+      //  CGPoint vertices2[] = { original.origin, particularSpriteRect.origin};
+     //ccDrawPoly(vertices2, 4, YES);
+
+      ccDrawColor4B(255, 255,255, 255);
+      ccDrawRect(particularSpriteRect.origin, ccpAdd(particularSpriteRect.origin, (ccp(particularSpriteRect.size.width,particularSpriteRect.size.height))));
+      //ccDrawRect(particularSpriteRect.origin,ccp(particularSpriteRect.origin.x+particularSpriteRect.size.width, particularSpriteRect.origin.y+particularSpriteRect.size.height));
+    }
+    
+//    if(!CGRectIsEmpty(particularSpriteRect)){
+//       CGContextRef ctx = UIGraphicsGetCurrentContext();
+//       CGContextSetRGBFillColor(ctx, 1.0, 0.0, 0.0, 1.0);
+//       CGContextFillRect(ctx, particularSpriteRect);
+//    }
 }
 
 int tickCnt;
@@ -456,17 +477,19 @@ int tickCnt;
          continue;
       }
       CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
-      CGRect particularSpriteRect = CGRectMake(enemy.position.x - 25, enemy.position.y-20, 50,50);
+      particularSpriteRect = CGRectMake(enemy.position.x-27, enemy.position.y-50, 54,80);
+      original = CGRectMake(enemy.position.x-27, enemy.position.y-50, 0,0);
       if (CGRectContainsPoint(particularSpriteRect, touchLocation)) {
         if(enemy!= nil &&
            ![enemy isEqual:[NSNull null]] &&
            [enemy getState] != injure &&
            [enemy getState] != dead &&
-           [enemy getState] != standby){
+           [enemy getState] != standby &&
+           [enemy getState] != moving){
             
            [enemy hit];
             hit = [CCSprite spriteWithFile:@"hit_normal.png"];
-            hit.position = location;
+            hit.position = enemy.position;//ccp(enemy.position.x,enemy.position.y);
             [self addChild:hit z:15];
            
             [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"hit.plist"];
@@ -632,7 +655,6 @@ int tickCnt;
     [self addChild:_coinLabel z:14];
 	
 }
-
 
 
 

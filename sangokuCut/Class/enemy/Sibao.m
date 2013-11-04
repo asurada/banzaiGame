@@ -34,6 +34,7 @@
 -(void)injure{
     
     [super injure];
+   
     
     
 }
@@ -90,6 +91,10 @@
     
 }
 
+
+-(void)finishInjure{
+     [super moveDown];
+}
 
 
 
