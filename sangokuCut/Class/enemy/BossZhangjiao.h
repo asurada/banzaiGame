@@ -6,8 +6,8 @@
 //  Copyright (c) 2013年 厳 巍. All rights reserved.
 //
 
-#import "BaseCharacter.h"
+#import "BaseBossCharacter.h"
 
-@interface BossZhangjiao : BaseCharacter
+@interface BossZhangjiao : BaseBossCharacter
 
 @end

@@ -332,6 +332,10 @@
 		9C99BBE217D3689E001A1E59 /* Page_battle_v1_iPhone5.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C99BBE017D3689E001A1E59 /* Page_battle_v1_iPhone5.png */; };
 		9C99BBE517D3706F001A1E59 /* Icon_battle_nameBg_locked.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C99BBE317D3706E001A1E59 /* Icon_battle_nameBg_locked.png */; };
 		9C99BBE617D3706F001A1E59 /* Icon_battle_nameBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C99BBE417D3706F001A1E59 /* Icon_battle_nameBg.png */; };
+		9CE14500182F88DA0002C75A /* BaseBossCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE144FF182F88DA0002C75A /* BaseBossCharacter.m */; };
+		9CE14503182F97FA0002C75A /* Loading_blood.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CE14501182F97FA0002C75A /* Loading_blood.png */; };
+		9CE14504182F97FA0002C75A /* Loading_bloodBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CE14502182F97FA0002C75A /* Loading_bloodBg.png */; };
+		9CE14506183A64570002C75A /* layer_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CE14505183A64570002C75A /* layer_4.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -886,6 +890,11 @@
 		9C99BBE017D3689E001A1E59 /* Page_battle_v1_iPhone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Page_battle_v1_iPhone5.png; sourceTree = "<group>"; };
 		9C99BBE317D3706E001A1E59 /* Icon_battle_nameBg_locked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_battle_nameBg_locked.png; sourceTree = "<group>"; };
 		9C99BBE417D3706F001A1E59 /* Icon_battle_nameBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_battle_nameBg.png; sourceTree = "<group>"; };
+		9CE144FE182F88DA0002C75A /* BaseBossCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseBossCharacter.h; sourceTree = "<group>"; };
+		9CE144FF182F88DA0002C75A /* BaseBossCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseBossCharacter.m; sourceTree = "<group>"; };
+		9CE14501182F97FA0002C75A /* Loading_blood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Loading_blood.png; sourceTree = "<group>"; };
+		9CE14502182F97FA0002C75A /* Loading_bloodBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Loading_bloodBg.png; sourceTree = "<group>"; };
+		9CE14505183A64570002C75A /* layer_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = layer_4.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1527,6 +1536,8 @@
 		9C8DDAF917AA2ACA00BC144B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9CE14501182F97FA0002C75A /* Loading_blood.png */,
+				9CE14502182F97FA0002C75A /* Loading_bloodBg.png */,
 				9C99BBE317D3706E001A1E59 /* Icon_battle_nameBg_locked.png */,
 				9C99BBE417D3706F001A1E59 /* Icon_battle_nameBg.png */,
 				9C99BBDF17D3689D001A1E59 /* Page_battle_v1_iPhone4s.png */,
@@ -1656,6 +1667,8 @@
 			children = (
 				9C97B7FA17AB944300B0012D /* BaseCharacter.h */,
 				9C97B7FB17AB944300B0012D /* BaseCharacter.mm */,
+				9CE144FE182F88DA0002C75A /* BaseBossCharacter.h */,
+				9CE144FF182F88DA0002C75A /* BaseBossCharacter.m */,
 				9C8E589917BF58FA004CACDA /* Coin.h */,
 				9C8E589A17BF58FB004CACDA /* Coin.mm */,
 				9C623F1517C91165004704FB /* Siheng.h */,
@@ -1722,6 +1735,7 @@
 		9C97B7E917AB878200B0012D /* Animation */ = {
 			isa = PBXGroup;
 			children = (
+				9CE14505183A64570002C75A /* layer_4.png */,
 				9C8D1E5D17F05F2000A2B1CF /* HuangjinSiha_dead.plist */,
 				9C8D1E5E17F05F2000A2B1CF /* HuangjinSiha_dead.png */,
 				9C8D1E5F17F05F2000A2B1CF /* HuangjinSiha_normal.plist */,
@@ -1885,6 +1899,7 @@
 				9C8D1E5017F05CD200A2B1CF /* BossZhangjiao_dead.png in Resources */,
 				9C8DD8DA17AA2A2000BC144B /* iTunesArtwork in Resources */,
 				9C8DDA3317AA2A2200BC144B /* ChangeLog in Resources */,
+				9CE14506183A64570002C75A /* layer_4.png in Resources */,
 				9C8DDAF317AA2A2300BC144B /* blocks.png in Resources */,
 				9C8DDB8517AA2EC800BC144B /* Bg_iPhone4s.png in Resources */,
 				9C8DDB8617AA2EC800BC144B /* Bg_iPhone5.png in Resources */,
@@ -1902,6 +1917,7 @@
 				9C8DDBE517AA2EC800BC144B /* sheet_64x64_0007.png in Resources */,
 				9C8DDBE617AA2EC800BC144B /* sheet_64x64_0008.png in Resources */,
 				9C8DDBE717AA2EC800BC144B /* sheet_64x64_0009.png in Resources */,
+				9CE14503182F97FA0002C75A /* Loading_blood.png in Resources */,
 				9C8DDBE817AA2EC800BC144B /* Page_loading_iPhone4s.png in Resources */,
 				9C8D1E5917F05CD200A2B1CF /* Sihei_dead.plist in Resources */,
 				9C8DDBE917AA2EC800BC144B /* Page_loading_iPhone5.png in Resources */,
@@ -1952,6 +1968,7 @@
 				9C52471E17AF4F30001291C7 /* Deco_cloud_v1.png in Resources */,
 				9C52472017AF5298001291C7 /* sheet_64x64_2.png in Resources */,
 				9C8E585917BB45E0004CACDA /* mike_normal.plist in Resources */,
+				9CE14504182F97FA0002C75A /* Loading_bloodBg.png in Resources */,
 				9C8E585D17BCE5C8004CACDA /* num-hd.png in Resources */,
 				9C8E585F17BCF035004CACDA /* numbers.png in Resources */,
 				9C8E587217BE31D7004CACDA /* zhangfei_attack.plist in Resources */,
@@ -2108,6 +2125,7 @@
 				9C8DDA1417AA2A2200BC144B /* CDXPropertyModifierAction.m in Sources */,
 				9C8DDA1717AA2A2200BC144B /* CocosDenshion.m in Sources */,
 				9C8DDA1B17AA2A2200BC144B /* SimpleAudioEngine.m in Sources */,
+				9CE14500182F88DA0002C75A /* BaseBossCharacter.m in Sources */,
 				9C8DDA3117AA2A2200BC144B /* aabb.c in Sources */,
 				9C8DDA3717AA2A2200BC144B /* mat4stack.c in Sources */,
 				9C8DDA3917AA2A2200BC144B /* matrix.c in Sources */,

@@ -65,7 +65,7 @@
          [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
           [NSString stringWithFormat:@"Siheng_dead_%d.png",i]]];
     }
-    self.deadAnim = [CCAnimation animationWithSpriteFrames:deadAnimFrames delay:0.033f];
+    self.deadAnim = [CCAnimation animationWithSpriteFrames:deadAnimFrames delay:0.03333f];
 }
 
 
@@ -76,7 +76,7 @@
          [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
           [NSString stringWithFormat:@"Siheng_normal_%d.png",i]]];
     }
-    self.normalAnim = [CCAnimation animationWithSpriteFrames:normalAnimFrames delay:0.033];
+    self.normalAnim = [CCAnimation animationWithSpriteFrames:normalAnimFrames delay:0.03333];
     
 }
 

@@ -13,7 +13,8 @@
 
 
 typedef enum {
-    moving,
+    movingup,
+    movingdown,
     standby,
     healthy,
     attack,
@@ -26,12 +27,14 @@ typedef enum {
 
 @interface BaseCharacter : CCSprite{
     float _hp;
+    float _allHp;
     float _injureHp;
     float _intervalTimeMove;
     float _intervalSpaceMove;
+    int _index;
     
     NSString *_name;
-    
+    id<CharacterDelegate> _charDelegate;
     state _state;
     bool _hasAttack;
     
@@ -59,19 +62,21 @@ typedef enum {
 @property (nonatomic, retain) NSString *deadSound;
 @property (nonatomic, retain) id<CharacterDelegate> charDelegate;
 @property (nonatomic, assign) float intervalTimeMove;
+@property (nonatomic, assign) int index;
 @property (nonatomic, assign) float intervalSpaceMove;
 @property (nonatomic, retain) NSString *name;
+@property (nonatomic, assign) float hp;
 
 
 +(id)spriteWithFile;
 -(BOOL)initSprite;
 
 -(void)injure;
--(void)dead;
+-(void)dead:(float)direction;
 -(void)attack;
 -(void)normal;
 -(void)action;
--(void)hit;
+-(void)hit:(float)direction;
 -(void)moveUp;
 -(void)moveDown;
 -(void)loadNormalAnim;
@@ -79,9 +84,10 @@ typedef enum {
 -(void)loadDeadAnim;
 -(void)loadAttackAnim;
 -(void)finishDead;
-
+-(void)stopAction;
 -(state)getState;
 -(void)setState:(state)stt;
+-(void)stopNormalAction;
 
 
 

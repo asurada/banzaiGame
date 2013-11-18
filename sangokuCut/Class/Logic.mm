@@ -44,20 +44,44 @@
 }
 
 
--(BaseCharacter *)createEnemey:(int)index{
+-(BaseCharacter *)createEnemy:(int)index{
     BaseCharacter* enemy = [self getEnemy];
     [enemy setState:standby];
     enemy.charDelegate = self;
     if([enemy initSprite]){
         enemy.position =  CGPointMake(50+(index%3)*110,-25+(index/3)*105);
-        int z = 5-(index/3)*2;
+        int z = 8-(index/3)*3;
+        enemy.index = index;
         [_layer addChild:enemy z:z];
     }
     return enemy;
 }
 
+
+-(BaseCharacter *)createBoss:(BaseCharacter *)boss at:(int)index{
+    [boss setState:standby];
+    boss.charDelegate = self;
+    if([boss initSprite]){
+        [self setSpritePositon:boss at:index];
+        [_layer addChild:boss];
+    }
+    return boss;
+}
+
+-(void)setSpritePositon:(BaseCharacter *)boss at:(int)index{
+    if(boss != nil){
+        boss.position =  CGPointMake(50+(index%3)*110,-25+(index/3)*105);
+        boss.zOrder = 8-(index/3)*3;//
+        boss.index = index;
+    }
+}
+
+
+
+
+
 -(BaseCharacter*)getEnemy{
-    int ran =  arc4random()%8;
+    int ran = arc4random()%7;
     NSLog(@"回目= %2d",ran);
     switch (ran) {
         case 0:
@@ -87,9 +111,6 @@
     int index = [_enemyBox indexOfObject:sender];
     NSLog(@"dead at %d",index);
     [_enemyBox replaceObjectAtIndex:index withObject:[NSNull null]];
-   // [sender removeFromParentAndCleanup:YES];
-   // sender = nil;
-   // [sender release];
     
     Coin *coin = [Coin spriteWithFile];
     if([coin initSprite]){
@@ -105,6 +126,20 @@
 
 -(void)onBeforeCharacterDead:(CCSprite *)sender{
     [charDelegate onBeforeCharacterDead:sender];
+}
+
+
+-(void)onInjureGirl:(CCSprite *)sender{
+    [charDelegate onInjureGirl:sender];
+}
+
+-(void)onKillBoss:(CCSprite *)sender{
+     [charDelegate onKillBoss:sender];
+}
+
+-(void)onInjureBoss:(CGPoint)location sender:(CCSprite *)sender bossBloodRate:(float)rate{
+    
+     [charDelegate onInjureBoss:location sender:sender bossBloodRate:rate];
 }
 
 -(void)onCoinDisappear:(CCSprite *)sender{

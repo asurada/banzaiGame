@@ -45,12 +45,19 @@ enum {
 
 CGRect particularSpriteRect;
 CGRect original;
+NSMutableArray * bloods;
+int bloodCount = 5;
+bool isCutting = false;
+const CGPoint WSSCGPointNull = {(CGFloat)NAN, (CGFloat)NAN};
+CGPoint prePoint = WSSCGPointNull;
+
+
 
 +(CCScene *) scene
 {
 	// 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
-	
+
 	// 'layer' is an autorelease object.
 	HelloWorldLayer *layer = [HelloWorldLayer node];
 	
@@ -249,7 +256,8 @@ int tickCnt;
 - (void)hogehoge
 {
     tickCnt++;
-    tickCnt = [logic showEnemey:tickCnt];
+    tickCnt = [logic showEnemey:tickCnt killed:enemyCount];
+ 
 }
 
 
@@ -335,24 +343,24 @@ int tickCnt;
     CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"bg.png"];
     [self addChild:spriteSheet];
     // add the background image
-    CCSprite *background_01 =[CCSprite spriteWithSpriteFrameName:@"Bg_iPhone5_01.png"];// [CCSprite spriteWithFile:@"Bg_iPhone5_01.png"];
+    CCSprite *background_01 =[CCSprite spriteWithSpriteFrameName:@"layer_1.png"];// [CCSprite spriteWithFile:@"Bg_iPhone5_01.png"];
     background_01.position = ccp(screen.width/2,screen.height + diff - background_01.contentSize.height/2);//415
     [self addChild:background_01 z:0];
 
     height = background_01.contentSize.height;
-    CCSprite *background_02 = [CCSprite spriteWithSpriteFrameName:@"Bg_iPhone5_02.png"];
+    CCSprite *background_02 = [CCSprite spriteWithSpriteFrameName:@"layer_2.png"];
     background_02.position = ccp(screen.width/2,screen.height + diff - height - background_02.contentSize.height/2);
-    [self addChild:background_02 z:2];
+    [self addChild:background_02 z:3];
     
     height = height + background_02.contentSize.height;
-    CCSprite *background_03 = [CCSprite spriteWithSpriteFrameName:@"Bg_iPhone5_03.png"];
+    CCSprite *background_03 = [CCSprite spriteWithSpriteFrameName:@"layer_3.png"];
     background_03.position = ccp(screen.width/2,screen.height + diff - height - background_03.contentSize.height/2);
-    [self addChild:background_03 z:4];
+    [self addChild:background_03 z:6];
     
     height = height + background_03.contentSize.height;
-    CCSprite *background_04 = [CCSprite spriteWithSpriteFrameName:@"Bg_iPhone5_04.png"];
+    CCSprite *background_04 = [CCSprite spriteWithSpriteFrameName:@"layer_4.png"];
     background_04.position = ccp(screen.width/2,screen.height + diff - height - background_04.contentSize.height/2);
-    [self addChild:background_04 z:6];
+    [self addChild:background_04 z:9];
 
 }
 
@@ -386,7 +394,10 @@ int tickCnt;
         // move the sparkle to the touch
         _bladeSparkle.position = location;
         [_bladeSparkle resetSystem];
-       // [self hit:touch at:location];
+        prePoint = location;
+        [self hit:touch at:location];
+        
+   
     }
 }
 
@@ -443,7 +454,7 @@ int tickCnt;
         _bladeSparkle.position = location;
         
        
-
+        prePoint = location;
         [self hit:touch at:location];
 
 
@@ -469,6 +480,31 @@ int tickCnt;
     
 }
 
+-(void)onInjureGirl:(CCSprite *)sender{
+    if(bloods!= nil && [bloods count] >0){
+       CCSprite *blood = [bloods objectAtIndex:[bloods count]-1];
+       [bloods removeObject:blood];
+       [blood removeFromParentAndCleanup:YES];
+       if([bloods count] == 0){
+        
+      }
+    }
+    
+ }
+
+
+-(void)onInjureBoss:(CGPoint)location sender:(CCSprite *)sender bossBloodRate:(float)rate{
+   // _bossBlood.contentSize.width = _bossBlood.contentSize.width*rate;
+    [_bossBlood setScaleX:rate];
+    _bossBlood.position = ccp(_bossIcon.position.x + _bossBlood.contentSize.width*rate/2 + 20,_bossIcon.position.y );
+
+}
+
+
+
+-(void)onKillBoss:(CCSprite *)sender{
+    [_bossBlood setScaleX:0];
+}
 
 
 -(void)hit:(UITouch *)touch at:(CGPoint )location{
@@ -480,14 +516,25 @@ int tickCnt;
       particularSpriteRect = CGRectMake(enemy.position.x-27, enemy.position.y-50, 54,80);
       original = CGRectMake(enemy.position.x-27, enemy.position.y-50, 0,0);
       if (CGRectContainsPoint(particularSpriteRect, touchLocation)) {
-        if(enemy!= nil &&
-           ![enemy isEqual:[NSNull null]] &&
+         
+          
+          if(enemy!= nil &&
+           ![enemy isEqual:[NSNull null]] && [enemy hp]>0 &&
            [enemy getState] != injure &&
            [enemy getState] != dead &&
            [enemy getState] != standby &&
-           [enemy getState] != moving){
-            
-           [enemy hit];
+           [enemy getState] != movingdown && !isCutting){
+            isCutting = YES;
+            float direction = 0;
+            if(WSSCGPointIsNull(prePoint)){
+                prePoint = location;
+            }else{
+                direction = location.x-prePoint.x;
+                prePoint = location;
+            }
+           
+            [enemy hit:direction];
+           
             hit = [CCSprite spriteWithFile:@"hit_normal.png"];
             hit.position = enemy.position;//ccp(enemy.position.x,enemy.position.y);
             [self addChild:hit z:15];
@@ -506,9 +553,11 @@ int tickCnt;
             id callback = [CCCallFuncO actionWithTarget:hit selector:@selector(removeFromParentAndCleanup:) object:[CCNode node]];
             id sequence = [CCSequence actions:repeat, callback,nil];
             [hit runAction:sequence];
+         }else{
+            
          }
       }else{
-          
+        isCutting = NO;
       }
    }
     
@@ -548,6 +597,9 @@ int tickCnt;
         
         // sparkle effect stops
         [_bladeSparkle stopSystem];
+        isCutting = NO;
+        prePoint = WSSCGPointNull;
+        
 	}
 }
 
@@ -581,11 +633,12 @@ int tickCnt;
     //CCSprite *pasueIcon = [CCSprite spriteWithFile:@"btn_pause.png"];
     //pasueIcon.position = ccp(screen.width - pasueIcon.contentSize.width/2-5, screen.height - pasueIcon.contentSize.height/2-5);
     //[self addChild:pasueIcon];
-    
+     bloods = [[NSMutableArray alloc]init];
     for (int i = 0; i < 3; i++)
     {
         CCSprite *blood = [CCSprite spriteWithFile:@"Icon_heart.png"];
         blood.position = ccp(screen.width-pasueIcon.contentSize.width*1.5-blood.contentSize.width/2-(blood.contentSize.width+2)*i,screen.height-blood.contentSize.height/2-5);
+        [bloods addObject:blood];
         [self addChild:blood z:12];
     }
     
@@ -604,6 +657,15 @@ int tickCnt;
     _bossIcon.position = ccp(_bossIcon.contentSize.width/2+10,_coinIcon.position.y - _bossIcon.contentSize.height-5);
     [self addChild:_bossIcon z:12];
     
+
+    
+    _bossBloodBg = [CCSprite spriteWithFile:@"Loading_bloodBg.png"];
+    _bossBloodBg.position = ccp(_bossIcon.position.x + _bossBloodBg.contentSize.width/2+20,_bossIcon.position.y );
+    [self addChild:_bossBloodBg z:12];
+    
+    _bossBlood = [CCSprite spriteWithFile:@"Loading_blood.png"];
+    _bossBlood.position = ccp(_bossIcon.position.x + _bossBlood.contentSize.width/2+20,_bossIcon.position.y );
+    [self addChild:_bossBlood z:12];
     
         
     [self createLabel];
@@ -656,7 +718,9 @@ int tickCnt;
 	
 }
 
-
+BOOL WSSCGPointIsNull( CGPoint point ){
+    return std::isnan(point.x) && std::isnan(point.y);
+}
 
 
 #pragma mark GameKit delegate

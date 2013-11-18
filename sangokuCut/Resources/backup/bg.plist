@@ -4,10 +4,10 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>layer_1.png</key>
+            <key>Bg_iPhone5_01.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,0},{640,639}}</string>
+                <string>{{2,2},{640,639}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -17,10 +17,10 @@
                 <key>sourceSize</key>
                 <string>{640,639}</string>
             </dict>
-            <key>layer_2.png</key>
+            <key>Bg_iPhone5_02.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,639},{640,204}}</string>
+                <string>{{2,849},{640,204}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -30,31 +30,31 @@
                 <key>sourceSize</key>
                 <string>{640,204}</string>
             </dict>
-            <key>layer_3.png</key>
+            <key>Bg_iPhone5_03.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,843},{640,203}}</string>
+                <string>{{2,643},{640,204}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{640,203}}</string>
+                <string>{{0,0},{640,204}}</string>
                 <key>sourceSize</key>
-                <string>{640,203}</string>
+                <string>{640,204}</string>
             </dict>
-            <key>layer_4.png</key>
+            <key>Bg_iPhone5_04.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,1046},{640,90}}</string>
+                <string>{{2,1055},{640,87}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{640,90}}</string>
+                <string>{{0,0},{640,87}}</string>
                 <key>sourceSize</key>
-                <string>{640,90}</string>
+                <string>{640,87}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -64,9 +64,9 @@
             <key>realTextureFileName</key>
             <string>bg.png</string>
             <key>size</key>
-            <string>{640,1150}</string>
+            <string>{644,1144}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:ff97678ded140430d6d4af21eaa6f84f:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:9f7b562260acb6a13c182a6c8c3e98d7:1/1$</string>
             <key>textureFileName</key>
             <string>bg.png</string>
         </dict>

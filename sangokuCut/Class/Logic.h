@@ -31,8 +31,11 @@
 @property (nonatomic, retain) id<CharacterDelegate> charDelegate;
 
 -(Logic*)iniLogic:(Logic *)logic;
--(int)showEnemey:(int)tickCnt;
+-(int)showEnemey:(int)tickCnt killed:(int)killedCnt;
 -(void)loadEnmey;
--(BaseCharacter *)createEnemey:(int)index;
+-(BaseCharacter *)createEnemy:(int)index;
+-(BaseCharacter *)createBoss:(BaseCharacter *)boss at:(int)index;
+-(void)setSpritePositon:(BaseCharacter *)boss at:(int)index;
+-(void)showBoss;
 
 @end

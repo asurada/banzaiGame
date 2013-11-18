@@ -20,7 +20,8 @@
 
 -(BOOL)initSprite{
     [super initSprite];
-    _hp = 10;
+    _hp = 50;
+    _allHp = 50;
     _injureHp = 2;
     _intervalSpaceMove = 125;
     _intervalTimeMove =.5f;

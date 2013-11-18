@@ -579,15 +579,15 @@ GLToClipTransform(kmMat4 *transformOut)
 
 	CCLOG(@"cocos2d: animation stopped");
 
-#if CC_DIRECTOR_IOS_USE_BACKGROUND_THREAD
-	[_runningThread cancel];
-	[_runningThread release];
-	_runningThread = nil;
-#endif
-
-	[_displayLink invalidate];
-	_displayLink = nil;
-    _isAnimating = NO;
+//#if CC_DIRECTOR_IOS_USE_BACKGROUND_THREAD
+//	[_runningThread cancel];
+//	[_runningThread release];
+//	_runningThread = nil;
+//#endif
+//
+//	[_displayLink invalidate];
+//	_displayLink = nil;
+//    _isAnimating = NO;
 }
 
 // Overriden in order to use a more stable delta time

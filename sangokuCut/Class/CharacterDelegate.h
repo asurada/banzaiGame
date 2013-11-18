@@ -13,4 +13,8 @@
 
 - (void)onCharacterDead:(CGPoint)location sender:(CCSprite *)sender;
 - (void)onBeforeCharacterDead:(CCSprite *)sender;
+- (void)onInjureGirl:(CCSprite *)sender;
+- (void)onInjureBoss:(CGPoint)location sender:(CCSprite *)sender bossBloodRate:(float)rate;
+- (void)onKillBoss:(CCSprite *)sender;
+
 @end

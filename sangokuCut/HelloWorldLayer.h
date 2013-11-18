@@ -48,6 +48,8 @@
     CCSprite *_zombiIcon;
     CCSprite *_coinIcon;
     CCSprite *_bossIcon;
+    CCSprite *_bossBlood;
+    CCSprite *_bossBloodBg;
     
     
     CCLabelAtlas *_zombiLabel;
