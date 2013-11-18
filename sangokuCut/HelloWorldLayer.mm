@@ -394,7 +394,7 @@ int tickCnt;
         // move the sparkle to the touch
         _bladeSparkle.position = location;
         [_bladeSparkle resetSystem];
-        prePoint = location;
+ 
         [self hit:touch at:location];
         
    
@@ -454,7 +454,7 @@ int tickCnt;
         _bladeSparkle.position = location;
         
        
-        prePoint = location;
+  
         [self hit:touch at:location];
 
 
@@ -508,6 +508,14 @@ int tickCnt;
 
 
 -(void)hit:(UITouch *)touch at:(CGPoint )location{
+    float direction = 0;
+    if(WSSCGPointIsNull(prePoint)){
+        prePoint = location;
+    }else{
+        direction = location.x-prePoint.x;
+        prePoint = location;
+    }
+    
     for (BaseCharacter *enemy in logic.enemyBox) {
       if([enemy isEqual:[NSNull null]]){
          continue;
@@ -525,14 +533,6 @@ int tickCnt;
            [enemy getState] != standby &&
            [enemy getState] != movingdown && !isCutting){
             isCutting = YES;
-            float direction = 0;
-            if(WSSCGPointIsNull(prePoint)){
-                prePoint = location;
-            }else{
-                direction = location.x-prePoint.x;
-                prePoint = location;
-            }
-           
             [enemy hit:direction];
            
             hit = [CCSprite spriteWithFile:@"hit_normal.png"];
