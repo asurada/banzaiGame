@@ -44,6 +44,7 @@ enum {
 @implementation HelloWorldLayer
 
 CGRect particularSpriteRect;
+CGRect halfParticularSpriteRect;
 CGRect original;
 NSMutableArray * bloods;
 int bloodCount = 5;
@@ -522,10 +523,9 @@ int tickCnt;
       }
       CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
       particularSpriteRect = CGRectMake(enemy.position.x-27, enemy.position.y-50, 54,80);
-      original = CGRectMake(enemy.position.x-27, enemy.position.y-50, 0,0);
+      halfParticularSpriteRect = CGRectMake(enemy.position.x-27, enemy.position.y-50, 27,80);
+     // original = CGRectMake(enemy.position.x-27, enemy.position.y-50, 0,0);
       if (CGRectContainsPoint(particularSpriteRect, touchLocation)) {
-         
-          
           if(enemy!= nil &&
            ![enemy isEqual:[NSNull null]] && [enemy hp]>0 &&
            [enemy getState] != injure &&
@@ -533,8 +533,16 @@ int tickCnt;
            [enemy getState] != standby &&
            [enemy getState] != movingdown && !isCutting){
             isCutting = YES;
-            [enemy hit:direction];
-           
+            if(direction != 0){
+               [enemy hit:direction];
+            }else{
+                if(CGRectContainsPoint(halfParticularSpriteRect, touchLocation)){
+                   [enemy hit:1];
+                }else{
+                   [enemy hit:-1];
+                }
+            }
+              
             hit = [CCSprite spriteWithFile:@"hit_normal.png"];
             hit.position = enemy.position;//ccp(enemy.position.x,enemy.position.y);
             [self addChild:hit z:15];
