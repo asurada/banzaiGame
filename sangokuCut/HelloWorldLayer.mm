@@ -531,7 +531,8 @@ int tickCnt;
            [enemy getState] != injure &&
            [enemy getState] != dead &&
            [enemy getState] != standby &&
-           [enemy getState] != movingdown && !isCutting){
+           [enemy getState] != movingup &&
+           [enemy getState] != movingdown &&!isCutting){
             isCutting = YES;
             if(direction != 0){
                [enemy hit:direction];

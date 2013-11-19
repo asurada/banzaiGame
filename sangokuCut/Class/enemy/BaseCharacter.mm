@@ -18,7 +18,8 @@
 @synthesize deadAnim=_deadAnim;
 @synthesize attackAnim=_attackAnim;
 @synthesize intervalSpaceMove = _intervalSpaceMove;
-@synthesize moveSpeed = _moveSpeed;
+@synthesize moveUpSpeed = _moveUpSpeed;
+@synthesize moveDownSpeed = _moveDownSpeed;
 @synthesize waitingTime = _waitingTime;
 @synthesize hidSound = _hidSound;
 @synthesize deadSound = _deadSound;
@@ -65,7 +66,6 @@ float original_Y = 0.0;
         }
 
       _state = injure;
-     // [self  stopNormalAction];
       [self stopAllActions];
       id injureAnimation = [CCAnimate actionWithAnimation:self.injureAnim];
       id injureRepeat = [CCRepeat actionWithAction:injureAnimation times:1];
@@ -122,7 +122,7 @@ float original_Y = 0.0;
 -(void)moveUp{
     original_Y = self.position.y;
     _state = movingup;
-    id moveTo = [CCMoveTo actionWithDuration:self.moveSpeed position:ccp(self.position.x,self.position.y+self.intervalSpaceMove)];
+    id moveTo = [CCMoveTo actionWithDuration:self.moveUpSpeed position:ccp(self.position.x,self.position.y+self.intervalSpaceMove)];
     id callback = [CCCallFunc actionWithTarget:self selector:@selector(finishMoveUp)];
     [self runAction:[CCSequence actions:moveTo,callback,nil]];
     [self schedule:@selector(moveDown) interval:self.waitingTime];
@@ -135,7 +135,7 @@ float original_Y = 0.0;
     _state = movingdown;
     self.zOrder = 7-(self.index/3)*3;//
     [self unscheduleAllSelectors];
-    id moveTo = [CCMoveTo actionWithDuration:self.moveSpeed position:ccp(self.position.x,original_Y)];
+    id moveTo = [CCMoveTo actionWithDuration:self.moveDownSpeed position:ccp(self.position.x,original_Y)];
     id callback = [CCCallFunc actionWithTarget:self selector:@selector(finishMoveDown)];
     [self runAction:[CCSequence actions:moveTo,callback,nil]];
 

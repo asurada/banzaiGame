@@ -23,8 +23,9 @@
     _allHp = _hp = 50;
     _injureHp = 2;
     _intervalSpaceMove = 125;
-    _moveSpeed =.5f;
-    _waitingTime = 5.3f;
+    _moveUpSpeed =.3f;
+    _moveDownSpeed =.3f;
+    _waitingTime = .8f;
     _name = @"BossZhangjiao";
     return YES;
     
