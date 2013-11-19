@@ -28,6 +28,9 @@
 @synthesize name = _name;
 @synthesize allHp = _allHp;
 
+
+float original_Y = 0.0;
+
 -(BOOL)initSprite{
     _state = standby;
     [self loadNormalAnim];
@@ -35,6 +38,7 @@
     [self loadDeadAnim];
     [self loadAttackAnim];
     [self setScaleX];
+    original_Y = self.position.y;
     return YES;
 }
 
@@ -116,6 +120,7 @@
 }
 
 -(void)moveUp{
+    original_Y = self.position.y;
     _state = movingup;
     id moveTo = [CCMoveTo actionWithDuration:self.moveSpeed position:ccp(self.position.x,self.position.y+self.intervalSpaceMove)];
     id callback = [CCCallFunc actionWithTarget:self selector:@selector(finishMoveUp)];
@@ -130,7 +135,7 @@
     _state = movingdown;
     self.zOrder = 7-(self.index/3)*3;//
     [self unscheduleAllSelectors];
-    id moveTo = [CCMoveTo actionWithDuration:self.moveSpeed position:ccp(self.position.x,self.position.y-self.intervalSpaceMove)];
+    id moveTo = [CCMoveTo actionWithDuration:self.moveSpeed position:ccp(self.position.x,original_Y)];
     id callback = [CCCallFunc actionWithTarget:self selector:@selector(finishMoveDown)];
     [self runAction:[CCSequence actions:moveTo,callback,nil]];
 
