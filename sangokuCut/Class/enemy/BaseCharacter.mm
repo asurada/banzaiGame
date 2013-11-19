@@ -132,19 +132,21 @@ float original_Y = 0.0;
 
 
 -(void)moveDown{
-    _state = movingdown;
-    self.zOrder = 7-(self.index/3)*3;//
-    [self unscheduleAllSelectors];
-    id moveTo = [CCMoveTo actionWithDuration:self.moveDownSpeed position:ccp(self.position.x,original_Y)];
-    id callback = [CCCallFunc actionWithTarget:self selector:@selector(finishMoveDown)];
-    [self runAction:[CCSequence actions:moveTo,callback,nil]];
+    if(_state != dead){
+       _state = movingdown;
+       self.zOrder = 7-(self.index/3)*3;//
+       [self unscheduleAllSelectors];
+       id moveTo = [CCMoveTo actionWithDuration:self.moveDownSpeed position:ccp(self.position.x,original_Y)];
+       id callback = [CCCallFunc actionWithTarget:self selector:@selector(finishMoveDown)];
+       [self runAction:[CCSequence actions:moveTo,callback,nil]];
+    }
 
 }
 
 
 -(void)finishMoveDown{
-    _state = standby;
     [self stopAction];
+    _state = standby;
     [self removeFromParentAndCleanup:YES];
 }
 
