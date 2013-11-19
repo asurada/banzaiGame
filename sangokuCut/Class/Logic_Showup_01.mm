@@ -9,6 +9,7 @@
 #import "Logic_Showup_01.h"
 #import "BaseCharacter.h"
 #import "BossZhangjiao.h"
+#define KILLCOUNT ((int)50)
 
 @implementation Logic_Showup_01
 
@@ -27,24 +28,28 @@ BaseCharacter *boss;
     };
 
     BaseCharacter *enemy = nil;
-    if(tickCnt >=10 ){
+    if(tickCnt >= 10 - killedCnt/10 *1.5){
         tickCnt = 0;
-        if(cnt < 14 && killedCnt < 10){
+        if(cnt < 14 && killedCnt < KILLCOUNT){
             NSLog(@"look at %d",arr[cnt]);
             enemy =[self.enemyBox objectAtIndex:arr[cnt]];
             if(enemy != nil && ![enemy isEqual:[NSNull null]] && [enemy getState] == standby){
-              [enemy removeFromParentAndCleanup:YES];
-              enemy = [self createEnemy:arr[cnt]];
-              [self.enemyBox replaceObjectAtIndex:arr[cnt] withObject:enemy];
-              [enemy moveUp];
+               [enemy removeFromParentAndCleanup:YES];
+               enemy = [self createEnemy:arr[cnt]];
+               [self.enemyBox replaceObjectAtIndex:arr[cnt] withObject:enemy];
+               enemy.waitingTime = enemy.waitingTime - (float)(killedCnt/KILLCOUNT) *enemy.waitingTime *0.5;
+               enemy.moveSpeed = enemy.moveSpeed - (float)(killedCnt/KILLCOUNT) * enemy.moveSpeed*0.5;
+               [enemy moveUp];
             }else if([enemy isEqual:[NSNull null]]){
                NSLog(@"insert at %d",arr[cnt]);
                enemy = [self createEnemy:arr[cnt]];
                [self.enemyBox replaceObjectAtIndex:arr[cnt] withObject:enemy];
+               enemy.waitingTime = enemy.waitingTime - (float)(killedCnt/KILLCOUNT) *enemy.waitingTime *0.5;
+               enemy.moveSpeed = enemy.moveSpeed - (float)(killedCnt/KILLCOUNT) * enemy.moveSpeed*0.5;
                [enemy moveUp];
             }
           cnt++;
-        }else if(killedCnt >= 10){
+        }else if(killedCnt >= KILLCOUNT){
             if(!bossAppear){
               for (BaseCharacter *allEnemy in self.enemyBox) {
                  if(![allEnemy isEqual:[NSNull null]] && [allEnemy getState] == healthy){
@@ -81,6 +86,8 @@ BaseCharacter *boss;
          [boss setState:standby];
          int ran = arc4random()%8;
          [self setSpritePositon:boss at:ran];
+         boss.waitingTime = boss.waitingTime - (float)(boss.hp/boss.allHp) * boss.waitingTime *0.5;
+         boss.moveSpeed = boss.moveSpeed - (float)(boss.hp/KILLCOUNT) * boss.moveSpeed*0.5;
          [boss moveUp];
        }
     }

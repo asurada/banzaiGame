@@ -20,11 +20,11 @@
 
 -(BOOL)initSprite{
     [super initSprite];
-    _hp = 50;
-    _allHp = 50;
+    _allHp = _hp = 50;
     _injureHp = 2;
     _intervalSpaceMove = 125;
-    _intervalTimeMove =.5f;
+    _moveSpeed =.5f;
+    _waitingTime = 5.3f;
     _name = @"BossZhangjiao";
     return YES;
     
@@ -35,9 +35,9 @@
      self.hidSound = @"fingerHit_4.caf";
      NSMutableArray *injureAnimFrames = [NSMutableArray array];
      for (int i=1; i<=12; i++) {
-     [injureAnimFrames addObject:
-     [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-     [NSString stringWithFormat:@"BossZhangjiao_injured_%d.png",i]]];
+       [injureAnimFrames addObject:
+       [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+       [NSString stringWithFormat:@"BossZhangjiao_injured_%d.png",i]]];
      }
      self.injureAnim = [CCAnimation animationWithSpriteFrames:injureAnimFrames delay:0.033f];
 

@@ -23,7 +23,8 @@
     _hp = 1;
     _injureHp = 2;
     _intervalSpaceMove = 125;
-    _intervalTimeMove =.5f;
+    _moveSpeed =.5f;
+    _waitingTime = 5.3f;
     _name = @"HuangjinSiheng";
     return YES;
     

@@ -29,9 +29,10 @@ typedef enum {
     float _hp;
     float _allHp;
     float _injureHp;
-    float _intervalTimeMove;
+    float _moveSpeed;
+    float _waitingTime;
     float _intervalSpaceMove;
-    int _index;
+    int   _index;
     
     NSString *_name;
     id<CharacterDelegate> _charDelegate;
@@ -61,12 +62,13 @@ typedef enum {
 @property (nonatomic, retain) NSString *hidSound;
 @property (nonatomic, retain) NSString *deadSound;
 @property (nonatomic, retain) id<CharacterDelegate> charDelegate;
-@property (nonatomic, assign) float intervalTimeMove;
+@property (nonatomic, assign) float moveSpeed;
+@property (nonatomic, assign) float waitingTime;
 @property (nonatomic, assign) int index;
 @property (nonatomic, assign) float intervalSpaceMove;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, assign) float hp;
-
+@property (nonatomic, assign) float allHp;
 
 +(id)spriteWithFile;
 -(BOOL)initSprite;
