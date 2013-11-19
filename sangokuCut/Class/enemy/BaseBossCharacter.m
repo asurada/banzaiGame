@@ -11,6 +11,7 @@
 
 @implementation BaseBossCharacter
 
+float preDirection = 0.0;
 
 -(void)finishMoveDown{
     _state = standby;
@@ -68,15 +69,16 @@
 
 
 -(void)injure:(float)direction{
-    if(_state != injure){
-        if(_hp >0){
-            _hp--;
-        }
+    if(preDirection == 0 || ((float)preDirection*direction)<0){
         if(direction >= 0){
             self.scaleX = 1;
         }else{
             self.scaleX = -1;
         }
+        if(_hp >0){
+            _hp--;
+        }
+        preDirection = direction;
         _state = injure;
         [[SimpleAudioEngine sharedEngine] playEffect:self.hidSound];
         [self stopNormalAction];
@@ -84,14 +86,23 @@
         id injureRepeat = [CCRepeat actionWithAction:injureAnimation times:1];
         id injureCallback = [CCCallFunc actionWithTarget:self selector:@selector(finishInjure)];
         _injureAction = [[CCSequence actions:injureRepeat,injureCallback,nil]retain];
+        
         [self runAction:_injureAction];
         [self.charDelegate onInjureBoss:self.position sender:self bossBloodRate:(float)_hp/(float)_allHp];
     }
+    
 }
 
 
 -(void)finishInjure{
     [self normal];
+}
+
+
+-(void)stopNormalAction{
+    [_normalAction stop];
+    [_attackAction stop];
+   // [_injureAction stop];
 }
 
 

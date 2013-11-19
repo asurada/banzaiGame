@@ -32,6 +32,7 @@
 
 float original_Y = 0.0;
 
+
 -(BOOL)initSprite{
     _state = standby;
     [self loadNormalAnim];

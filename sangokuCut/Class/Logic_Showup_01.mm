@@ -30,7 +30,7 @@ BaseCharacter *boss;
     if(killedCnt > 10 && killedCnt < 20){
        //intervalTime = 2;
     }else{
-       intervalTime = 20 - killedCnt/10 *1.5;
+        intervalTime = 20 ;//- killedCnt/10 *1.5;
        //intervalTime = 2;
     }
     BaseCharacter *enemy = nil;
@@ -42,7 +42,7 @@ BaseCharacter *boss;
         }else{
            position =arr[cnt];
         }
-        if(cnt < 14 && killedCnt < KILLCOUNT){
+        if( killedCnt < KILLCOUNT){//cnt < 14 &&
             NSLog(@"look at %d",position);
             enemy =[self.enemyBox objectAtIndex:position];
             if(enemy != nil && ![enemy isEqual:[NSNull null]] && [enemy getState] == standby && ![enemy isRunning]){

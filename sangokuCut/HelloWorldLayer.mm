@@ -51,6 +51,8 @@ int bloodCount = 5;
 bool isCutting = false;
 const CGPoint WSSCGPointNull = {(CGFloat)NAN, (CGFloat)NAN};
 CGPoint prePoint = WSSCGPointNull;
+float preDirect = 0.0;
+
 
 
 
@@ -527,8 +529,8 @@ int tickCnt;
      // original = CGRectMake(enemy.position.x-27, enemy.position.y-50, 0,0);
       if (CGRectContainsPoint(particularSpriteRect, touchLocation)) {
           if(enemy!= nil &&
-           ![enemy isEqual:[NSNull null]] && [enemy hp]>0 &&
-           [enemy getState] != injure &&
+           ![enemy isEqual:[NSNull null]]&&
+            [enemy hp]>0 &&
            [enemy getState] != dead &&
            [enemy getState] != standby &&
            [enemy getState] != movingup &&
@@ -536,32 +538,21 @@ int tickCnt;
             isCutting = YES;
             if(direction != 0){
                [enemy hit:direction];
+                if(preDirect == 0.0){
+                  [self playHit:enemy];
+                }else if(((float)preDirect * direction)<0){
+                  [self playHit:enemy];
+                }
+              
             }else{
                 if(CGRectContainsPoint(halfParticularSpriteRect, touchLocation)){
                    [enemy hit:1];
                 }else{
                    [enemy hit:-1];
                 }
+                [self playHit:enemy];
             }
-              
-            hit = [CCSprite spriteWithFile:@"hit_normal.png"];
-            hit.position = enemy.position;//ccp(enemy.position.x,enemy.position.y);
-            [self addChild:hit z:15];
-           
-            [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"hit.plist"];
-            NSMutableArray *hitAnimFrames = [NSMutableArray array];
-            for (int i=0; i<=4; i++) {
-               [hitAnimFrames addObject:
-               [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-               [NSString stringWithFormat:@"sheet_256x256_%d.png",i]]];
-            }
-            
-            hitAnim = [CCAnimation animationWithSpriteFrames:hitAnimFrames delay:0.07f];
-            id hitAnimation = [CCAnimate actionWithAnimation:hitAnim];
-            id repeat = [CCRepeat actionWithAction:hitAnimation times:1];
-            id callback = [CCCallFuncO actionWithTarget:hit selector:@selector(removeFromParentAndCleanup:) object:[CCNode node]];
-            id sequence = [CCSequence actions:repeat, callback,nil];
-            [hit runAction:sequence];
+            preDirect = direction;
          }else{
             
          }
@@ -586,6 +577,26 @@ int tickCnt;
         }
 }
 
+-(void)playHit:(BaseCharacter *)enemy{
+    hit = [CCSprite spriteWithFile:@"hit_normal.png"];
+    hit.position = enemy.position;//ccp(enemy.position.x,enemy.position.y);
+    [self addChild:hit z:15];
+    
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"hit.plist"];
+    NSMutableArray *hitAnimFrames = [NSMutableArray array];
+    for (int i=0; i<=4; i++) {
+        [hitAnimFrames addObject:
+         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+          [NSString stringWithFormat:@"sheet_256x256_%d.png",i]]];
+    }
+    
+    hitAnim = [CCAnimation animationWithSpriteFrames:hitAnimFrames delay:0.07f];
+    id hitAnimation = [CCAnimate actionWithAnimation:hitAnim];
+    id repeat = [CCRepeat actionWithAction:hitAnimation times:1];
+    id callback = [CCCallFuncO actionWithTarget:hit selector:@selector(removeFromParentAndCleanup:) object:[CCNode node]];
+    id sequence = [CCSequence actions:repeat, callback,nil];
+    [hit runAction:sequence];
+}
 
 
 /*
@@ -608,6 +619,7 @@ int tickCnt;
         [_bladeSparkle stopSystem];
         isCutting = NO;
         prePoint = WSSCGPointNull;
+        preDirect = 0;
         
 	}
 }
