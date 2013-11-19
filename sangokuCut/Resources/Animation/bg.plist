@@ -46,15 +46,15 @@
             <key>layer_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,1046},{640,90}}</string>
+                <string>{{0,1046},{640,100}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{640,90}}</string>
+                <string>{{0,0},{640,100}}</string>
                 <key>sourceSize</key>
-                <string>{640,90}</string>
+                <string>{640,100}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -64,9 +64,9 @@
             <key>realTextureFileName</key>
             <string>bg.png</string>
             <key>size</key>
-            <string>{640,1150}</string>
+            <string>{640,1146}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:ff97678ded140430d6d4af21eaa6f84f:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:fa7b1bc22788097ecb9970264f72e3f0:1/1$</string>
             <key>textureFileName</key>
             <string>bg.png</string>
         </dict>

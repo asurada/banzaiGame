@@ -84,7 +84,7 @@
 
 -(void)loadNormalAnim{
     NSMutableArray *normalAnimFrames = [NSMutableArray array];
-    for (int i=1; i<=14; i++) {
+    for (int i=1; i<=27; i++) {
         [normalAnimFrames addObject:
          [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
           [NSString stringWithFormat:@"Sibao_normal_%d.png",i]]];
