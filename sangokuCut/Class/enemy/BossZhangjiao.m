@@ -25,7 +25,7 @@
     _intervalSpaceMove = 125;
     _moveUpSpeed =.3f;
     _moveDownSpeed =.3f;
-    _waitingTime = .8f;
+    _waitingTime = 1.8f;
     _name = @"BossZhangjiao";
     return YES;
     
