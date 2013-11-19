@@ -73,7 +73,7 @@ typedef enum {
 +(id)spriteWithFile;
 -(BOOL)initSprite;
 
--(void)injure;
+-(void)injure:(float)direction;
 -(void)dead:(float)direction;
 -(void)attack;
 -(void)normal;

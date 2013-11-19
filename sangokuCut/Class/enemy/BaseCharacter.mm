@@ -48,11 +48,21 @@
     }
 }
 
--(void)injure{
+-(void)injure:(float)direction{
     [[SimpleAudioEngine sharedEngine] playEffect:self.hidSound];
     if(_state != injure){
+        if(_hp >0){
+          _hp--;
+        }
+        if(direction >= 0){
+            self.scaleX = 1;
+        }else{
+            self.scaleX = -1;
+        }
+
       _state = injure;
-      [self  stopNormalAction];
+     // [self  stopNormalAction];
+      [self stopAllActions];
       id injureAnimation = [CCAnimate actionWithAnimation:self.injureAnim];
       id injureRepeat = [CCRepeat actionWithAction:injureAnimation times:1];
       id injureCallback = [CCCallFunc actionWithTarget:self selector:@selector(finishInjure)];
@@ -186,15 +196,9 @@
 
 -(void)hit:(float)direction{
     if(_hp > 1){
-       _hp--;
-       [_attackAction stop];
-       [_injureAction stop];
-       [_normalAction stop];
-       [self injure];
+
+       [self injure:direction];
     }else if(_hp == 1 && _state != dead){
-       [_attackAction stop];
-       [_injureAction stop];
-       [_normalAction stop];
        [self dead:direction];
     }
 }

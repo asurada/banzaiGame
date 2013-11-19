@@ -86,8 +86,8 @@ BaseCharacter *boss;
          [boss setState:standby];
          int ran = arc4random()%8;
          [self setSpritePositon:boss at:ran];
-         boss.waitingTime = boss.waitingTime - (float)(boss.hp/boss.allHp) * boss.waitingTime *0.5;
-         boss.moveSpeed = boss.moveSpeed - (float)(boss.hp/KILLCOUNT) * boss.moveSpeed*0.5;
+         boss.waitingTime = boss.waitingTime ;//- (float)(boss.hp/boss.allHp) * boss.waitingTime *0.5;
+         boss.moveSpeed = boss.moveSpeed ;//- (float)(boss.hp/KILLCOUNT) * boss.moveSpeed*0.5;
          [boss moveUp];
        }
     }
