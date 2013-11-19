@@ -79,7 +79,7 @@
         }
         _state = injure;
         [[SimpleAudioEngine sharedEngine] playEffect:self.hidSound];
-        [self stopAction];
+        [self stopNormalAction];
         id injureAnimation = [CCAnimate actionWithAnimation:self.injureAnim];
         id injureRepeat = [CCRepeat actionWithAction:injureAnimation times:1];
         id injureCallback = [CCCallFunc actionWithTarget:self selector:@selector(finishInjure)];
