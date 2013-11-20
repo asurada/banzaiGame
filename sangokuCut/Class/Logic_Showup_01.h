@@ -9,22 +9,28 @@
 #import "Logic.h"
 
 @interface Logic_Showup_01 : Logic{
-    int enemyClearCount;
-    float enemyMoveUpSpeed;
-    float enemyMoveDownSpeed;
-    float enemyWaitingTime;
-    float bossWaitingTime;
-    float bossMoveUpSpeed;
-    float bossMoveDownSpeed;
-    float intervalTime;
-    int enemyCount;
+    int   _enemyClearCount;
+    float _enemyMoveUpSpeed;
+    float _enemyMoveDownSpeed;
+    float _enemyWaitingTime;
+    float _bossWaitingTime;
+    float _bossMoveUpSpeed;
+    float _bossMoveDownSpeed;
+    float _intervalTime;
+    int   _enemyCount;
     
 }
 @property (nonatomic, assign) int enemyClearCount;
--(void)setIntervalTime:(float)time;
--(void)setEnemyMoveUpSpeed:(float)time;
--(void)setEnemyMoveDownSpeed:(float)time;
--(void)setBossMoveUpSpeed:(float)time;
--(void)setBossMoveDownSpeed:(float)time;
--(void)setEnemyCount:(int)count;
+@property (nonatomic, assign) float enemyMoveUpSpeed;
+@property (nonatomic, assign) float enemyMoveDownSpeed;
+@property (nonatomic, assign) float enemyWaitingTime;
+@property (nonatomic, assign) float bossWaitingTime;
+@property (nonatomic, assign) float bossMoveUpSpeed;
+@property (nonatomic, assign) float bossMoveDownSpeed;
+@property (nonatomic, assign) float intervalTime;
+@property (nonatomic, assign) int enemyCount;
+
+
+
+
 @end
