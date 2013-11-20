@@ -20,18 +20,32 @@ int cnt = 0;
 BaseCharacter *boss;
 @synthesize enemyClearCount;
 
+int arr[14] = {
+    0, 1, 2, 5, 4, 3, 6, 7, 8, 0, 2, 4, 6, 8
+};
 
+
+
+-(id)init{
+    
+    enemyCount = KILLCOUNT;
+    enemyMoveUpSpeed = .2;
+    enemyMoveDownSpeed=.3;
+    bossMoveUpSpeed=.4;
+    bossMoveDownSpeed=.3;
+    intervalTime= 20;
+    return [super init];
+}
 
 
 -(int)showEnemey:(int)tickCnt killed:(int)killedCnt{
-    int arr[14] = {
-        0, 1, 2, 5, 4, 3, 6, 7, 8, 0, 2, 4, 6, 8
-    };
+    
+    
+    
     if(killedCnt > 10 && killedCnt < 20){
-       //intervalTime = 2;
+        intervalTime = 2;
     }else{
-        intervalTime = 20 ;//- killedCnt/10 *1.5;
-       //intervalTime = 2;
+        intervalTime = 20;
     }
     BaseCharacter *enemy = nil;
     if(tickCnt >= intervalTime){
@@ -40,50 +54,49 @@ BaseCharacter *boss;
         if(intervalTime > 2){
            position = arc4random()%9;
         }else{
-           position =arr[cnt];
+            if(cnt > 13){
+                cnt = 0;
+            }
+            position =arr[cnt];
+            cnt++;
         }
-        if( killedCnt < KILLCOUNT){//cnt < 14 &&
+        if(killedCnt < enemyCount){//cnt < 14 &&
             NSLog(@"look at %d",position);
             enemy =[self.enemyBox objectAtIndex:position];
             if(enemy != nil && ![enemy isEqual:[NSNull null]] && [enemy getState] == standby && ![enemy isRunning]){
                [enemy removeFromParentAndCleanup:YES];
                enemy = [self createEnemy:position];
                [self.enemyBox replaceObjectAtIndex:position withObject:enemy];
-                enemy.waitingTime = enemy.waitingTime;// - (float)(killedCnt/KILLCOUNT) *enemy.waitingTime *0.5;
-                enemy.moveUpSpeed = enemy.moveUpSpeed;// - (float)(killedCnt/KILLCOUNT) * enemy.moveUpSpeed*0.5;
-                enemy.moveDownSpeed = enemy.moveDownSpeed;// - (float)(killedCnt/KILLCOUNT) * enemy.moveDownSpeed*0.5;
+//                enemy.waitingTime = enemy.waitingTime;// - (float)(killedCnt/KILLCOUNT) *enemy.waitingTime *0.5;
+//                enemy.moveUpSpeed = enemy.moveUpSpeed;// - (float)(killedCnt/KILLCOUNT) * enemy.moveUpSpeed*0.5;
+//                enemy.moveDownSpeed = enemy.moveDownSpeed;// - (float)(killedCnt/KILLCOUNT) * enemy.moveDownSpeed*0.5;
                [enemy moveUp];
             }else if([enemy isEqual:[NSNull null]]){
                NSLog(@"insert at %d",position);
                enemy = [self createEnemy:position];
                [self.enemyBox replaceObjectAtIndex:position withObject:enemy];
-                enemy.waitingTime = enemy.waitingTime;// - (float)(killedCnt/KILLCOUNT) *enemy.waitingTime *0.5;
-                enemy.moveUpSpeed = enemy.moveUpSpeed;// - (float)(killedCnt/KILLCOUNT) * enemy.moveUpSpeed*0.5;
-                enemy.moveDownSpeed = enemy.moveDownSpeed;// - (float)(killedCnt/KILLCOUNT) * enemy.moveDownSpeed*0.5;
+//                enemy.waitingTime = enemy.waitingTime;// - (float)(killedCnt/KILLCOUNT) *enemy.waitingTime *0.5;
+//                enemy.moveUpSpeed = enemy.moveUpSpeed;// - (float)(killedCnt/KILLCOUNT) * enemy.moveUpSpeed*0.5;
+//                enemy.moveDownSpeed = enemy.moveDownSpeed;// - (float)(killedCnt/KILLCOUNT) * enemy.moveDownSpeed*0.5;
                [enemy moveUp];
             }else{
                 tickCnt = 20;
             }
-          cnt++;
-        }else if(killedCnt >= KILLCOUNT){
+        }else if(killedCnt >= enemyCount){
             if(!bossAppear){
               for (BaseCharacter *allEnemy in self.enemyBox) {
                  if(![allEnemy isEqual:[NSNull null]] && [allEnemy getState] == healthy){
                      [allEnemy moveDown];
-                     
                  }
               }
               bossAppear = YES;
             }else{
              [self showBoss];
             }
-        }else if (cnt == 14){
-            cnt = 0;
-        }
-        
      }else{
         
      }
+    }
 
      return tickCnt;
 
@@ -102,14 +115,37 @@ BaseCharacter *boss;
          [boss setState:standby];
          int ran = arc4random()%8;
          [self setSpritePositon:boss at:ran];
-         boss.waitingTime = boss.waitingTime ;//- (float)(boss.hp/boss.allHp) * boss.waitingTime *0.5;
-         boss.moveUpSpeed = boss.moveUpSpeed ;//- (float)(boss.hp/KILLCOUNT) * boss.moveSpeed*0.5;
-         boss.moveDownSpeed = boss.moveDownSpeed ;
+         //boss.waitingTime = boss.waitingTime;//- (float)(boss.hp/boss.allHp) * boss.waitingTime *0.5;
+         //boss.moveUpSpeed = boss.moveUpSpeed;//- (float)(boss.hp/KILLCOUNT) * boss.moveSpeed*0.5;
+         //boss.moveDownSpeed = boss.moveDownSpeed ;
          [boss moveUp];
        }
     }
 }
 
+-(void)setIntervalTime:(float)time{
+    enemyWaitingTime = time;
+}
+
+-(void)setEnemyMoveUpSpeed:(float)time{
+    enemyMoveUpSpeed = time;
+}
+
+-(void)setEnemyMoveDownSpeed:(float)time{
+    enemyMoveDownSpeed = time;
+}
+
+-(void)setBossMoveUpSpeed:(float)time{
+    bossMoveUpSpeed = time;
+}
+
+-(void)setBossMoveDownSpeed:(float)time{
+    bossMoveDownSpeed = time;
+}
+
+-(void)setEnemyCount:(int)count{
+    enemyCount = count;
+}
 
 
 -(void)loadEnmey{

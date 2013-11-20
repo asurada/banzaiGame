@@ -34,6 +34,7 @@ typedef enum {
     float _waitingTime;
     float _intervalSpaceMove;
     int   _index;
+    float original_Y;
     
     NSString *_name;
     id<CharacterDelegate> _charDelegate;

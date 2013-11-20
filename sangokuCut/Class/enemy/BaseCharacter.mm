@@ -30,7 +30,7 @@
 @synthesize allHp = _allHp;
 
 
-float original_Y = 0.0;
+
 
 
 -(BOOL)initSprite{
@@ -135,7 +135,7 @@ float original_Y = 0.0;
 -(void)moveDown{
     if(_state != dead){
        _state = movingdown;
-       self.zOrder = 7-(self.index/3)*3;//
+       self.zOrder = 7-(self.index/3)*3;
        [self unscheduleAllSelectors];
        id moveTo = [CCMoveTo actionWithDuration:self.moveDownSpeed position:ccp(self.position.x,original_Y)];
        id callback = [CCCallFunc actionWithTarget:self selector:@selector(finishMoveDown)];

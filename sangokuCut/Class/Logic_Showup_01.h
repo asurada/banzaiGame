@@ -10,8 +10,21 @@
 
 @interface Logic_Showup_01 : Logic{
     int enemyClearCount;
+    float enemyMoveUpSpeed;
+    float enemyMoveDownSpeed;
+    float enemyWaitingTime;
+    float bossWaitingTime;
+    float bossMoveUpSpeed;
+    float bossMoveDownSpeed;
+    float intervalTime;
+    int enemyCount;
     
 }
 @property (nonatomic, assign) int enemyClearCount;
-
+-(void)setIntervalTime:(float)time;
+-(void)setEnemyMoveUpSpeed:(float)time;
+-(void)setEnemyMoveDownSpeed:(float)time;
+-(void)setBossMoveUpSpeed:(float)time;
+-(void)setBossMoveDownSpeed:(float)time;
+-(void)setEnemyCount:(int)count;
 @end
