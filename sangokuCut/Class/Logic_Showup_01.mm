@@ -26,7 +26,6 @@
 @synthesize enemyCount = _enemyCount;
 bool stateMove;
 bool bossAppear;
-int intervalTime = 0;
 int cnt = 0;
 BaseCharacter *boss;
 
@@ -113,15 +112,15 @@ int sequence = 0;
     
     
     if(sequence > 0 && killedCnt > 9 && killedCnt < 20){
-        intervalTime = 2;
+         self.intervalTime = 2;
     }else{
-        intervalTime = 20;
+         self.intervalTime = 20;
     }
     BaseCharacter *enemy = nil;
     if(tickCnt >= self.intervalTime){
         int position = 0;
         tickCnt = 0;
-        if(intervalTime > 2){
+        if(self.intervalTime > 2){
            position = arc4random()%9;
         }else{
             if(cnt > 9){
