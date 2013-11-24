@@ -107,24 +107,25 @@
 }
 
 -(void)onCharacterDead:(CGPoint)location sender:(CCSprite *)sender{
-    
     int index = [_enemyBox indexOfObject:sender];
     NSLog(@"dead at %d",index);
-    [_enemyBox replaceObjectAtIndex:index withObject:[NSNull null]];
     
-    Coin *coin = [Coin spriteWithFile];
-    if([coin initSprite]){
-        coin.itemDelegate = self;
-        coin.position = ccp(location.x,location.y+40);
-        coin.world = self.world;
-        [coin initPhysics];
-        [_layer addChild:coin z:sender.zOrder+10];
-        [_coinBox addObject:coin];
-    }
+    [_enemyBox replaceObjectAtIndex:index withObject:[NSNull null]];
 }
 
 
 -(void)onBeforeCharacterDead:(CCSprite *)sender{
+    Coin *coin = [Coin spriteWithFile];
+    if([coin initSprite]){
+        coin.itemDelegate = self;
+        coin.position = ccp(sender.position.x,sender.position.y);
+        coin.world = self.world;
+        [coin initPhysics];
+        [coin setVelocityDirection:sender.scaleX];
+        [_layer addChild:coin z:sender.zOrder+10];
+        [_coinBox addObject:coin];
+    }
+
     [charDelegate onBeforeCharacterDead:sender];
 }
 
@@ -138,7 +139,6 @@
 }
 
 -(void)onInjureBoss:(CGPoint)location sender:(CCSprite *)sender bossBloodRate:(float)rate{
-    
      [charDelegate onInjureBoss:location sender:sender bossBloodRate:rate];
 }
 

@@ -332,6 +332,8 @@
 		9C99BBE217D3689E001A1E59 /* Page_battle_v1_iPhone5.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C99BBE017D3689E001A1E59 /* Page_battle_v1_iPhone5.png */; };
 		9C99BBE517D3706F001A1E59 /* Icon_battle_nameBg_locked.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C99BBE317D3706E001A1E59 /* Icon_battle_nameBg_locked.png */; };
 		9C99BBE617D3706F001A1E59 /* Icon_battle_nameBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C99BBE417D3706F001A1E59 /* Icon_battle_nameBg.png */; };
+		9CD7E3F018420C0200B11629 /* getCoin.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CD7E3EE18420C0200B11629 /* getCoin.plist */; };
+		9CD7E3F118420C0200B11629 /* getCoin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CD7E3EF18420C0200B11629 /* getCoin.png */; };
 		9CE14500182F88DA0002C75A /* BaseBossCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE144FF182F88DA0002C75A /* BaseBossCharacter.m */; };
 		9CE14503182F97FA0002C75A /* Loading_blood.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CE14501182F97FA0002C75A /* Loading_blood.png */; };
 		9CE14504182F97FA0002C75A /* Loading_bloodBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CE14502182F97FA0002C75A /* Loading_bloodBg.png */; };
@@ -889,6 +891,8 @@
 		9C99BBE017D3689E001A1E59 /* Page_battle_v1_iPhone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Page_battle_v1_iPhone5.png; sourceTree = "<group>"; };
 		9C99BBE317D3706E001A1E59 /* Icon_battle_nameBg_locked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_battle_nameBg_locked.png; sourceTree = "<group>"; };
 		9C99BBE417D3706F001A1E59 /* Icon_battle_nameBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_battle_nameBg.png; sourceTree = "<group>"; };
+		9CD7E3EE18420C0200B11629 /* getCoin.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = getCoin.plist; sourceTree = "<group>"; };
+		9CD7E3EF18420C0200B11629 /* getCoin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = getCoin.png; sourceTree = "<group>"; };
 		9CE144FE182F88DA0002C75A /* BaseBossCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseBossCharacter.h; sourceTree = "<group>"; };
 		9CE144FF182F88DA0002C75A /* BaseBossCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseBossCharacter.m; sourceTree = "<group>"; };
 		9CE14501182F97FA0002C75A /* Loading_blood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Loading_blood.png; sourceTree = "<group>"; };
@@ -1733,6 +1737,8 @@
 		9C97B7E917AB878200B0012D /* Animation */ = {
 			isa = PBXGroup;
 			children = (
+				9CD7E3EE18420C0200B11629 /* getCoin.plist */,
+				9CD7E3EF18420C0200B11629 /* getCoin.png */,
 				9C8D1E5D17F05F2000A2B1CF /* HuangjinSiha_dead.plist */,
 				9C8D1E5E17F05F2000A2B1CF /* HuangjinSiha_dead.png */,
 				9C8D1E5F17F05F2000A2B1CF /* HuangjinSiha_normal.plist */,
@@ -1964,6 +1970,7 @@
 				9C52471E17AF4F30001291C7 /* Deco_cloud_v1.png in Resources */,
 				9C52472017AF5298001291C7 /* sheet_64x64_2.png in Resources */,
 				9C8E585917BB45E0004CACDA /* mike_normal.plist in Resources */,
+				9CD7E3F018420C0200B11629 /* getCoin.plist in Resources */,
 				9CE14504182F97FA0002C75A /* Loading_bloodBg.png in Resources */,
 				9C8E585D17BCE5C8004CACDA /* num-hd.png in Resources */,
 				9C8E585F17BCF035004CACDA /* numbers.png in Resources */,
@@ -1992,6 +1999,7 @@
 				9C8D1E6D17F05F2000A2B1CF /* HuangjinSihei_dead.plist in Resources */,
 				9C623F2817C91710004704FB /* Siheng_injure.png in Resources */,
 				9C623F2917C91710004704FB /* Siheng_normal.plist in Resources */,
+				9CD7E3F118420C0200B11629 /* getCoin.png in Resources */,
 				9C623F2A17C91710004704FB /* Siheng_normal.png in Resources */,
 				9C623F2F17C9C5F8004704FB /* Siha_dead.plist in Resources */,
 				9C623F3017C9C5F8004704FB /* Siha_dead.png in Resources */,
@@ -2282,7 +2290,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F71850B4-A187-44A0-8848-D8642DF9AE87";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "12704AE9-0884-400D-ADED-2A4ED7CFD7AE";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"sangokuCut/libs\"";
 				WRAPPER_EXTENSION = app;
@@ -2314,7 +2322,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F71850B4-A187-44A0-8848-D8642DF9AE87";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "12704AE9-0884-400D-ADED-2A4ED7CFD7AE";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"sangokuCut/libs\"";
 				VALIDATE_PRODUCT = YES;

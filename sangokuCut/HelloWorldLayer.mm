@@ -166,7 +166,7 @@ float preDirect = 0.0;
 	CGSize s = [[CCDirector sharedDirector] winSize];
 	
 	b2Vec2 gravity;
-	gravity.Set(0.0f, -16.0f);
+	gravity.Set(0.0f, -40.0f);
 	world = new b2World(gravity);
 	
 	
@@ -535,7 +535,7 @@ int tickCnt;
            [enemy getState] != standby &&
            [enemy getState] != movingup &&
            [enemy getState] != movingdown &&!isCutting){
-            isCutting = YES;
+              isCutting = YES;
             if(direction != 0){
                [enemy hit:direction];
                 if(preDirect == 0.0){
@@ -568,8 +568,8 @@ int tickCnt;
             CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
             CGRect particularSpriteRect = CGRectMake(coin.position.x, coin.position.y, coin.contentSize.width,coin.contentSize.height);
             if (CGRectContainsPoint(particularSpriteRect, touchLocation)) {
-                [coin gotCoin];
-                [logic.coinBox removeObject:coin];
+                [coin gotoCoin:_coinIcon.position];
+                //[logic.coinBox removeObject:coin];
                 coinCount++;
                 [_coinLabel setString:[NSString stringWithFormat:@"%d",coinCount]];
                 return;

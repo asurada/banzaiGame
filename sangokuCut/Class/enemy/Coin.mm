@@ -17,14 +17,14 @@
 @synthesize itemDelegate;
 
 +(id)spriteWithFile{
-   return [super spriteWithSpriteFrameName:@"coin_0.png"];
+   return [super spriteWithSpriteFrameName:@"coin_1.png"];
 }
 
 
 -(BOOL)initSprite{
 
     NSMutableArray *normalAnimFrames = [NSMutableArray array];
-    for (int i=0; i<=15; i++) {
+    for (int i=1; i<=32; i++) {
         [normalAnimFrames addObject:
          [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
           [NSString stringWithFormat:@"coin_%d.png",i]]];
@@ -35,9 +35,15 @@
     self.coinAction = [CCRepeatForever actionWithAction:
                          [CCAnimate actionWithAnimation:coinAnim]];
     [self runAction:self.coinAction];
+    [self schedule:@selector(blink_slow) interval:2];
+    [self schedule:@selector(blink_fast) interval:4];
     [self schedule:@selector(coinDisappear) interval:5.3];
     return YES;
 
+}
+
+-(BOOL)initGotCoinAnim{
+   
 }
 
 
@@ -53,6 +59,23 @@
     }
 }
 
+-(void)gotoCoin:(CGPoint )postition{
+    _world->DestroyBody(ballBody);
+    ballBody = nil;
+
+    NSMutableArray *normalAnimFrames = [NSMutableArray array];
+    for (int i=1; i<=5; i++) {
+        [normalAnimFrames addObject:
+         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+          [NSString stringWithFormat:@"coinGetEffect_%d.png",i]]];
+    }
+    CCAnimation *coinAnim = [CCAnimation animationWithSpriteFrames:normalAnimFrames delay:0.04f];
+    id getCoin = [CCAnimate actionWithAnimation:coinAnim];
+    
+    id moveTo = [CCMoveTo actionWithDuration:1 position:postition];
+    id callback = [CCCallFunc actionWithTarget:self selector:@selector(coinDisappear)];
+    [self runAction:[CCSequence actions:getCoin,moveTo,callback,nil]];
+}
 
 
 -(void)initPhysics{
@@ -64,7 +87,7 @@
     
     // Create circle shape
     b2CircleShape circle;
-    circle.m_radius = 8.0/PTM_RATIO;
+    circle.m_radius = 18.0/PTM_RATIO;
 
     // Create shape definition and add to body
     ballShapeDef.shape = &circle;
@@ -77,17 +100,38 @@
     // b2Vec2 force = b2Vec2(10, 10);
     // ballBody->ApplyLinearImpulse(force, ballBodyDef.position);
     ballBody->SetAngularVelocity(0);
-    ballBody->SetLinearVelocity(b2Vec2(0/PTM_RATIO,100/PTM_RATIO));
+   // ballBody->SetLinearVelocity(b2Vec2(0/PTM_RATIO,200/PTM_RATIO));
 }
+
+
+-(void)setVelocityDirection:(float)direction{
+     ballBody->SetLinearVelocity(b2Vec2((0+direction*10)/PTM_RATIO,200/PTM_RATIO));
+}
+
+-(void)blink_slow{
+    CCBlink* blink = [CCBlink actionWithDuration:2 blinks:25];//动作声明，一个闪烁动作
+    [self runAction:blink];
+}
+
+-(void)blink_fast{
+    CCBlink* blink = [CCBlink actionWithDuration:1.3 blinks:25];//动作声明，一个闪烁动作
+    [self runAction:blink];
+}
+
+-(void)blink{
+    CCBlink* blink_slow = [CCBlink actionWithDuration:1.3 blinks:25];//动作声明，一个闪烁动作
+    CCBlink* blink_fast = [CCBlink actionWithDuration:1.3 blinks:25];//动作声明，一个闪烁动作
+    [self runAction:[CCSequence actions:blink_slow,blink_fast,nil]];
+}
+
 
 
 -(void)coinDisappear{
    // delete _world;
-    _world->DestroyBody(ballBody);
+   // _world->DestroyBody(ballBody);
     [itemDelegate onCoinDisappear:self];
     [self removeFromParentAndCleanup:YES];
     _ballFixture = nil;
-    ballBody = nil;
     self.coinAction = nil;
     self.itemDelegate = nil;
 }

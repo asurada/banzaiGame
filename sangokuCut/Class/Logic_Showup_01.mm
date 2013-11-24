@@ -28,7 +28,7 @@ bool stateMove;
 bool bossAppear;
 int cnt = 0;
 BaseCharacter *boss;
-
+bool isSequenceRun = NO;
 
 int arr[9] = {
     0, 1, 2, 5, 4, 3, 6, 7, 8,
@@ -104,17 +104,25 @@ int sequence = 0;
 }
 
 
+
 -(int)showEnemey:(int)tickCnt killed:(int)killedCnt{
     
-    if(killedCnt == 9){
+    if(killedCnt == 5 && sequence == 0){
+        sequence = arc4random()% 7 +1 ;
+    }else if(killedCnt == 11 && sequence == 0){
         sequence = arc4random()% 27 +1 ;
+    }else if(killedCnt == 15 && sequence == 0){
+        sequence = arc4random()% 9 +1 ;
+    }else if(killedCnt == 20 && sequence == 0){
+        sequence = arc4random()% 20 +1 ;
     }
     
     
-    if(sequence > 0 && killedCnt > 9 && killedCnt < 20){
+    if(sequence > 0){
          self.intervalTime = 2;
     }else{
          self.intervalTime = 20;
+         isSequenceRun = NO;
     }
     BaseCharacter *enemy = nil;
     if(tickCnt >= self.intervalTime){
@@ -129,6 +137,7 @@ int sequence = 0;
             position = [self getPosition]; //;arr[cnt];
             cnt++;
             sequence --;
+            
         }
         if(killedCnt < self.enemyCount){//cnt < 14 &&
             NSLog(@"look at %d",position);

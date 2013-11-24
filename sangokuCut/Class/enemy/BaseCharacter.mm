@@ -97,8 +97,8 @@
         }
         _state = dead;
        [self stopAction];
-        self.zOrder = 10-(self.index/3)*3;//
-
+       self.zOrder = 10-(self.index/3)*3;//
+       self.position = ccp(self.position.x+(3*self.scaleX), self.position.y+50);
        [[SimpleAudioEngine sharedEngine] playEffect:self.deadSound];
        [charDelegate onBeforeCharacterDead:self];
        id animation = [CCAnimate actionWithAnimation:self.deadAnim];

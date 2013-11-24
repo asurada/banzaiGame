@@ -30,10 +30,13 @@
 @property(nonatomic,assign)BOOL hasGot;
 
 
+
 +(id)spriteWithFile;
 -(BOOL)initSprite;
 -(void)gotCoin;
 -(void)initPhysics;
 -(void)coinDisappear;
+-(void)setVelocityDirection:(float)direction;
+-(void)gotoCoin:(CGPoint)postition;
 
 @end
