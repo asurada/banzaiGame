@@ -60,9 +60,10 @@
 }
 
 -(void)gotoCoin:(CGPoint )postition{
-    _world->DestroyBody(ballBody);
-    ballBody = nil;
-
+    if(ballBody != nil){
+       _world->DestroyBody(ballBody);
+       ballBody = nil;
+    }
     NSMutableArray *normalAnimFrames = [NSMutableArray array];
     for (int i=1; i<=5; i++) {
         [normalAnimFrames addObject:
@@ -71,8 +72,7 @@
     }
     CCAnimation *coinAnim = [CCAnimation animationWithSpriteFrames:normalAnimFrames delay:0.04f];
     id getCoin = [CCAnimate actionWithAnimation:coinAnim];
-    
-    id moveTo = [CCMoveTo actionWithDuration:1 position:postition];
+    id moveTo = [CCMoveTo actionWithDuration:0.5 position:postition];
     id callback = [CCCallFunc actionWithTarget:self selector:@selector(coinDisappear)];
     [self runAction:[CCSequence actions:getCoin,moveTo,callback,nil]];
 }

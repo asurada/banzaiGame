@@ -562,19 +562,18 @@ int tickCnt;
    }
     
     
-        NSLog(@"coinBox count: %d",logic.coinBox.count);
-        for (int index=0; index<logic.coinBox.count; index++) {
-            Coin *coin = [logic.coinBox objectAtIndex:index];
-            CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
-            CGRect particularSpriteRect = CGRectMake(coin.position.x, coin.position.y, coin.contentSize.width,coin.contentSize.height);
-            if (CGRectContainsPoint(particularSpriteRect, touchLocation)) {
-                [coin gotoCoin:_coinIcon.position];
-                //[logic.coinBox removeObject:coin];
-                coinCount++;
-                [_coinLabel setString:[NSString stringWithFormat:@"%d",coinCount]];
-                return;
-            }
-        }
+    NSLog(@"coinBox count: %d",logic.coinBox.count);
+      for (int index=0; index<logic.coinBox.count; index++) {
+         Coin *coin = [logic.coinBox objectAtIndex:index];
+         CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
+         CGRect particularSpriteRect = CGRectMake(coin.position.x, coin.position.y, coin.contentSize.width,coin.contentSize.height);
+         if (CGRectContainsPoint(particularSpriteRect, touchLocation)) {
+             [coin gotoCoin:_coinIcon.position];
+             coinCount++;
+             [_coinLabel setString:[NSString stringWithFormat:@"%d",coinCount]];
+              return;
+         }
+      }
 }
 
 -(void)playHit:(BaseCharacter *)enemy{

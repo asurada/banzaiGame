@@ -295,7 +295,6 @@
 		9C8E588117BE31D7004CACDA /* zhangfei_injure.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E586F17BE31D7004CACDA /* zhangfei_injure.png */; };
 		9C8E588217BE31D7004CACDA /* zhangfei_normal.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E587017BE31D7004CACDA /* zhangfei_normal.plist */; };
 		9C8E588317BE31D7004CACDA /* zhangfei_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E587117BE31D7004CACDA /* zhangfei_normal.png */; };
-		9C8E589B17BF58FC004CACDA /* Coin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E589A17BF58FB004CACDA /* Coin.mm */; };
 		9C8E58A017BF5B47004CACDA /* hit.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E589E17BF5B44004CACDA /* hit.plist */; };
 		9C8E58A117BF5B47004CACDA /* hit.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E589F17BF5B45004CACDA /* hit.png */; };
 		9C8E58A417BF5B86004CACDA /* coin.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E58A217BF5B83004CACDA /* coin.plist */; };
@@ -337,6 +336,7 @@
 		9CE14500182F88DA0002C75A /* BaseBossCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE144FF182F88DA0002C75A /* BaseBossCharacter.m */; };
 		9CE14503182F97FA0002C75A /* Loading_blood.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CE14501182F97FA0002C75A /* Loading_blood.png */; };
 		9CE14504182F97FA0002C75A /* Loading_bloodBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CE14502182F97FA0002C75A /* Loading_bloodBg.png */; };
+		A295413218436C9E003A7FB6 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = A295413118436C9E003A7FB6 /* Coin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -842,7 +842,6 @@
 		9C8E587017BE31D7004CACDA /* zhangfei_normal.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zhangfei_normal.plist; sourceTree = "<group>"; };
 		9C8E587117BE31D7004CACDA /* zhangfei_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhangfei_normal.png; sourceTree = "<group>"; };
 		9C8E589917BF58FA004CACDA /* Coin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coin.h; sourceTree = "<group>"; };
-		9C8E589A17BF58FB004CACDA /* Coin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Coin.mm; sourceTree = "<group>"; };
 		9C8E589E17BF5B44004CACDA /* hit.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hit.plist; sourceTree = "<group>"; };
 		9C8E589F17BF5B45004CACDA /* hit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hit.png; sourceTree = "<group>"; };
 		9C8E58A217BF5B83004CACDA /* coin.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = coin.plist; sourceTree = "<group>"; };
@@ -897,6 +896,7 @@
 		9CE144FF182F88DA0002C75A /* BaseBossCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseBossCharacter.m; sourceTree = "<group>"; };
 		9CE14501182F97FA0002C75A /* Loading_blood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Loading_blood.png; sourceTree = "<group>"; };
 		9CE14502182F97FA0002C75A /* Loading_bloodBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Loading_bloodBg.png; sourceTree = "<group>"; };
+		A295413118436C9E003A7FB6 /* Coin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coin.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1672,7 +1672,7 @@
 				9CE144FE182F88DA0002C75A /* BaseBossCharacter.h */,
 				9CE144FF182F88DA0002C75A /* BaseBossCharacter.m */,
 				9C8E589917BF58FA004CACDA /* Coin.h */,
-				9C8E589A17BF58FB004CACDA /* Coin.mm */,
+				A295413118436C9E003A7FB6 /* Coin.m */,
 				9C623F1517C91165004704FB /* Siheng.h */,
 				9C623F1617C91166004704FB /* Siheng.m */,
 				9C623F1817C911D6004704FB /* Siha.h */,
@@ -2201,7 +2201,6 @@
 				9C8DDC4517AA6B3700BC144B /* PolygonSprite.mm in Sources */,
 				9C97B7FC17AB944300B0012D /* BaseCharacter.mm in Sources */,
 				9C8D1E8017F05FF300A2B1CF /* BossZhangjiao.m in Sources */,
-				9C8E589B17BF58FC004CACDA /* Coin.mm in Sources */,
 				9C8E58B217C0CC32004CACDA /* EnemyData.mm in Sources */,
 				9C8E58BB17C5F559004CACDA /* Logic.mm in Sources */,
 				9C8D1E8617F0601F00A2B1CF /* Sihei.m in Sources */,
@@ -2216,6 +2215,7 @@
 				9C99BBCF17D3346E001A1E59 /* SceneOption.m in Sources */,
 				9C99BBD217D334A4001A1E59 /* SceneRanking.m in Sources */,
 				9C99BBD617D33F44001A1E59 /* CCButton.m in Sources */,
+				A295413218436C9E003A7FB6 /* Coin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2290,7 +2290,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "12704AE9-0884-400D-ADED-2A4ED7CFD7AE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F71850B4-A187-44A0-8848-D8642DF9AE87";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"sangokuCut/libs\"";
 				WRAPPER_EXTENSION = app;
@@ -2322,7 +2322,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "12704AE9-0884-400D-ADED-2A4ED7CFD7AE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F71850B4-A187-44A0-8848-D8642DF9AE87";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"sangokuCut/libs\"";
 				VALIDATE_PRODUCT = YES;
