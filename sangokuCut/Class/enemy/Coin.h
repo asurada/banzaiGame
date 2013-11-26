@@ -10,6 +10,7 @@
 #import "Box2D.h"
 #import "GLES-Render.h"
 #import "ItemDelegate.h"
+#import "CoinEffect.h"
 
 #define PTM_RATIO 32
 
@@ -20,6 +21,7 @@
       b2BodyDef ballBodyDef;
       b2Body * ballBody;
       b2FixtureDef ballShapeDef;
+      CoinEffect *effect;
       BOOL _hasGot;
     
 }

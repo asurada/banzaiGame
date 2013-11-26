@@ -9,6 +9,7 @@
 #import "Coin.h"
 #import "CCPhysicsSprite.h"
 #import "Box2D.h"
+#import "CoinEffect.h"
 
 @implementation Coin
 
@@ -64,17 +65,24 @@
        _world->DestroyBody(ballBody);
        ballBody = nil;
     }
-    NSMutableArray *normalAnimFrames = [NSMutableArray array];
-    for (int i=1; i<=5; i++) {
-        [normalAnimFrames addObject:
-         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-          [NSString stringWithFormat:@"coinGetEffect_%d.png",i]]];
-    }
-    CCAnimation *coinAnim = [CCAnimation animationWithSpriteFrames:normalAnimFrames delay:0.04f];
-    id getCoin = [CCAnimate actionWithAnimation:coinAnim];
+//    NSMutableArray *normalAnimFrames = [NSMutableArray array];
+//    for (int i=1; i<=5; i++) {
+//        [normalAnimFrames addObject:
+//         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+//          [NSString stringWithFormat:@"coinGetEffect_%d.png",i]]];
+//    }
+//    CCAnimation *coinAnim = [CCAnimation animationWithSpriteFrames:normalAnimFrames delay:0.04f];
+    
+    //id getCoin = [CCAnimate actionWithAnimation:coinAnim];
+    effect = [CoinEffect spriteWithFile];
+    [self.parent addChild:effect];
+    effect.position = self.position;
+    effect.zOrder = 20;
+    [effect initSprite];
+    
     id moveTo = [CCMoveTo actionWithDuration:0.5 position:postition];
     id callback = [CCCallFunc actionWithTarget:self selector:@selector(coinDisappear)];
-    [self runAction:[CCSequence actions:getCoin,moveTo,callback,nil]];
+    [self runAction:[CCSequence actions:moveTo,callback,nil]];
 }
 
 
@@ -130,6 +138,7 @@
    // delete _world;
    // _world->DestroyBody(ballBody);
     [itemDelegate onCoinDisappear:self];
+    //[effect removeFromParentAndCleanup:YES];
     [self removeFromParentAndCleanup:YES];
     _ballFixture = nil;
     self.coinAction = nil;
