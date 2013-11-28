@@ -14,6 +14,7 @@
 +(void)loadResource{
     
     [[CCTextureCache sharedTextureCache]addImage:@"coin.png"];
+    [[CCTextureCache sharedTextureCache]addImage:@"num.png"];
     [[CCTextureCache sharedTextureCache]addImage:@"getCoin.png"];
     [[CCTextureCache sharedTextureCache]addImage:@"zhangfei_normal.png"];
     [[CCTextureCache sharedTextureCache]addImage:@"zhangfei_injure.png"];
@@ -109,6 +110,8 @@
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Sihei_dead.plist" texture:texture2D];
     texture2D = [cache textureForKey:@"getCoin.png"];
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"getCoin.plist" texture:texture2D];
+    texture2D = [cache textureForKey:@"num.png"];
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"num.plist" texture:texture2D];
     
 
     

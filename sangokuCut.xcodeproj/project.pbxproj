@@ -286,7 +286,6 @@
 		9C8DDC4217AA69A900BC144B /* triangulate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DDC3D17AA69A900BC144B /* triangulate.cpp */; };
 		9C8DDC4517AA6B3700BC144B /* PolygonSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DDC4417AA6B3700BC144B /* PolygonSprite.mm */; };
 		9C8E585917BB45E0004CACDA /* mike_normal.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E585817BB45E0004CACDA /* mike_normal.plist */; };
-		9C8E585D17BCE5C8004CACDA /* num-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E585C17BCE5C7004CACDA /* num-hd.png */; };
 		9C8E585F17BCF035004CACDA /* numbers.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E585E17BCF034004CACDA /* numbers.png */; };
 		9C8E587217BE31D7004CACDA /* zhangfei_attack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E586017BE31CF004CACDA /* zhangfei_attack.plist */; };
 		9C8E587317BE31D7004CACDA /* zhangfei_attack.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E586117BE31CF004CACDA /* zhangfei_attack.png */; };
@@ -339,6 +338,7 @@
 		9CE14500182F88DA0002C75A /* BaseBossCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE144FF182F88DA0002C75A /* BaseBossCharacter.m */; };
 		9CE14503182F97FA0002C75A /* Loading_blood.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CE14501182F97FA0002C75A /* Loading_blood.png */; };
 		9CE14504182F97FA0002C75A /* Loading_bloodBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CE14502182F97FA0002C75A /* Loading_bloodBg.png */; };
+		A26B2DB21847567200BF91A9 /* Number.m in Sources */ = {isa = PBXBuildFile; fileRef = A26B2DB11847567200BF91A9 /* Number.m */; };
 		A295413218436C9E003A7FB6 /* Coin.mm in Sources */ = {isa = PBXBuildFile; fileRef = A295413118436C9E003A7FB6 /* Coin.mm */; };
 /* End PBXBuildFile section */
 
@@ -835,7 +835,6 @@
 		9C8DDC4317AA6B3700BC144B /* PolygonSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolygonSprite.h; sourceTree = "<group>"; };
 		9C8DDC4417AA6B3700BC144B /* PolygonSprite.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PolygonSprite.mm; sourceTree = "<group>"; };
 		9C8E585817BB45E0004CACDA /* mike_normal.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = mike_normal.plist; path = Resources/physics/mike_normal.plist; sourceTree = "<group>"; };
-		9C8E585C17BCE5C7004CACDA /* num-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "num-hd.png"; sourceTree = "<group>"; };
 		9C8E585E17BCF034004CACDA /* numbers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = numbers.png; sourceTree = "<group>"; };
 		9C8E586017BE31CF004CACDA /* zhangfei_attack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zhangfei_attack.plist; sourceTree = "<group>"; };
 		9C8E586117BE31CF004CACDA /* zhangfei_attack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhangfei_attack.png; sourceTree = "<group>"; };
@@ -903,6 +902,8 @@
 		9CE144FF182F88DA0002C75A /* BaseBossCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseBossCharacter.m; sourceTree = "<group>"; };
 		9CE14501182F97FA0002C75A /* Loading_blood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Loading_blood.png; sourceTree = "<group>"; };
 		9CE14502182F97FA0002C75A /* Loading_bloodBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Loading_bloodBg.png; sourceTree = "<group>"; };
+		A26B2DB01847567200BF91A9 /* Number.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Number.h; sourceTree = "<group>"; };
+		A26B2DB11847567200BF91A9 /* Number.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Number.m; sourceTree = "<group>"; };
 		A295413118436C9E003A7FB6 /* Coin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Coin.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1611,7 +1612,6 @@
 			isa = PBXGroup;
 			children = (
 				9C8E585E17BCF034004CACDA /* numbers.png */,
-				9C8E585C17BCE5C7004CACDA /* num-hd.png */,
 				9C8DDB6D17AA2EC800BC144B /* btn_pause.png */,
 				9C8DDB6E17AA2EC800BC144B /* Icon_boss.png */,
 				9C8DDB6F17AA2EC800BC144B /* Icon_coin.png */,
@@ -1698,6 +1698,8 @@
 				9C8D1E8517F0601F00A2B1CF /* Sihei.m */,
 				9CD7E3FB1843957E00B11629 /* CoinEffect.h */,
 				9CD7E3FC1843957E00B11629 /* CoinEffect.m */,
+				A26B2DB01847567200BF91A9 /* Number.h */,
+				A26B2DB11847567200BF91A9 /* Number.m */,
 			);
 			path = enemy;
 			sourceTree = "<group>";
@@ -1984,7 +1986,6 @@
 				9C8E585917BB45E0004CACDA /* mike_normal.plist in Resources */,
 				9CD7E3F018420C0200B11629 /* getCoin.plist in Resources */,
 				9CE14504182F97FA0002C75A /* Loading_bloodBg.png in Resources */,
-				9C8E585D17BCE5C8004CACDA /* num-hd.png in Resources */,
 				9C8E585F17BCF035004CACDA /* numbers.png in Resources */,
 				9C8E587217BE31D7004CACDA /* zhangfei_attack.plist in Resources */,
 				9C8E587317BE31D7004CACDA /* zhangfei_attack.png in Resources */,
@@ -2230,6 +2231,7 @@
 				9C99BBD217D334A4001A1E59 /* SceneRanking.m in Sources */,
 				9C99BBD617D33F44001A1E59 /* CCButton.m in Sources */,
 				A295413218436C9E003A7FB6 /* Coin.mm in Sources */,
+				A26B2DB21847567200BF91A9 /* Number.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2284,7 +2286,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: WEI YAN (EVRKY9E9CY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wei Yan (EMHM4XY2B6)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2304,7 +2306,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "12704AE9-0884-400D-ADED-2A4ED7CFD7AE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F71850B4-A187-44A0-8848-D8642DF9AE87";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"sangokuCut/libs\"";
 				WRAPPER_EXTENSION = app;
@@ -2317,7 +2319,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: WEI YAN (EVRKY9E9CY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wei Yan (EMHM4XY2B6)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = sangokuCut/Prefix.pch;
@@ -2336,7 +2338,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "12704AE9-0884-400D-ADED-2A4ED7CFD7AE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F71850B4-A187-44A0-8848-D8642DF9AE87";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"sangokuCut/libs\"";
 				VALIDATE_PRODUCT = YES;

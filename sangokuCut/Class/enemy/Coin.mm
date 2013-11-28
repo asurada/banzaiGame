@@ -16,6 +16,7 @@
 @synthesize world = _world;
 @synthesize hasGot =_hasGot;
 @synthesize itemDelegate;
+@synthesize charDelegate = _charDelegate;
 
 +(id)spriteWithFile{
    return [super spriteWithSpriteFrameName:@"coin_1.png"];
@@ -81,8 +82,9 @@
     [effect initSprite];
     
     id moveTo = [CCMoveTo actionWithDuration:0.5 position:postition];
+    id touchCoin = [CCCallFunc actionWithTarget:self selector:@selector(onCoinTouch)];
     id callback = [CCCallFunc actionWithTarget:self selector:@selector(coinDisappear)];
-    [self runAction:[CCSequence actions:moveTo,callback,nil]];
+    [self runAction:[CCSequence actions:moveTo,touchCoin,callback,nil]];
 }
 
 
@@ -143,6 +145,11 @@
     _ballFixture = nil;
     self.coinAction = nil;
     self.itemDelegate = nil;
+}
+
+
+-(void)onCoinTouch{
+   [self.charDelegate onGotCoint:self];
 }
 
 @end

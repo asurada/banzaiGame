@@ -21,6 +21,7 @@
 #import "CCButton.h"
 #import "SceneStartup.h"
 #import "SimpleAudioEngine.h"
+#import "Number.h"
 
 
 enum {
@@ -531,10 +532,10 @@ int tickCnt;
           if(enemy!= nil &&
            ![enemy isEqual:[NSNull null]]&&
             [enemy hp]>0 &&
-           [enemy getState] != dead &&
-           [enemy getState] != standby &&
-           [enemy getState] != movingup &&
-           [enemy getState] != movingdown &&!isCutting){
+            [enemy getState] != dead &&
+            [enemy getState] != standby &&
+            [enemy getState] != movingup &&
+            [enemy getState] != movingdown &&!isCutting){
               isCutting = YES;
             if(direction != 0){
                [enemy hit:direction];
@@ -565,6 +566,7 @@ int tickCnt;
     NSLog(@"coinBox count: %d",logic.coinBox.count);
       for (int index=0; index<logic.coinBox.count; index++) {
          Coin *coin = [logic.coinBox objectAtIndex:index];
+          coin.charDelegate = self;
          CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
          CGRect particularSpriteRect = CGRectMake(coin.position.x, coin.position.y, coin.contentSize.width,coin.contentSize.height);
          if (CGRectContainsPoint(particularSpriteRect, touchLocation)) {
@@ -687,7 +689,12 @@ int tickCnt;
     _bossBlood.position = ccp(_bossIcon.position.x + _bossBlood.contentSize.width/2+20,_bossIcon.position.y );
     [self addChild:_bossBlood z:12];
     
-        
+    
+    
+  
+    //number.position = _coinIcon.position;
+
+    
     [self createLabel];
     
 }
@@ -711,6 +718,13 @@ int tickCnt;
 }
 
 
+-(void)onGotCoint:(CCSprite *)sender{
+    id scaleUpAction =  [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.5 scaleX:1.4 scaleY:1.4] rate:2.0];
+    id scaleDownAction = [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.2 scaleX:0.8 scaleY:0.8] rate:2.0];
+    id scaleUpAction2 =  [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.1 scaleX:1 scaleY:1] rate:2.0];
+    CCSequence *scaleSeq = [CCSequence actions:scaleUpAction, scaleDownAction, scaleUpAction2, nil];
+    [_coinIcon runAction:scaleSeq];
+}
 
 -(void) createLabel
 {

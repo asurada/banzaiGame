@@ -11,11 +11,13 @@
 #import "GLES-Render.h"
 #import "ItemDelegate.h"
 #import "CoinEffect.h"
+#import "CharacterDelegate.h"
 
 #define PTM_RATIO 32
 
 
 @interface Coin : CCSprite{
+      id<CharacterDelegate> _charDelegate;
       b2World *_world;
       b2Fixture *_ballFixture;
       b2BodyDef ballBodyDef;
@@ -25,7 +27,7 @@
       BOOL _hasGot;
     
 }
-
+@property (nonatomic, strong)  id<CharacterDelegate> charDelegate;
 @property (nonatomic, strong) CCAction *coinAction;
 @property (nonatomic, retain) id<ItemDelegate> itemDelegate;
 @property(nonatomic,assign)b2World *world;
