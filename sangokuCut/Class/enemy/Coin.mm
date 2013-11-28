@@ -65,6 +65,7 @@
     if(ballBody != nil){
        _world->DestroyBody(ballBody);
        ballBody = nil;
+       [self stopAllActions];
     }
 //    NSMutableArray *normalAnimFrames = [NSMutableArray array];
 //    for (int i=1; i<=5; i++) {
@@ -81,7 +82,7 @@
     effect.zOrder = 20;
     [effect initSprite];
     
-    id moveTo = [CCMoveTo actionWithDuration:0.5 position:postition];
+    id moveTo = [CCMoveTo actionWithDuration:0.3 position:postition];
     id touchCoin = [CCCallFunc actionWithTarget:self selector:@selector(onCoinTouch)];
     id callback = [CCCallFunc actionWithTarget:self selector:@selector(coinDisappear)];
     [self runAction:[CCSequence actions:moveTo,touchCoin,callback,nil]];
@@ -140,7 +141,6 @@
    // delete _world;
    // _world->DestroyBody(ballBody);
     [itemDelegate onCoinDisappear:self];
-    //[effect removeFromParentAndCleanup:YES];
     [self removeFromParentAndCleanup:YES];
     _ballFixture = nil;
     self.coinAction = nil;

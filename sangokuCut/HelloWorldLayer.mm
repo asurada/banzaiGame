@@ -329,6 +329,9 @@ int tickCnt;
             
         }
     }
+    
+
+    
 }
 
 
@@ -564,18 +567,18 @@ int tickCnt;
     
     
     NSLog(@"coinBox count: %d",logic.coinBox.count);
-      for (int index=0; index<logic.coinBox.count; index++) {
-         Coin *coin = [logic.coinBox objectAtIndex:index];
-          coin.charDelegate = self;
-         CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
-         CGRect particularSpriteRect = CGRectMake(coin.position.x, coin.position.y, coin.contentSize.width,coin.contentSize.height);
-         if (CGRectContainsPoint(particularSpriteRect, touchLocation)) {
-             [coin gotoCoin:_coinIcon.position];
-             coinCount++;
-             [_coinLabel setString:[NSString stringWithFormat:@"%d",coinCount]];
-              return;
-         }
+    for (int index=0; index<logic.coinBox.count; index++) {
+      Coin *coin = [logic.coinBox objectAtIndex:index];
+      coin.charDelegate = self;
+      CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
+      CGRect particularSpriteRect = CGRectMake(coin.position.x, coin.position.y, coin.contentSize.width,coin.contentSize.height);
+      if (CGRectContainsPoint(particularSpriteRect, touchLocation)) {
+         [coin gotoCoin: ccp(26,510)];
+         coinCount++;
+         [_coinLabel setString:[NSString stringWithFormat:@"%d",coinCount]];
+         return;
       }
+   }
 }
 
 -(void)playHit:(BaseCharacter *)enemy{
@@ -719,8 +722,8 @@ int tickCnt;
 
 
 -(void)onGotCoint:(CCSprite *)sender{
-    id scaleUpAction =  [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.5 scaleX:1.4 scaleY:1.4] rate:2.0];
-    id scaleDownAction = [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.2 scaleX:0.8 scaleY:0.8] rate:2.0];
+    id scaleUpAction =  [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.2 scaleX:1.4 scaleY:1.4] rate:2.0];
+    id scaleDownAction = [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.1 scaleX:0.8 scaleY:0.8] rate:2.0];
     id scaleUpAction2 =  [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.1 scaleX:1 scaleY:1] rate:2.0];
     CCSequence *scaleSeq = [CCSequence actions:scaleUpAction, scaleDownAction, scaleUpAction2, nil];
     [_coinIcon runAction:scaleSeq];
