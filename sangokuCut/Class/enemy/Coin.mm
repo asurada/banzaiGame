@@ -65,17 +65,10 @@
     if(ballBody != nil){
        _world->DestroyBody(ballBody);
        ballBody = nil;
-       [self stopAllActions];
     }
-//    NSMutableArray *normalAnimFrames = [NSMutableArray array];
-//    for (int i=1; i<=5; i++) {
-//        [normalAnimFrames addObject:
-//         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-//          [NSString stringWithFormat:@"coinGetEffect_%d.png",i]]];
-//    }
-//    CCAnimation *coinAnim = [CCAnimation animationWithSpriteFrames:normalAnimFrames delay:0.04f];
     
-    //id getCoin = [CCAnimate actionWithAnimation:coinAnim];
+    [self stopAllActions];
+    
     effect = [CoinEffect spriteWithFile];
     [self.parent addChild:effect];
     effect.position = self.position;
@@ -87,6 +80,7 @@
     id callback = [CCCallFunc actionWithTarget:self selector:@selector(coinDisappear)];
     [self runAction:[CCSequence actions:moveTo,touchCoin,callback,nil]];
 }
+
 
 
 -(void)initPhysics{
