@@ -40,15 +40,18 @@
         numlabel.position = ccp(numlabel.position.x, numlabel.position.y);
         [numList addObject:numlabel];
         [self addChild:numlabel];
+        
         return;
     }
     
     for(int index = 0; index< digits;index++){
         if([numList count]<index+1){
             Number *numlabel = [Number spriteWithFile:@"num_1.png"];
-            numlabel.position = ccp(numlabel.position.x + 20 * index, numlabel.position.y);
-            [numList addObject:numlabel];
-            [self addChild:numlabel];
+            if([numlabel initSprite]){
+              numlabel.position = ccp(numlabel.position.x + 20 * index, numlabel.position.y);
+              [numList addObject:numlabel];
+              [self addChild:numlabel];
+            }
         }
         int value = 0;
         if(index == 0){

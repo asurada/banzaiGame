@@ -10,22 +10,20 @@
 
 @implementation Number
 
+
+
 +(id)spriteWithFile:name{
-    
     return [super spriteWithFile:name];
 }
 
 
 -(BOOL)initSprite{
-    
-    id scaleUpAction =  [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.2 scaleX:3 scaleY:3] rate:1.0];
-    id scaleDownAction = [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.1 scaleX:1 scaleY:1] rate:1.0];
-    CCSequence *scaleSeq = [CCSequence actions:scaleUpAction, scaleDownAction, nil];
-    id callback = [CCCallFunc actionWithTarget:self selector:@selector(showNextNumber)];
-    [self runAction:[CCSequence actions:scaleSeq,callback,nil]];
+    curcount =-1;
+    dstCount =-1;
     return YES;
-    
 }
+
+
 
 
 -(BOOL)showNum:(int)num{
@@ -36,7 +34,6 @@
     }else if(dstCount < curcount){
         curcount = num;
         return [self showNumAnimation:curcount];
-        
     }else{
         NSString *name = [NSString stringWithFormat:@"num_%d.png",num];
         [self setTexture:[[CCTextureCache sharedTextureCache] addImage:name]];
