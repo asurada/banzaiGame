@@ -15,7 +15,6 @@
 
 @synthesize world = _world;
 @synthesize hasGot =_hasGot;
-@synthesize itemDelegate;
 @synthesize charDelegate = _charDelegate;
 
 +(id)spriteWithFile{
@@ -76,9 +75,9 @@
     [effect initSprite];
     
     id moveTo = [CCMoveTo actionWithDuration:0.3 position:postition];
+    id enlargeCoin = [CCCallFunc actionWithTarget:self selector:@selector(onEnlargeCoin)];
     id touchCoin = [CCCallFunc actionWithTarget:self selector:@selector(onCoinTouch)];
-    id callback = [CCCallFunc actionWithTarget:self selector:@selector(coinDisappear)];
-    [self runAction:[CCSequence actions:moveTo,touchCoin,callback,nil]];
+    [self runAction:[CCSequence actions:moveTo,touchCoin,enlargeCoin,nil]];
 }
 
 
@@ -134,15 +133,29 @@
 -(void)coinDisappear{
    // delete _world;
    // _world->DestroyBody(ballBody);
-    [itemDelegate onCoinDisappear:self];
+    [_charDelegate onCoinDisappear:self];
     [self removeFromParentAndCleanup:YES];
     _ballFixture = nil;
     self.coinAction = nil;
-    self.itemDelegate = nil;
 }
 
+-(void)onEnlargeCoin{
+    [self stopAllActions];
+    CCSpriteFrameCache* cache = [CCSpriteFrameCache sharedSpriteFrameCache];
+    CCSpriteFrame* frame = [cache spriteFrameByName:@"coin_7.png"];
+    [self setDisplayFrame:frame];
+    id scaleUpAction = [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.2 scaleX:2 scaleY:2] rate:1.0];
+    id fadeOut = [CCFadeOut actionWithDuration:0.2];
+    id callback = [CCCallFunc actionWithTarget:self selector:@selector(coinDisappear)];
+    CCSequence *scaleSeqEnlarge= [CCSequence actions:scaleUpAction,callback, nil];
+    CCSequence *scaleSeqFadeout= [CCSequence actions:fadeOut, nil];
+    [self runAction:scaleSeqEnlarge];
+    [self runAction:scaleSeqFadeout];
+}
 
 -(void)onCoinTouch{
+    
+
    [self.charDelegate onGotCoint:self];
 }
 

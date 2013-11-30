@@ -117,7 +117,6 @@
 -(void)onBeforeCharacterDead:(CCSprite *)sender{
     Coin *coin = [Coin spriteWithFile];
     if([coin initSprite]){
-        coin.itemDelegate = self;
         coin.position = ccp(sender.position.x,sender.position.y);
         coin.world = self.world;
         [coin initPhysics];

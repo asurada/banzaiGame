@@ -29,7 +29,6 @@
 }
 @property (nonatomic, strong)  id<CharacterDelegate> charDelegate;
 @property (nonatomic, strong) CCAction *coinAction;
-@property (nonatomic, retain) id<ItemDelegate> itemDelegate;
 @property(nonatomic,assign)b2World *world;
 @property(nonatomic,assign)BOOL hasGot;
 
