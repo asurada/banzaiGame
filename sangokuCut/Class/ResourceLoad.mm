@@ -14,14 +14,14 @@
 +(void)loadResource{
     
     [[CCTextureCache sharedTextureCache]addImage:@"coin.png"];
+   
+    //[[CCTextureCache sharedTextureCache]addImage:@"sheet_64x64_0006.png"];
     [[CCTextureCache sharedTextureCache]addImage:@"num.png"];
     [[CCTextureCache sharedTextureCache]addImage:@"getCoin.png"];
     [[CCTextureCache sharedTextureCache]addImage:@"zhangfei_normal.png"];
     [[CCTextureCache sharedTextureCache]addImage:@"zhangfei_injure.png"];
     [[CCTextureCache sharedTextureCache]addImage:@"zhangfei_attack.png"];
     [[CCTextureCache sharedTextureCache]addImage:@"zhangfei_dead.png"];
-    [[CCTextureCache sharedTextureCache]addImage:@"zombi_lv1_dead.png"];
-    [[CCTextureCache sharedTextureCache]addImage:@"zombi_lv1.png"];
     [[CCTextureCache sharedTextureCache]addImage:@"Girl_injure.png"];
     [[CCTextureCache sharedTextureCache]addImage:@"Girl_normal.png"];
     [[CCTextureCache sharedTextureCache]addImage:@"Siheng_normal.png"];
@@ -61,10 +61,6 @@
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_attack.plist" texture:texture2D];
     texture2D = [cache textureForKey:@"zhangfei_dead.png"];
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zhangfei_dead.plist" texture:texture2D];
-    texture2D = [cache textureForKey:@"zombi_lv1_dead.png"];
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zombi_lv1_dead.plist" texture:texture2D];
-    texture2D = [cache textureForKey:@"zombi_lv1.png"];
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zombi_lv1.plist" texture:texture2D];
     texture2D = [cache textureForKey:@"Girl_injure.png"];
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Girl_injure.plist" texture:texture2D];
     texture2D = [cache textureForKey:@"Girl_normal.png"];
@@ -99,7 +95,6 @@
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"BossZhangjiao_injured.plist" texture:texture2D];
     texture2D = [cache textureForKey:@"BossZhangjiao_normal.png"];
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"BossZhangjiao_normal.plist" texture:texture2D];
-    
     texture2D = [cache textureForKey:@"Sibao_injured.png"];
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Sibao_injured.plist" texture:texture2D];
     texture2D = [cache textureForKey:@"Sibao_normal.png"];
@@ -112,6 +107,7 @@
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"getCoin.plist" texture:texture2D];
     texture2D = [cache textureForKey:@"num.png"];
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"num.plist" texture:texture2D];
+  //  texture2D = [cache textureForKey:@"sheet_64x64_0006.png"];
     
 
     
