@@ -18,6 +18,7 @@
 #import "CharacterDelegate.h"
 #import "Logic_Showup_01.h"
 #import "ItemDelegate.h"
+#import "NumbersLabel.h"
 
 //Pixel to metres ratio. Box2D uses metres as the unit for measurement.
 //This ratio defines how many pixels correspond to 1 Box2D "metre"
@@ -26,7 +27,7 @@
 #define PTM_RATIO 32
 
 // HelloWorldLayer
-@interface HelloWorldLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate,CharacterDelegate>
+@interface HelloWorldLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate,CharacterDelegate,ItemDelegate>
 {
 	CCTexture2D *spriteTexture_;	// weak ref
 	b2World* world;					// strong ref
@@ -52,6 +53,7 @@
     CCSprite *_bossBloodBg;
     
     
+    
     CCLabelAtlas *_zombiLabel;
 	CCLabelAtlas *_coinLabel;
     
@@ -63,7 +65,7 @@
     BaseCharacter *hitTarget;
     
     Logic_Showup_01 *logic;
-    
+    NumbersLabel *number;
     
     int coinCount;
     int enemyCount;

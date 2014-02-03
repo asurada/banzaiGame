@@ -9,9 +9,13 @@
 #import "CCSprite.h"
 #import "cocos2d.h"
 
-@interface Number : CCSprite
+@interface Number : CCSprite{
+    int curcount;
+    int dstCount;
+}
 
 +(id)spriteWithFile:(NSString *)name;
 -(BOOL)initSprite;
+-(BOOL)showNum:(int)num;
 
 @end

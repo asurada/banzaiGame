@@ -17,5 +17,6 @@
 - (void)onInjureBoss:(CGPoint)location sender:(CCSprite *)sender bossBloodRate:(float)rate;
 - (void)onKillBoss:(CCSprite *)sender;
 - (void)onGotCoint:(CCSprite *)sender;
+- (void)onCoinDisappear:(CCSprite *)sender;
 
 @end

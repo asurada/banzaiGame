@@ -21,7 +21,7 @@
 #import "CCButton.h"
 #import "SceneStartup.h"
 #import "SimpleAudioEngine.h"
-#import "Number.h"
+#import "NumbersLabel.h"
 
 
 enum {
@@ -574,8 +574,7 @@ int tickCnt;
       CGRect particularSpriteRect = CGRectMake(coin.position.x, coin.position.y, coin.contentSize.width,coin.contentSize.height);
       if (CGRectContainsPoint(particularSpriteRect, touchLocation)) {
          [coin gotoCoin: ccp(26,510)];
-         coinCount++;
-         [_coinLabel setString:[NSString stringWithFormat:@"%d",coinCount]];
+          //[_coinLabel setString:[NSString stringWithFormat:@"%d",coinCount]];
          return;
       }
    }
@@ -673,7 +672,11 @@ int tickCnt;
     [self addChild:_zombiIcon z:12];
     
 
-    _coinIcon = [CCSprite spriteWithFile:@"Icon_coin.png"];
+    CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"numpic.png"];
+    [self addChild:spriteSheet];
+
+    
+    _coinIcon = [CCSprite spriteWithFile:@"Icon_coin.png"];//:@"Icon_coin.png"
     _coinIcon.position = ccp(_coinIcon.contentSize.width/2+10,_zombiIcon.position.y - _coinIcon.contentSize.height-5);
     [self addChild:_coinIcon z:12];
     
@@ -693,11 +696,6 @@ int tickCnt;
     [self addChild:_bossBlood z:12];
     
     
-    
-  
-    //number.position = _coinIcon.position;
-
-    
     [self createLabel];
     
 }
@@ -708,7 +706,6 @@ int tickCnt;
     switch([sender tag]){
         case 11:
             CCLOG(@"spriteButtonUseSelector_pushed");
-            
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SceneStartup scene] ]];
             break;
         case 22:
@@ -722,6 +719,8 @@ int tickCnt;
 
 
 -(void)onGotCoint:(CCSprite *)sender{
+    coinCount++;
+    [number showNum:coinCount];
     id scaleUpAction =  [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.2 scaleX:1.4 scaleY:1.4] rate:2.0];
     id scaleDownAction = [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.1 scaleX:0.8 scaleY:0.8] rate:2.0];
     id scaleUpAction2 =  [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.1 scaleX:1 scaleY:1] rate:2.0];
@@ -729,29 +728,42 @@ int tickCnt;
     [_coinIcon runAction:scaleSeq];
 }
 
+
+-(void)onCoinDisappear:(CCSprite *)sender{
+   
+
+}
+
 -(void) createLabel
 {
-	if( _zombiLabel && _coinLabel ) {
+	if( _zombiLabel) {
 		CCTexture2D *texture = [_zombiLabel texture];
 		[_zombiLabel release];
-		[_coinLabel release];
+		//[_coinLabel release];
 		[[CCTextureCache sharedTextureCache ] removeTexture:texture];
 		_zombiLabel = nil;
-		_coinLabel = nil;
+		//_coinLabel = nil;
 	}
+
     
 	CCTexture2DPixelFormat currentFormat = [CCTexture2D defaultAlphaPixelFormat];
 	[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
 	_zombiLabel =  [[CCLabelAtlas alloc]  initWithString:@"0" charMapFile:@"numbers.png" itemWidth:20 itemHeight:32 startCharMap:'.'];
-	_coinLabel =  [[CCLabelAtlas alloc]  initWithString:@"0" charMapFile:@"numbers.png" itemWidth:20 itemHeight:32 startCharMap:'.'];
+	//_coinLabel =  [[CCLabelAtlas alloc]  initWithString:@"0" charMapFile:@"numbers.png" itemWidth:20 itemHeight:32 startCharMap:'.'];
 
  
 	[CCTexture2D setDefaultAlphaPixelFormat:currentFormat];
     _zombiLabel.position = ccp(_zombiIcon.position.x+20,_zombiIcon.position.y-15);
-    _coinLabel.position = ccp(_coinIcon.position.x+20,_coinIcon.position.y-15);
-
+    //_coinLabel.position = ccp(_coinIcon.position.x+20,_coinIcon.position.y-15);
+    
+    
+    number = [[NumbersLabel alloc]init];
+    [self addChild:number z:14];
+    number.position = ccp(_coinIcon.position.x+30,_coinIcon.position.y);
+    [number showNum:0];
+  
     [self addChild:_zombiLabel z:14];
-    [self addChild:_coinLabel z:14];
+ //   [self addChild:_coinLabel z:14];
 	
 }
 

@@ -10,21 +10,66 @@
 
 @implementation Number
 
+
+
 +(id)spriteWithFile:name{
-    return [super spriteWithSpriteFrameName:name];
+    return [super spriteWithFile:name];
 }
 
 
 -(BOOL)initSprite{
-    
-    id scaleUpAction =  [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:1 scaleX:1.0 scaleY:1.0] rate:2.0];
-    id scaleDownAction = [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.5 scaleX:0.8 scaleY:0.8] rate:2.0];
-    CCSequence *scaleSeq = [CCSequence actions:scaleUpAction, scaleDownAction, nil];
-    [self runAction:[CCRepeatForever actionWithAction:scaleSeq]];    
+    curcount =-1;
+    dstCount =-1;
     return YES;
+}
+
+
+
+
+-(BOOL)showNum:(int)num{
+    dstCount = num;
+    if(dstCount > curcount){
+        curcount++;
+        return [self showNumAnimation:curcount];
+    }else if(dstCount < curcount){
+        curcount = num;
+        return [self showNumAnimation:curcount];
+    }else{
+        NSString *name = [NSString stringWithFormat:@"num_%d.png",num];
+        [self setTexture:[[CCTextureCache sharedTextureCache] addImage:name]];
+        return FALSE;
+    }
+   
+    
     
 }
 
+-(BOOL)showNumAnimation:(int)num{
+    NSString *name = [NSString stringWithFormat:@"num_%d.png",num];
+    [self setTexture:[[CCTextureCache sharedTextureCache] addImage:name]];
+    [self setScale:4];
+    id scaleDownAction = [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.1 scaleX:0.5 scaleY:0.5] rate:1.0];
+    id scaleDownNormal = [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.1 scaleX:1 scaleY:1] rate:1.0];
+    CCSequence *scaleSeq = [CCSequence actions:scaleDownAction,scaleDownNormal, nil];
+    id callback = [CCCallFunc actionWithTarget:self selector:@selector(showNextNum)];
+    [self runAction:[CCSequence actions:scaleSeq,callback,nil]];
+    return YES;
+
+}
+
+
+
+-(BOOL)showNextNum{
+    if(dstCount > curcount){
+        curcount++;
+        return [self showNumAnimation:curcount];
+    }else if(dstCount < curcount){
+        curcount = dstCount;
+        return [self showNumAnimation:curcount];
+    }
+    return NO;
+   
+}
 
 
 
